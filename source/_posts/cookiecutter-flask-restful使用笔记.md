@@ -1,3 +1,9 @@
+---
+title: cookiecutter-flask-restful使用笔记
+date: 2021-04-02 17:40:17
+tags:
+---
+
 [TOC]
 
 # flask-cookiecutter-restful 使用
@@ -115,9 +121,48 @@ pipenv install
 pipenv install -r requirements.txt
 ```
 
+### 4. 数据库
+```shell
+# 本地创建相关库
+CREATE DATABASE `aipms` /*!40100 DEFAULT CHARACTER SET utf8mb4 */
+
+# 项目配置数据库, 修改.env
+DATABASE_URI=mysql+pymysql://root:123456@localhost:3306/aipms?charset=utf8mb4
+
+# 进虚拟环境
+pipenv shell
+
+# 生成迁移文件
+flask db migrate -m 'init migration'
+
+# 更新到数据库
+flask db upgrate
+```
+
+### 5. 接口测试
+
+- 注册
+```shell
+curl --location --request POST 'http://127.0.0.1:5002/auth/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "admin",
+    "password": "admin"
+}'
+```
+
+- 登录
+```shell
+curl --location --request POST 'http://127.0.0.1:5002/auth/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "admin",
+    "password": "admin"
+}'
+```
 
 
-### 4. 关联git
+### 6. git
 
 ```shell
 # git初始化
@@ -168,6 +213,28 @@ brew install docker
 python3 -m pip install docker-compose
 ```
 
+- 登录docker
+```shell
+docker login
+```
 
+- 拉取基础Image
+```shell
+docker pull python:3.7.10-alpine
+```
 
-### 3. 
+- 创建容器并进入
+```shell
+docker run -it --name=container_name python:3.7.10-alpine /bin/sh
+```
+
+- 配置dockerfile
+```shell
+
+```
+
+- 从dockerfile启动项目
+```shell
+docker build -t container_name ./Dockerfile
+```
+
