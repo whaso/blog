@@ -22,6 +22,8 @@ tags:
 
 ### 3. 修改服务器配置
 
+> 后台运行: `nohup ./frps -c frps.ini >/dev/null 2>&1 &`
+
 - `vi frps.ini`
 
 ```shell
