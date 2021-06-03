@@ -1,0 +1,409 @@
+# Configure navigation menu url, icon and enable
+# 配置导航菜单的url, 图标及是否启用
+# [material icons](https://material.io/resources/icons/?style=baseline)
+# [fontawesome](https://fontawesome.com/v5.15.3/icons)
+menu:
+  index:
+    enable: true
+    url: /
+    icon: fas fa-home
+    material_icon: home
+  categories:
+    enable: true
+    url: /categories
+    icon: fas fa-bookmark
+    material_icon: chrome_reader_mode
+  archives:
+    enable: true
+    url: /archives
+    icon: fas fa-archive
+    material_icon: inbox
+  tags:
+    enable: true
+    url: /tags
+    icon: fas fa-tags
+    material_icon: label
+  about:
+    enable: true
+    url: /about
+    icon: fas fa-user-circle
+    material_icon: account_circle
+  lab:
+    enable: true
+    icon: fas fa-list
+    material_icon: apps
+    children:
+      comments:
+        enable: true
+        url: /comments
+        icon: fas fa-comments
+        material_icon: comment
+      friends:
+        enable: true
+        url: /friends
+        icon: fas fa-address-book
+        material_icon: link
+      resume:
+        enable: true
+        url: /resume
+        icon: fas fa-briefcase
+        material_icon: work
+      timeline:
+        enable: true
+        url: /timeline
+        icon: fas fa-calendar-alt
+        material_icon: timeline
+      vlog:
+        enable: true
+        url: /vlog
+        icon: fas fa-film
+        material_icon: video_library
+      portfolio:
+        enable: true
+        url: /portfolio
+        icon: fas fa-cubes
+        material_icon: widgets
+  medias:
+    enable: true
+    icon: fas fa-list
+    material_icon: perm_media
+    children:
+      galleries:
+        enable: true
+        url: /galleries
+        icon: fas fa-image
+        material_icon: photo_library
+      musics:
+        enable: true
+        url: /musics
+        icon: fas fa-music
+        material_icon: library_music
+      videos:
+        enable: true
+        url: /videos
+        icon: fas fa-film
+        material_icon: video_library
+      books:
+        enable: true
+        url: /books
+        icon: fas fa-book
+        material_icon: library_books
+
+# config favicon and logo
+# 配置favicon和logo
+favicon: /img/favicon.png
+logo: 
+  url: /img/logo.png
+  circle: true
+banner: /img/icon-seamless.png
+post_cover:
+  default: /img/icon-seamless.png
+
+profile:
+  avatar: /img/logo.png
+  name: xiongxianzhu
+  job: Python & Go 软件工程师
+  sns:
+    - github
+    - email
+    - qq
+    - wechat
+    - weibo
+    - facebook
+    - twitter
+    - rss
+
+# Sidebar
+sidebar:
+  position: left       # left, right
+  background_color: 'linear-gradient(to right, #8e24aa 0%, #9c27b0 100%)'
+  background_image: /img/icon-seamless.png
+
+
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub:
+    - Hi, I'm zhuxiongxian.
+    - Welcome to my blog!!!
+  fontcss: https://fonts.googleapis.com/css2?family=Marck+Script
+  font_family: Marck Script
+
+# Posts TOC
+# 文章目录
+toc:
+  enable: true
+  show_toggle_btn: true
+  position: right   # left or right
+
+# SNS
+# 社交网络服务
+sns:
+  github: https://github.com/xiongxianzhu
+  email: 929679459@qq.com
+  qq: 929679459
+  wechat: xxshwz
+  weibo: http://weibo.com/929679459     # https://weibo.com/xxx
+  zhihu: # https://www.zhihu.com/xxx
+  juejin: https://juejin.cn/user/1714893867985389
+  bilibili: https://space.bilibili.com/200731874
+  facebook: https://www.facebook.com/xiongxian.zhu  # https://www.facebook.com/xxx
+  twitter: https://twitter.com/xiongxianzhu         # https://twitter.com/xxx
+  youtube:
+  googleplus:
+  instagram:
+  tumblr:
+  linkedin: https://www.linkedin.com/in/zhuxiongxian/
+  telegram:
+  dribbble:
+  pinterest:
+  behance:
+  v2ex:
+  segmentfault:
+  rss: true
+
+# Enable the back to top button
+# 是否启用快速回到顶部按钮
+top: 
+  enable: true
+
+# copyright
+# 版权
+copyright:
+  since: 2017     # year
+
+# ================
+# Comment System
+# ================
+# 评论系统
+# disqus comment
+disqus:
+  enable: false
+  shortname: blog-zhuxiongxian
+
+# gitalk comment
+gitalk:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    client_id:
+    client_secret:
+  admin:
+
+# gitment comment
+gitment:
+  enable: false
+  owner:
+  repo:
+  oauth:
+    client_id:
+    client_secret:
+
+# livere comment
+# 来必力评论系统
+livere:
+  enable: false
+  uid:
+
+# valine comment system. https://valine.js.org
+valine:
+  enable: true # if you want use valine,please set this value is true
+  app_id: Mia2Oc0sFRP8CLKWIpkzlKH7-gzGzoHsz  # leancloud application app id
+  app_key: UzWr1AJYRlfkoKpaNY9l2dIW  # leancloud application app key
+  notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+  verify: false # valine verify code (true/false)
+  visitor: true
+  page_size: 10 # comment list page size
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  lang: zh-cn # i18n: zh-cn/en
+  placeholder: 发一条友善的评论 # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link # valine comment header info
+  # emoji_cdn: https://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/ # 默认微博表情CDN
+  emoji_cdn: https://i0.hdslb.com/bfs/emote/    # 设置Bilibili表情包地址
+    
+
+# changyan comment
+# 畅言评论系统， 需要备案
+changyan:
+  enable: false
+  app_id:
+  conf:
+
+# DaoVoice online contact
+daovoice:
+  enable: false
+  app_id:
+
+# frontend libraries
+# 前端插件库
+# 默认使用本主题下的前端库文件地址， 可替换成对应的绝对路径的CDN地址
+# 免费的CDN推荐： jsDelivr， cdnjs, unpkg, BootCDN, cloudflare
+libs:
+  css:
+    fontawesome: /libs/fontawesome/css/all.min.css
+    materialize: /libs/materialize/materialize.min.css
+    animate: /libs/animate.css/animate.min.css
+    gitalk:
+    prism: /libs/prism/prism-tomorrow-night.css
+    material_icons: /libs/materialicons/materialicons.css   # https://fonts.googleapis.com/icon?family=Material+Icons
+    aos: /libs/aos/aos.css
+    aplayer: /libs/aplayer/APlayer.min.css
+    tocbot: /libs/tocbot/tocbot.css
+    meting: /libs/aplayer/Meting.min.js
+    xxcoding: /css/xxcoding.css
+    mycss: 
+  js:
+    jquery: /libs/jquery/jquery.min.js
+    materialize: /libs/materialize/materialize.min.js
+    lazyload: /libs/lazyload/lazyload.min.js
+    aos: /libs/aos/aos.js
+    aplayer: /libs/aplayer/APlayer.min.js
+    valine: /libs/valine/Valine.min.js
+    tocbot: /libs/tocbot/tocbot.min.js
+    scrollprogress: 
+    gitalk:
+    busuanzi:
+    xxcoding: /js/xxcoding.js
+    myjs: 
+  fontcss:
+    - https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500
+    - https://fonts.googleapis.com/css2?family=Marck+Script
+
+cdn:
+  css:
+    fontawesome: 
+    materialize: 
+    animate: 
+    gitalk:
+    prism: 
+    material_icons: 
+    aos: 
+    aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css
+    tocbot: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css
+  js:
+    jquery: 
+    materialize: 
+    lazyload: 
+    aos: 
+    aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
+    valine: //unpkg.com/valine/dist/Valine.min.js
+    scrollprogress: 
+    gitalk:
+    busuanzi:
+    meting: https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js
+    live2d: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+    tocbot: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js
+  fontcss:
+
+google_analytics:
+# 不蒜子(http://busuanzi.ibruce.info/) 网站统计
+busuanzi_analytics:
+  enable: true
+
+icp:
+  enable: true
+  url: https://beian.miit.gov.cn/
+  text: 粤ICP备17065679号-1
+
+random_thumbnail:
+  - /img/random/material-1.jpg
+  - /img/random/material-2.jpg
+  - /img/random/material-3.jpg
+  - /img/random/material-4.jpg
+  - /img/random/material-5.jpg
+  - /img/random/material-6.jpg
+  - /img/random/material-7.jpg
+  - /img/random/material-8.jpg
+  - /img/random/material-9.jpg
+  - /img/random/material-10.jpg
+  - /img/random/material-11.jpg
+  - /img/random/material-12.jpg
+  - /img/random/material-13.jpg
+  - /img/random/material-14.jpg
+  - /img/random/material-15.jpg
+  - /img/random/material-16.jpg
+  - /img/random/material-17.jpg
+  - /img/random/material-18.jpg
+  - /img/random/material-19.jpg
+  - /img/random/material-20.jpg
+  - /img/random/material-21.jpg
+  - /img/random/material-22.jpg
+  - /img/random/material-23.jpg
+  - /img/random/material-24.jpg
+  - /img/random/material-25.jpg
+  - /img/random/material-26.jpg
+  - /img/random/material-27.jpg
+  - /img/random/material-28.jpg
+  - /img/random/material-29.jpg
+  - /img/random/material-30.jpg
+  - /img/random/material-31.jpg
+  - /img/random/material-32.jpg
+  - /img/random/material-33.jpg
+  - /img/random/material-34.jpg
+  - /img/random/material-35.jpg
+  - /img/random/material-36.jpg
+  - /img/random/material-37.jpg
+  - /img/random/material-38.jpg
+
+carousel:
+  show_indicators: true
+  auto_loop: true
+  interval_time: 5000
+  duration: 200
+  indicators: true
+  show_control: true
+  carousel_bg:
+    - /img/bg/bg-1.jpg
+    - /img/bg/bg-2.jpg
+    - /img/bg/bg-3.jpg
+    - /img/bg/bg-4.jpg
+    - /img/bg/bg-5.jpg
+
+# https://aplayer.js.org/#/zh-Hans/?id=参数
+# https://github.com/metowolf/MetingJS
+aplayer:
+  enable: true
+  server: netease     # Music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist      # song, playlist, album, search, artist
+  id: 743950282       # song id, playlist id, album id, search keyword
+  fixed: true         # 开启吸底模式
+  mini: false         # 开启迷你模式
+  theme: '#b7daff'    # 主题色
+  autoplay: false     # 是否自动播放
+  loop: 'all'         # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random'     # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'     # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7         # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  list_folded: true   # 列表默认折叠
+  hide_lrc: true      # 隐藏歌词
+  list_max_height:    # 列表最大高度
+  auto_hide: true     # 自动隐藏
+
+# live2d-widget 看板娘
+# https://github.com/stevenjoezhang/live2d-widget
+live2d:
+  enable: true
+
+# 站点运行开始时间.
+time:
+  enable: true
+  year: 2017 # 年份
+  month: 06 # 月份
+  date: 05 # 日期
+  hour: 00 # 小时
+  minute: 00 # 分钟
+  second: 00 # 秒
+
+# 代码块
+# 行号在网站根目录下的_config.yml配置下的prismjs.line_number， 即site.config.prismjs.line_number
+codeblock:
+  mac_theme: true             # mac主题
+  show_code_language: true    # 显示代码语言
+  show_copy_button: true      # 显示拷贝代码按钮

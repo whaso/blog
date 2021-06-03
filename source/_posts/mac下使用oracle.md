@@ -1,5 +1,5 @@
 ---
-title: mac下使用oracle.md
+title: mac + python + oracle.md
 date: 2021-06-01 09:56:00
 tags:
 ---
@@ -7,7 +7,7 @@ tags:
 > Oracle 字符串只能用单引号
 
 ### mac安装通过docker安装使用oracle
-> https://github.com/MaksymBilenko/docker-oracle-12c
+> 参考: https://github.com/MaksymBilenko/docker-oracle-12c
 ```shell
 # 拉取镜像
 docker pull quay.io/maksymbilenko/oracle-12c
@@ -99,6 +99,30 @@ password: oracle
 - 创建数据库: `create tablespace 表间名 datafile '数据文件名' size 表空间大小;`
   - 例: `create tablespace TEST datafile 'test' size 20M;`
 - 查看建表语句: `select dbms_metadata.get_ddl('TABLE','USERINFO') from dual;`
+
+
+
+### 错误汇总
+
+- 找不到 `libocci.dylib`
+
+参考: `https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html` 根据提示要安装 `Oracle Instant Client` 
+
+下载 `http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html` 的`Basic Package` 
+
+下载解压后在环境变量中添加 `export DYLD_LIBRARY_PATH=解压文件目录`
+
+- ORA-12541
+
+服务未启动
+
+- ORA-12505
+
+报错时的配置: `oracle+cx_oracle://test:123456@localhost:1521/TEST`
+
+连接配置不是具体到库, 而是到服务名, 修改为: `oracle+cx_oracle://test:123456@localhost:1521/xe`
+
+> 服务名查看命令: `select INSTANCE_NAME from v$instance;`
 
 
 
