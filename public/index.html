@@ -145,6 +145,562 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/07/git%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/07/git%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB/" class="post-title-link" itemprop="url">git代码迁移</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-07 18:04:38" itemprop="dateCreated datePublished" datetime="2021-12-07T18:04:38+08:00">2021-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-12-09 11:19:59" itemprop="dateModified" datetime="2021-12-09T11:19:59+08:00">2021-12-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 拉所有分支</span></span><br><span class="line">git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除旧源</span></span><br><span class="line">git remote rm origin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 改为新源</span></span><br><span class="line">git remote add origin git@xxxx.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 推代码 全部分支 / 标签</span></span><br><span class="line">git push --all</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/29/git%E4%BB%A3%E7%A0%81ssh%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/29/git%E4%BB%A3%E7%A0%81ssh%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">git代码ssh方式部署linux服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-29 10:30:47 / Modified: 10:39:47" itemprop="dateCreated datePublished" datetime="2021-09-29T10:30:47+08:00">2021-09-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a>1. 创建用户</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建用户, -m 创建用户家目录</span></span><br><span class="line">useradd -m 用户名</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改密码(在root用户下操作)</span></span><br><span class="line">passwd 用户名</span><br></pre></td></tr></table></figure>
+<h2 id="2-在git项目服务器添加ssh公钥"><a href="#2-在git项目服务器添加ssh公钥" class="headerlink" title="2. 在git项目服务器添加ssh公钥"></a>2. 在git项目服务器添加ssh公钥</h2><h2 id="3-在部署服务器用户家目录添加ssh密钥"><a href="#3-在部署服务器用户家目录添加ssh密钥" class="headerlink" title="3. 在部署服务器用户家目录添加ssh密钥"></a>3. 在部署服务器用户家目录添加ssh密钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh/</span><br><span class="line">vi id_rsa  # 添加公钥</span><br><span class="line">vi id_rsa.pub  # 添加私钥</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果提示权限644不对(Permissions 0644 <span class="keyword">for</span> <span class="string">&#x27;~/.ssh/id_rsa&#x27;</span> are too open) 执行以下命令修改权限</span></span><br><span class="line">chmod 755 ~/.ssh/</span><br><span class="line">chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub</span><br><span class="line">chmod 644 ~/.ssh/known_hosts</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/pycharm2vscode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/20/pycharm2vscode/" class="post-title-link" itemprop="url">pycharm2vscode.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-20 09:13:59 / Modified: 09:19:45" itemprop="dateCreated datePublished" datetime="2021-09-20T09:13:59+08:00">2021-09-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="VSCode常用快捷键"><a href="#VSCode常用快捷键" class="headerlink" title="VSCode常用快捷键"></a>VSCode常用快捷键</h1><ul>
+<li>全部折叠:  <code>cmd + k</code> + <code>cmd + 0</code></li>
+</ul>
+<h1 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h1><h2 id="关于导包"><a href="#关于导包" class="headerlink" title="关于导包"></a>关于导包</h2><ul>
+<li>PyCharm 可以在项目指定目录右键指定为导包路径, VSCode需要在<code>.vscode/launch.json</code>内 <code>settings.configurations</code> 配置<code>env</code>时加上 <code>&quot;PYTHONPATH&quot;: &quot;$&#123;fileDirname&#125;/../smartbase:$&#123;fileDirname&#125;&quot;</code>多个目录通过 <code>:</code> 追加</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/c-day01-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/21/c-day01-md/" class="post-title-link" itemprop="url">c++day01.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-21 10:52:00" itemprop="dateCreated datePublished" datetime="2021-08-21T10:52:00+08:00">2021-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="download"><a href="#download" class="headerlink" title="download"></a>download</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/?tdsourcetag=s_pctim_aiomsg"> Windows10下载MinGW </a><ul>
+<li>点击页面中的<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code> 进行下载</li>
+<li>下载完成后把 <code>bin</code> 目录放入系统环境变量即可在终端使用 <code>c++</code> 命令进行编译 <code>.cpp</code> 源代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><ul>
+<li><code>MyFirstApp</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello World! \n&quot;</span>; <span class="comment">// this will output to the console hello world</span></span><br><span class="line">    system(<span class="string">&quot;pause&gt;0&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">g++ .\MyFirstApp.cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行</span></span><br><span class="line">.\a.exe</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>换行  <code>\n</code> 或 <code> &lt;&lt; endl;</code></p>
+</li>
+<li><p>编译命令 <code>g++ [source file] -o [output filename]</code></p>
+</li>
+</ul>
+<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><ul>
+<li>命名<ul>
+<li>构成: 下划线, 字母(区分大小写), 数字(不可数字开头)</li>
+<li>一般用小驼峰命名法</li>
+</ul>
+</li>
+</ul>
+<p><strong>Data types</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>size(bytes)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数</td>
+<td>int</td>
+<td>4</td>
+<td>-2147483648 to 2147483647</td>
+</tr>
+<tr>
+<td>字符</td>
+<td>char</td>
+<td>1</td>
+<td>单引号为字符 ‘a’</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>string</td>
+<td></td>
+<td>双引号为字符串 “character”</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td>bool</td>
+<td>1</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>float</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>大浮点数</td>
+<td>double</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>Data type overflow</strong></p>
+<ul>
+<li>变量的值超过其内存空间, 类似钟表指针, 13 点 = 1 点 (INT_MAX + 1 = INT_MIN)</li>
+</ul>
+<p><strong>ASCII table</strong></p>
+<ul>
+<li>asign characters to number (it’s for American)</li>
+<li>ASCII extends: utf-(1-16)  (for others)</li>
+<li>字符转换为ASCII数字 <code>(int)&#39;a&#39;</code> 和 <code>int(&#39;a&#39;)</code> 两种写法</li>
+</ul>
+<h1 id="Condition-Statement"><a href="#Condition-Statement" class="headerlink" title="Condition Statement"></a>Condition Statement</h1><p><strong>语法</strong></p>
+<p><code>if()&#123;&#125;elif()&#123;&#125;else()&#123;&#125;</code></p>
+<ul>
+<li>注: 如果 <code>&#123;&#125;</code> 内只有一行代码, 可以不写 <code>&#123;&#125;</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//User enters side lengths of a triangle (a, b, c)</span></span><br><span class="line">    <span class="comment">//Program should write out whethre that triangle is</span></span><br><span class="line">    <span class="comment">//equilateral, isosceles or scalene</span></span><br><span class="line">    <span class="keyword">float</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a, b, c: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (a == b &amp;&amp; b == c)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Equilateral triangle&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a != b &amp;&amp; a != c &amp;&amp; b != c)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Scalene triangle&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Isosceles triangle&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行优先级 从上到下</span></span><br><span class="line">    <span class="comment">// + - * / %</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5.0</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2.5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ++, --</span></span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">7</span>;</span><br><span class="line">    counter++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    counter--;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> counter2 = <span class="number">7</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2++ &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 8</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ++counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>); <span class="comment">// clear console</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &lt;, &gt;, &lt;=, &gt;=, ==, !=</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; (a &gt; b) &lt;&lt; endl;  // 0 for false (1 for true)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &amp;&amp;, ||, !</span></span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">8</span>, d = <span class="number">9</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; !(c == 5 &amp;&amp; b == 9);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 优先级</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (c == <span class="number">8</span> &amp;&amp; d == <span class="number">4</span> + <span class="number">5</span>);  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =, +=, -=, *=, /=, %=</span></span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line">    x += <span class="number">7</span>;  <span class="comment">//same as: x = x + 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三目"><a href="#三目" class="headerlink" title="三目"></a>三目</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hostUserNum, guestUserNum;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;HOST: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; hostUserNum;</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Guest: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; guestUserNum;</span><br><span class="line"></span><br><span class="line">    (hostUserNum == guestUserNum)? <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Correct!&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Failed!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h1><blockquote>
+<p>注意每个case后面必需接break退出, 因为程序只判断一次case条件, 进入一次后, 其他的case不会再判断, 会运行下面的所有case.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/" class="post-title-link" itemprop="url">源码安装mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-26 10:46:45" itemprop="dateCreated datePublished" datetime="2021-07-26T10:46:45+08:00">2021-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="源码安装Mysql"><a href="#源码安装Mysql" class="headerlink" title="源码安装Mysql"></a>源码安装Mysql</h1><blockquote>
+<p>系统: CentOS 8</p>
+</blockquote>
+<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p><strong>官网找指定版本下载源码包</strong>   </p>
+<blockquote>
+<p> <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-boost-5.7.34.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>编译时命令 <code>cmake .</code> 报错汇总</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h1><h2 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p>Operating System: Linux-Generic</p>
+<p>OS Version: Linux-Generic(glibc 2.12) (x86, 64-bit)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><blockquote>
+<p>先查看下系统磁盘绑定情况, 再决定mysql data目录</p>
+<p>命令: df -h</p>
+</blockquote>
+<h3 id="2-1-创建用户-用户组-数据目录"><a href="#2-1-创建用户-用户组-数据目录" class="headerlink" title="2.1. 创建用户, 用户组, 数据目录"></a>2.1. 创建用户, 用户组, 数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql -d /home/mysql mysql</span><br><span class="line">mkdir /home/mysql/data</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-下载-解压"><a href="#2-2-下载-解压" class="headerlink" title="2.2. 下载, 解压"></a>2.2. 下载, 解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/mysql</span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -zvxf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<p><font color="red">启动mysql可能出现的错误:</font></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/22/Chapter-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/22/Chapter-02/" class="post-title-link" itemprop="url">Chapter-02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-22 13:42:54" itemprop="dateCreated datePublished" datetime="2021-06-22T13:42:54+08:00">2021-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络基础Chapter-2-物理层"><a href="#计算机网络基础Chapter-2-物理层" class="headerlink" title="计算机网络基础Chapter-2, 物理层"></a>计算机网络基础Chapter-2, 物理层</h1><h2 id="1-通信基础"><a href="#1-通信基础" class="headerlink" title="1. 通信基础"></a>1. 通信基础</h2><p><strong>物理层基本概念</strong></p>
+<ul>
+<li>物理层解决如何在连接各种计算机的传输媒体上<strong>传输数据比特流</strong>, 而不是指具体的传输媒体</li>
+<li>主要任务: 确定与传输媒体接口有关的一些特性</li>
+<li>机械特性:</li>
+<li>电气特性:</li>
+<li>功能特性:</li>
+</ul>
+<p><strong>数据通信基础</strong></p>
+<p><img src="../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
+<ul>
+<li>数据: 传送信息的实体, 通常是有意义的符号序列</li>
+<li>信号: 数据的电气/电磁的表现, 是数据在传输过程中的存在形式<ul>
+<li>数字信号: 代表消息的参数取值是离散的</li>
+<li>模拟信号: 代表消息的参数取值是连续的 (正弦波)</li>
+</ul>
+</li>
+<li>信源: 产生和发送数据的源头</li>
+<li>信宿: 接收数据的终点</li>
+<li>信道: <ul>
+<li>按传输信号分类:</li>
+<li>按</li>
+</ul>
+</li>
+<li>三种通信方式:<ul>
+<li>单工通信</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-两个公式"><a href="#2-两个公式" class="headerlink" title="2. 两个公式"></a>2. 两个公式</h2><h2 id="3-看图说话"><a href="#3-看图说话" class="headerlink" title="3. 看图说话"></a>3. 看图说话</h2><h2 id="4-传输介质"><a href="#4-传输介质" class="headerlink" title="4. 传输介质"></a>4. 传输介质</h2><h2 id="5-物理层设备"><a href="#5-物理层设备" class="headerlink" title="5. 物理层设备"></a>5. 物理层设备</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/16/Chapter-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -168,10 +724,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-06-16 22:05:05 / Modified: 23:03:58" itemprop="dateCreated datePublished" datetime="2021-06-16T22:05:05+08:00">2021-06-16</time>
+              <time title="Created: 2021-06-16 22:05:05" itemprop="dateCreated datePublished" datetime="2021-06-16T22:05:05+08:00">2021-06-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
 
           
 
@@ -505,85 +1067,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/13/CentOS%20+%20Flask%20+%20Docker%20+%20Flask-cookiecutter%20+%20Mysql%20+%20Gunicorn%20+%20Celery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/13/CentOS%20+%20Flask%20+%20Docker%20+%20Flask-cookiecutter%20+%20Mysql%20+%20Gunicorn%20+%20Celery/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-13 22:33:29" itemprop="dateCreated datePublished" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="CentOS-Flask-Docker-Flask-cookiecutter-Mysql-Gunicorn-Celery"><a href="#CentOS-Flask-Docker-Flask-cookiecutter-Mysql-Gunicorn-Celery" class="headerlink" title="CentOS + Flask + Docker + Flask-cookiecutter + Mysql + Gunicorn + Celery"></a>CentOS + Flask + Docker + Flask-cookiecutter + Mysql + Gunicorn + Celery</h1><blockquote>
-<p>服务器是阿里云买的CentOS系统.</p>
-<p>DNF包管理器克服了YUM包管理器的一些瓶颈，提升了包括用户体验，内存占用，依赖分析，运行速度等多方面的内容。</p>
-</blockquote>
-<h1 id="1-安装docker"><a href="#1-安装docker" class="headerlink" title="1. 安装docker"></a>1. 安装docker</h1><blockquote>
-<p>yum install docker</p>
-</blockquote>
-<p>安装完执行<code>docker</code>, 提示<code>Emulate Docker CLI using podman.</code> 上网查发现是</p>
-<blockquote>
-<p> CentOS8 以上的版本默认已经安装一个等同于 Docker的容器解决方案，这个就是Podman.</p>
-</blockquote>
-<blockquote>
-<p>简单理解 <code>alias docker = podman</code></p>
-</blockquote>
-<h2 id="2-安装MySQL"><a href="#2-安装MySQL" class="headerlink" title="2. 安装MySQL"></a>2. 安装MySQL</h2><ul>
-<li><p>安装: <code>dnf install @mysql</code></p>
-</li>
-<li><p>启动: <code>systemctl start mysqld</code></p>
-</li>
-<li><p>查看运行状态: <code>systemctl status mysqld</code></p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/%E9%85%8D%E7%BD%AEfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -615,7 +1098,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
               </span>
 
           
@@ -706,7 +1189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
               </span>
 
           
@@ -857,7 +1340,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
+                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
               </span>
 
           
@@ -939,362 +1422,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/25/Flask-Migrate%E6%8A%A5%E9%94%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/25/Flask-Migrate%E6%8A%A5%E9%94%99/" class="post-title-link" itemprop="url">Flask-Migrate报错</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-25 17:06:06" itemprop="dateCreated datePublished" datetime="2021-03-25T17:06:06+08:00">2021-03-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Flask-Migrate-pgsql-执行报错psycopg2-errors-DuplicateTable-relation-“user”-already-exists"><a href="#Flask-Migrate-pgsql-执行报错psycopg2-errors-DuplicateTable-relation-“user”-already-exists" class="headerlink" title="Flask-Migrate  + pgsql 执行报错psycopg2.errors.DuplicateTable: relation “user” already exists"></a>Flask-Migrate  + pgsql 执行报错psycopg2.errors.DuplicateTable: relation “user” already exists</h1><p><strong>问题出现</strong>: 全新项目, 本来是打算用mysql, 后来换pgsql, 一开始用mysql时执行过 <code>flask db migrate / flask db upgrade</code>, 测试ORM,, 换成pgsql后再执行<code>flask db upgrade</code>出现如上报错, 看字面意思是表已存在, 可pgsql中并没有此表!</p>
-<p><strong>原因</strong>: 一开始执行 <code>flask db migrate</code> 时 alembic 已经创建了记录(versions目录下的.py文件), 也就是说对 alembic 来说是已经创建过数据表了, 在sql语句执行前就被报错拦截住了, 所以即使数据库没有user表, 报错也提示表已存在!</p>
-<p><strong>解决</strong>: 直接把 versions 目录下记录全部删除, 重新执行 <code>flask db upgrade </code> </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/24/%E6%96%B0%E5%BB%BAflask%E9%A1%B9%E7%9B%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/24/%E6%96%B0%E5%BB%BAflask%E9%A1%B9%E7%9B%AE/" class="post-title-link" itemprop="url">新建flask项目</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-24 10:11:25" itemprop="dateCreated datePublished" datetime="2021-03-24T10:11:25+08:00">2021-03-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/nginx/" class="post-title-link" itemprop="url">nginx</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-18 17:10:44" itemprop="dateCreated datePublished" datetime="2021-03-18T17:10:44+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="nginx服务更新证书"><a href="#nginx服务更新证书" class="headerlink" title="nginx服务更新证书"></a>nginx服务更新证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">nginx配置文件: &#x2F;etc&#x2F;nginx&#x2F;sites_enabled</span><br><span class="line">server &#123;</span><br><span class="line">    listen  443;</span><br><span class="line">    server_name djdeveloper.cn *.djdeveloper.cn;</span><br><span class="line">    root    &#x2F;var&#x2F;www&#x2F;djdeveloper.cn;</span><br><span class="line">    autoindex   off;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.full.crt;</span><br><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache       shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout     5m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginx证书: &#x2F;etc&#x2F;nginx&#x2F;ssl</span><br><span class="line"></span><br><span class="line">cp **.full.crt **.full.crt.bak</span><br><span class="line">cp **.key **.key.bak</span><br><span class="line"></span><br><span class="line">vim **.full.crt cp</span><br><span class="line">vim **.key cp</span><br><span class="line"></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域:"></a>配置跨域:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置: http&#123;这里, server&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="nginx-502-错误初步排查"><a href="#nginx-502-错误初步排查" class="headerlink" title="nginx 502 错误初步排查"></a>nginx 502 错误初步排查</h3><ul>
-<li>nginx 配置文件默认目录 /etc/nginx/nginx.conf</li>
-<li>配置文件中有 include * 为包含的配置文件</li>
-<li>access_log off 为关闭日志, 开启后为 access_log /var/www/ccd.log</li>
-<li>如果在日志文件中能看到请求说明与nginx无关, 是项目的问题</li>
-<li>nginx -s reload</li>
-<li>nginx -t 检查配置文件语法是否正确</li>
-<li>lsof -i:port1 检查端口使用 CLOSE_WAIT 时看 port1 -&gt; port2 是port2出了问题</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" class="post-title-link" itemprop="url">微信公众号</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-18 17:09:33" itemprop="dateCreated datePublished" datetime="2021-03-18T17:09:33+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="redirect-uri错误"><a href="#redirect-uri错误" class="headerlink" title="redirect_uri错误"></a>redirect_uri错误</h3><ol>
-<li><p>首先确定<code>基本配置</code>中的 appID, appSecret, 服务器配置是否启用, 服务器地址, token是否都配置正确.</p>
-</li>
-<li><p><code>接口权限</code>-<code>网页授权获取用户基本信息</code>-<code>修改</code></p>
-</li>
-</ol>
-<ul>
-<li>注意: 这里有个大坑, 使用的url最好是直接域名, 如果有层级要保证项目实际使用的url全是在这里填写的层级之下的, 不然即使这里修改成功, 还是会报redirect_uri错误</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/nginx%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/nginx%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">nginx相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-03-18 17:05:06" itemprop="dateCreated datePublished" datetime="2021-03-18T17:05:06+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="nginx服务更新证书"><a href="#nginx服务更新证书" class="headerlink" title="nginx服务更新证书"></a>nginx服务更新证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">nginx配置文件: &#x2F;etc&#x2F;nginx&#x2F;sites_enabled</span><br><span class="line">server &#123;</span><br><span class="line">    listen  443;</span><br><span class="line">    server_name djdeveloper.cn *.djdeveloper.cn;</span><br><span class="line">    root    &#x2F;var&#x2F;www&#x2F;djdeveloper.cn;</span><br><span class="line">    autoindex   off;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.full.crt;</span><br><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache       shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout     5m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginx证书: &#x2F;etc&#x2F;nginx&#x2F;ssl</span><br><span class="line"></span><br><span class="line">cp **.full.crt **.full.crt.bak</span><br><span class="line">cp **.key **.key.bak</span><br><span class="line"></span><br><span class="line">vim **.full.crt cp</span><br><span class="line">vim **.key cp</span><br><span class="line"></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域:"></a>配置跨域:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置: http&#123;这里, server&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="nginx-502-错误初步排查"><a href="#nginx-502-错误初步排查" class="headerlink" title="nginx 502 错误初步排查"></a>nginx 502 错误初步排查</h3><ul>
-<li>nginx 配置文件默认目录 /etc/nginx/nginx.conf</li>
-<li>配置文件中有 include * 为包含的配置文件</li>
-<li>access_log off 为关闭日志, 开启后为 access_log /var/www/ccd.log</li>
-<li>如果在日志文件中能看到请求说明与nginx无关, 是项目的问题</li>
-<li>nginx -s reload</li>
-<li>nginx -t 检查配置文件语法是否正确</li>
-<li>lsof -i:port1 检查端口使用 CLOSE_WAIT 时看 port1 -&gt; port2 是port2出了问题</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1359,9 +1491,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
