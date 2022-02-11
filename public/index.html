@@ -145,7 +145,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/python+oracle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -159,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/12/09/oracle%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">oracle常用命令</a>
+            <a href="/2021/12/09/python+oracle/" class="post-title-link" itemprop="url">oracle常用命令</a>
         </h2>
 
         <div class="post-meta">
@@ -168,10 +168,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-12-09 16:05:29 / Modified: 16:06:27" itemprop="dateCreated datePublished" datetime="2021-12-09T16:05:29+08:00">2021-12-09</time>
+              <time title="Created: 2021-12-09 16:05:29" itemprop="dateCreated datePublished" datetime="2021-12-09T16:05:29+08:00">2021-12-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-11 18:20:20" itemprop="dateModified" datetime="2022-02-11T18:20:20+08:00">2022-02-11</time>
+              </span>
 
           
 
@@ -184,7 +190,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入</span></span><br><span class="line">sqlplus</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h3 id="和MySQL对比"><a href="#和MySQL对比" class="headerlink" title="和MySQL对比"></a>和MySQL对比</h3><h4 id="大小写"><a href="#大小写" class="headerlink" title="大小写"></a>大小写</h4><ul>
+<li><strong>oracle</strong>本身不区分大小写 (会把关键字全部转为大写再执行),但是对引号里的字符区分大小写。</li>
+</ul>
+<h4 id="主键自增"><a href="#主键自增" class="headerlink" title="主键自增"></a>主键自增</h4><ul>
+<li>oracle没有自带的主键自增, 需要先创建一个序列, 再创建一个触发器, 来实现主键自增</li>
+</ul>
+<h4 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看当前用户所有序列</span></span><br><span class="line">select * from user_objects where object_type=&#x27;SEQUENCE&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看表的所有触发器</span></span><br><span class="line">select * from all_triggers where table_name=&#x27;表名&#x27;; </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建序列</span></span><br><span class="line">create sequence 序列名称(一般是表名_SEQ)</span><br><span class="line">start with 1  # 开始数字</span><br><span class="line">minvalue 1 # 最小值</span><br><span class="line">maxvalue   # 最大值</span><br><span class="line">cycle    # 是否循环 cycle / nocycle</span><br><span class="line">increment by 1  # 增长数字</span><br><span class="line">nocache # 不使用缓存</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除序列</span></span><br><span class="line">DROP SEQUENCE 序列名;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建触发器</span></span><br><span class="line">create or replace trigger 触发器名</span><br><span class="line">        before insert on 表名</span><br><span class="line">        referencing old as old new as new</span><br><span class="line">        for each row</span><br><span class="line">      begin</span><br><span class="line">        select 序列名.nextval</span><br><span class="line">          into :new.ID</span><br><span class="line">          from dual;</span><br><span class="line">      end 触发器名;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除触发器</span></span><br><span class="line">drop trigger 触发器名;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+<h3 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sqlalchemy_URI  注: 不用指定数据库</span></span><br><span class="line">oracle+cx_oracle://&#123;账号&#125;:&#123;密码&#125;@10.168.199.21:1521/?service_name=&#123;服务名&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>安装oracle19c客户端</strong> (后发现连接不上远程数据库, 提示连接超时, 重新安装11.2.0.4版本客户端并开通了rac ip访问后可以正常连接)</p>
+<blockquote>
+<p>各版本下载地址: <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client/linux-x86-32-downloads.html">https://www.oracle.com/database/technologies/instant-client/linux-x86-32-downloads.html</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 安装依赖包, 不然rpm安装时会提示缺少 (root)</span><br><span class="line">yum install libnsl</span><br><span class="line"></span><br><span class="line">wget https:&#x2F;&#x2F;download.oracle.com&#x2F;otn_software&#x2F;linux&#x2F;instantclient&#x2F;1913000&#x2F;oracle-instantclient19.13-basic-19.13.0.0.0-2.x86_64.rpm</span><br><span class="line"></span><br><span class="line">wget https:&#x2F;&#x2F;download.oracle.com&#x2F;otn_software&#x2F;linux&#x2F;instantclient&#x2F;1913000&#x2F;oracle-instantclient19.13-sqlplus-19.13.0.0.0-2.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh oracle-instantclient19.13-basic-19.13.0.0.0-2.x86_64.rpm</span><br><span class="line"></span><br><span class="line">rpm -ivh oracle-instantclient19.13-sqlplus-19.13.0.0.0-2.x86_64.rpm</span><br><span class="line"></span><br><span class="line">cd &#x2F;usr&#x2F;lib&#x2F;oracle&#x2F;19.13&#x2F;client64</span><br><span class="line">vi tnsnames.ora</span><br><span class="line">hiup &#x3D;</span><br><span class="line">　　　　(DESCRIPTION &#x3D;</span><br><span class="line">　　　　　　(ADDRESS_LIST &#x3D;</span><br><span class="line">　　　　　　　　(ADDRESS &#x3D; (PROTOCOL &#x3D; TCP)(HOST &#x3D; 192.168.17.154)(PORT &#x3D; 1521))</span><br><span class="line">　　　　)</span><br><span class="line">　　　　　　(CONNECT_DATA &#x3D;</span><br><span class="line">　　　　　　　　(SERVER &#x3D; DEDICATED)</span><br><span class="line">　　　　　　(SERVICE_NAME &#x3D; hiup)</span><br><span class="line">　　　　　　)</span><br><span class="line">　　　　)</span><br></pre></td></tr></table></figure>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><ul>
+<li>报错ORA-00904: 后查到是数据库字段写错了, 和模型类的不一致</li>
+<li>unzip End-of-central-directory signature not found: 是文件有问题, 重新下载就可以</li>
+</ul>
 
       
     </div>
@@ -1374,7 +1402,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
