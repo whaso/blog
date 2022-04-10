@@ -23,6 +23,10 @@ tags:
 ### 3. 修改服务器配置
 
 > 后台运行: `nohup ./frps -c frps.ini >/dev/null 2>&1 &`
+>
+> bind_port FRP使用端口
+>
+> v_host_http_port 外部访问端口(可配置nginx proxy_pass转发)
 
 - `vi frps.ini`
 
