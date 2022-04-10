@@ -145,12 +145,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-<<<<<<< HEAD
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/c-day01-md/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="BOG">
       <meta itemprop="description" content="">
     </span>
 
@@ -160,7 +159,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/21/c-day01-md/" class="post-title-link" itemprop="url">c++day01.md</a>
+            <a href="/2022/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">计算机原理</a>
         </h2>
 
         <div class="post-meta">
@@ -170,14 +169,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-08-21 10:52:00" itemprop="dateCreated datePublished" datetime="2021-08-21T10:52:00+08:00">2021-08-21</time>
+              <time title="Created: 2022-02-20 14:59:37" itemprop="dateCreated datePublished" datetime="2022-02-20T14:59:37+08:00">2022-02-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-22 16:59:10" itemprop="dateModified" datetime="2021-08-22T16:59:10+08:00">2021-08-22</time>
+                <time title="Modified: 2022-04-10 16:05:52" itemprop="dateModified" datetime="2022-04-10T16:05:52+08:00">2022-04-10</time>
               </span>
 
           
@@ -191,103 +190,118 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="download"><a href="#download" class="headerlink" title="download"></a>download</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/?tdsourcetag=s_pctim_aiomsg"> Windows10下载MinGW </a><ul>
-<li>点击页面中的<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code> 进行下载</li>
-<li>下载完成后把 <code>bin</code> 目录放入系统环境变量即可在终端使用 <code>c++</code> 命令进行编译 <code>.cpp</code> 源代码</li>
-</ul>
-</li>
-</ul>
-<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><ul>
-<li><code>MyFirstApp</code></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello World! \n&quot;</span>; <span class="comment">// this will output to the console hello world</span></span><br><span class="line">    system(<span class="string">&quot;pause&gt;0&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">g++ .\MyFirstApp.cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行</span></span><br><span class="line">.\a.exe</span><br></pre></td></tr></table></figure>
+          <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="1-Basic"><a href="#1-Basic" class="headerlink" title="1. Basic"></a>1. Basic</h2><h3 id="1-1-基本组成"><a href="#1-1-基本组成" class="headerlink" title="1.1. 基本组成"></a>1.1. 基本组成</h3><p><strong>五大部分</strong></p>
 <ul>
-<li><p>换行  <code>\n</code> 或 <code> &lt;&lt; endl;</code></p>
-</li>
-<li><p>编译命令 <code>g++ [source file] -o [output filename]</code></p>
-</li>
-</ul>
-<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><ul>
-<li>命名<ul>
-<li>构成: 下划线, 字母(区分大小写), 数字(不可数字开头)</li>
-<li>一般用小驼峰命名法</li>
+<li><strong>运算器</strong>  (CPU) (主机): 算术运算、逻辑运算</li>
+<li><strong>控制器</strong>  (CPU) (主机): 指挥各部件, 使程序运行</li>
+<li>存储器 : 存放数据和程序<ul>
+<li><strong>主存</strong>  (主机)</li>
+<li>辅存  (I/O设备)</li>
 </ul>
 </li>
+<li><strong>输入设备</strong>  (I/O设备)</li>
+<li><strong>输出设备</strong>  (I/O设备)</li>
 </ul>
-<p><strong>Data types</strong></p>
-<table>
+<h3 id="1-2-各硬件部分"><a href="#1-2-各硬件部分" class="headerlink" title="1.2. 各硬件部分"></a>1.2. 各硬件部分</h3><blockquote>
+<p>寄存, 就是暂存数据的意思, 类似快递点</p>
+</blockquote>
+<p><strong>主存储器</strong></p>
+<blockquote>
+<p>存储体存数据, MAR对应数据位置(主存地址), MDR暂存对应的实际数据</p>
+<p>类似快递点: 存储体=&gt; 货架,  MAR =&gt; 店员,  MDR =&gt; 取货/放货 的柜台</p>
+<p>取数据过程: CPU把地址给到MAR, 把读指令给到主存储器, 主存储器把存储体MAR地址的数据放到MDR等待使用</p>
+<p>存数据过程: CPU把地址给到MAR, 把数据放到MDR, 把写指令给到主存储器, 主存储器根据指令把MDR中数据存储到存储体的MAR地址</p>
+</blockquote>
+<ul>
+<li>存储体: 数据在存储体中按地址存储, 每个地址对应一个存储单元<ul>
+<li>存储单元: 每个存储单元存放一串二进制代码<ul>
+<li>存储元: 即存储二进制的电子元件, 每个存储元可存1bit</li>
+</ul>
+</li>
+<li>存储字: 存储单元中二进制的组合</li>
+<li>存储字长: 存储单元中二进制代码的位数</li>
+</ul>
+</li>
+<li>MAR: 存储地址寄存器, 用于指明要读/写哪个存储单元, 其位数反映存储单元数量 Memory Data Register </li>
+<li>MDR: 存储数据寄存器, 用于暂存要读/写的数据, 其位数=存储字长 Memory Address Register </li>
+</ul>
+<p><strong>运算器</strong>: 用于实现算术运算(+ - * /)、逻辑运算(与/非)</p>
+<blockquote>
+<p>前三个存数据, ALU执行(运算)</p>
+</blockquote>
+<ul>
+<li>ACC: 累加计数器, 存放操作数、运算的结果 Accumulator</li>
+<li>MQ: 乘商寄存器, 进行乘、除法时用  Multiple-Quotient Register</li>
+<li>X: 通用寄存器, 存放操作数</li>
+<li>ALU: 算数逻辑单元, 用电路实现各种算数运算、逻辑运算  Arthmetic and Logic Unit</li>
+</ul>
+<p><strong>控制器</strong></p>
+<blockquote>
+<p>PC + IR 取指令, CU执行</p>
+</blockquote>
+<ul>
+<li>PC: 程序计数器, 存放下一条指令的地址  Program Counter</li>
+<li>IR: 指令寄存器, 存放当前执行的指令    Instruction Register</li>
+<li>CU: 控制单元, 分析指令, 给出控制信息 Control Unit</li>
+</ul>
+<p><strong>工作过程</strong></p>
+<ul>
+<li>初始: 指令、数据存入主存, PC指向第一条指令</li>
+<li>从主存中取指令放入IR、PC自动加1, CU分析指令, CU指挥其他部件执行指令</li>
+</ul>
+<h3 id="1-3-计算机系统层次结构"><a href="#1-3-计算机系统层次结构" class="headerlink" title="1.3. 计算机系统层次结构"></a>1.3. 计算机系统层次结构</h3><table>
 <thead>
 <tr>
-<th>类型</th>
-<th>定义</th>
-<th>size(bytes)</th>
-<th>说明</th>
+<th>微程序机器M0</th>
+<th>传统机器M1</th>
+<th>虚拟机器M2</th>
+<th>虚拟机器M3</th>
+<th>虚拟机器M4</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>整数</td>
-<td>int</td>
-<td>4</td>
-<td>-2147483648 to 2147483647</td>
+<td>微指令系统</td>
+<td>用机器语言的机器</td>
+<td>操作系统机器</td>
+<td>汇编语言机器</td>
+<td>高级语言机器</td>
 </tr>
 <tr>
-<td>字符</td>
-<td>char</td>
-<td>1</td>
-<td>单引号为字符 ‘a’</td>
+<td>硬件</td>
+<td>硬件</td>
+<td>软件</td>
+<td>软件</td>
+<td>软件</td>
 </tr>
 <tr>
-<td>字符串</td>
-<td>string</td>
+<td>由硬件直接执行微指令</td>
+<td>执行二进制机器指令</td>
+<td>向上提供”广义指令”(系统调用)</td>
+<td>用汇编程序翻译成机器语言程序</td>
+<td>用编译程序翻译成汇编语言程序</td>
+</tr>
+<tr>
+<td>微指令1 / 2 / 3</td>
+<td>000010000000101</td>
 <td></td>
-<td>双引号为字符串 “character”</td>
-</tr>
-<tr>
-<td>布尔</td>
-<td>bool</td>
-<td>1</td>
-<td>true / false</td>
-</tr>
-<tr>
-<td>浮点数</td>
-<td>float</td>
-<td>4</td>
-<td></td>
-</tr>
-<tr>
-<td>大浮点数</td>
-<td>double</td>
-<td>8</td>
-<td></td>
+<td>LOAD 5</td>
+<td>y=a*b + c</td>
 </tr>
 </tbody></table>
-<p><strong>Data type overflow</strong></p>
+<p><strong>三种级别的语言</strong></p>
 <ul>
-<li>变量的值超过其内存空间, 类似钟表指针, 13 点 = 1 点 (INT_MAX + 1 = INT_MIN)</li>
+<li>机器语言: 二进制代码</li>
+<li>汇编语言: 助记符<ul>
+<li>将汇编语言翻译成机器语言</li>
 </ul>
-<p><strong>ASCII table</strong></p>
-<ul>
-<li>asign characters to number (it’s for American)</li>
-<li>ASCII extends: utf-(1-16)  (for others)</li>
-<li>字符转换为ASCII数字 <code>(int)&#39;a&#39;</code> 和 <code>int(&#39;a&#39;)</code> 两种写法</li>
+</li>
+<li>高级语言: C, Python<ul>
+<li>编译程序(编译器): 将高级语言一次全部翻译为汇编语言, 或直接翻译为机器语言</li>
+<li>解释程序(解释器): 将高级语言翻译为机器语言, 翻译一句执行一句</li>
 </ul>
-<h1 id="Condition-Statement"><a href="#Condition-Statement" class="headerlink" title="Condition Statement"></a>Condition Statement</h1><p><strong>语法</strong></p>
-<p><code>if()&#123;&#125;elif()&#123;&#125;else()&#123;&#125;</code></p>
-<ul>
-<li>注: 如果 <code>&#123;&#125;</code> 内只有一行代码, 可以不写 <code>&#123;&#125;</code></li>
+</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//User enters side lengths of a triangle (a, b, c)</span></span><br><span class="line">    <span class="comment">//Program should write out whethre that triangle is</span></span><br><span class="line">    <span class="comment">//equilateral, isosceles or scalene</span></span><br><span class="line">    <span class="keyword">float</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a, b, c: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (a == b &amp;&amp; b == c)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Equilateral triangle&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a != b &amp;&amp; a != c &amp;&amp; b != c)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Scalene triangle&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Isosceles triangle&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行优先级 从上到下</span></span><br><span class="line">    <span class="comment">// + - * / %</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5.0</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2.5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ++, --</span></span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">7</span>;</span><br><span class="line">    counter++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    counter--;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> counter2 = <span class="number">7</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2++ &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 8</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ++counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>); <span class="comment">// clear console</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &lt;, &gt;, &lt;=, &gt;=, ==, !=</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; (a &gt; b) &lt;&lt; endl;  // 0 for false (1 for true)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &amp;&amp;, ||, !</span></span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">8</span>, d = <span class="number">9</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; !(c == 5 &amp;&amp; b == 9);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 优先级</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (c == <span class="number">8</span> &amp;&amp; d == <span class="number">4</span> + <span class="number">5</span>);  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =, +=, -=, *=, /=, %=</span></span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line">    x += <span class="number">7</span>;  <span class="comment">//same as: x = x + 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="三目"><a href="#三目" class="headerlink" title="三目"></a>三目</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hostUserNum, guestUserNum;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;HOST: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; hostUserNum;</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Guest: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; guestUserNum;</span><br><span class="line"></span><br><span class="line">    (hostUserNum == guestUserNum)? <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Correct!&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Failed!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h1><blockquote>
-<p>注意每个case后面必需接break退出, 因为程序只判断一次case条件, 进入一次后, 其他的case不会再判断, 会运行下面的所有case.</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="1-4-存储器的性能指标"><a href="#1-4-存储器的性能指标" class="headerlink" title="1.4. 存储器的性能指标"></a>1.4. 存储器的性能指标</h3>
       
     </div>
 
@@ -306,217 +320,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/" class="post-title-link" itemprop="url">源码安装mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-26 10:46:45" itemprop="dateCreated datePublished" datetime="2021-07-26T10:46:45+08:00">2021-07-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="源码安装Mysql"><a href="#源码安装Mysql" class="headerlink" title="源码安装Mysql"></a>源码安装Mysql</h1><blockquote>
-<p>系统: CentOS 8</p>
-</blockquote>
-<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p><strong>官网找指定版本下载源码包</strong>   </p>
-<blockquote>
-<p> <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-boost-5.7.34.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>编译时命令 <code>cmake .</code> 报错汇总</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h1 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h1><h2 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
-<p>Operating System: Linux-Generic</p>
-<p>OS Version: Linux-Generic(glibc 2.12) (x86, 64-bit)</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><blockquote>
-<p>先查看下系统磁盘绑定情况, 再决定mysql data目录</p>
-<p>命令: df -h</p>
-</blockquote>
-<h3 id="2-1-创建用户-用户组-数据目录"><a href="#2-1-创建用户-用户组-数据目录" class="headerlink" title="2.1. 创建用户, 用户组, 数据目录"></a>2.1. 创建用户, 用户组, 数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql -d /home/mysql mysql</span><br><span class="line">mkdir /home/mysql/data</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-下载-解压"><a href="#2-2-下载-解压" class="headerlink" title="2.2. 下载, 解压"></a>2.2. 下载, 解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/mysql</span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -zvxf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
-<p><font color="red">启动mysql可能出现的错误:</font></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/22/Chapter-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/22/Chapter-02/" class="post-title-link" itemprop="url">Chapter-02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-22 13:42:54" itemprop="dateCreated datePublished" datetime="2021-06-22T13:42:54+08:00">2021-06-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="计算机网络基础Chapter-2-物理层"><a href="#计算机网络基础Chapter-2-物理层" class="headerlink" title="计算机网络基础Chapter-2, 物理层"></a>计算机网络基础Chapter-2, 物理层</h1><h2 id="1-通信基础"><a href="#1-通信基础" class="headerlink" title="1. 通信基础"></a>1. 通信基础</h2><p><strong>物理层基本概念</strong></p>
-<ul>
-<li>物理层解决如何在连接各种计算机的传输媒体上<strong>传输数据比特流</strong>, 而不是指具体的传输媒体</li>
-<li>主要任务: 确定与传输媒体接口有关的一些特性</li>
-<li>机械特性:</li>
-<li>电气特性:</li>
-<li>功能特性:</li>
-</ul>
-<p><strong>数据通信基础</strong></p>
-<p><img src="../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
-<ul>
-<li>数据: 传送信息的实体, 通常是有意义的符号序列</li>
-<li>信号: 数据的电气/电磁的表现, 是数据在传输过程中的存在形式<ul>
-<li>数字信号: 代表消息的参数取值是离散的</li>
-<li>模拟信号: 代表消息的参数取值是连续的 (正弦波)</li>
-</ul>
-</li>
-<li>信源: 产生和发送数据的源头</li>
-<li>信宿: 接收数据的终点</li>
-<li>信道: <ul>
-<li>按传输信号分类:</li>
-<li>按</li>
-</ul>
-</li>
-<li>三种通信方式:<ul>
-<li>单工通信</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-两个公式"><a href="#2-两个公式" class="headerlink" title="2. 两个公式"></a>2. 两个公式</h2><h2 id="3-看图说话"><a href="#3-看图说话" class="headerlink" title="3. 看图说话"></a>3. 看图说话</h2><h2 id="4-传输介质"><a href="#4-传输介质" class="headerlink" title="4. 传输介质"></a>4. 传输介质</h2><h2 id="5-物理层设备"><a href="#5-物理层设备" class="headerlink" title="5. 物理层设备"></a>5. 物理层设备</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/16/Chapter-01/">
-=======
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/python+flask+oracle+docker+alpine/">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -540,22 +344,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-<<<<<<< HEAD
-              <time title="Created: 2021-06-16 22:05:05" itemprop="dateCreated datePublished" datetime="2021-06-16T22:05:05+08:00">2021-06-16</time>
-=======
               <time title="Created: 2021-12-09 16:05:29" itemprop="dateCreated datePublished" datetime="2021-12-09T16:05:29+08:00">2021-12-09</time>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-<<<<<<< HEAD
-                <time title="Modified: 2021-08-21 10:30:23" itemprop="dateModified" datetime="2021-08-21T10:30:23+08:00">2021-08-21</time>
-=======
-                <time title="Modified: 2022-02-15 15:46:49" itemprop="dateModified" datetime="2022-02-15T15:46:49+08:00">2022-02-15</time>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
+                <time title="Modified: 2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
               </span>
 
           
@@ -679,10 +475,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-12-09 11:25:26 / Modified: 11:26:38" itemprop="dateCreated datePublished" datetime="2021-12-09T11:25:26+08:00">2021-12-09</time>
+              <time title="Created: 2021-12-09 11:25:26" itemprop="dateCreated datePublished" datetime="2021-12-09T11:25:26+08:00">2021-12-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
+              </span>
 
           
 
@@ -747,7 +549,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-09 11:19:59" itemprop="dateModified" datetime="2021-12-09T11:19:59+08:00">2021-12-09</time>
+                <time title="Modified: 2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
               </span>
 
           
@@ -804,10 +606,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-29 10:30:47 / Modified: 10:39:47" itemprop="dateCreated datePublished" datetime="2021-09-29T10:30:47+08:00">2021-09-29</time>
+              <time title="Created: 2021-09-29 10:30:47" itemprop="dateCreated datePublished" datetime="2021-09-29T10:30:47+08:00">2021-09-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
+              </span>
 
           
 
@@ -864,10 +672,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-09-20 09:13:59 / Modified: 09:19:45" itemprop="dateCreated datePublished" datetime="2021-09-20T09:13:59+08:00">2021-09-20</time>
+              <time title="Created: 2021-09-20 09:13:59" itemprop="dateCreated datePublished" datetime="2021-09-20T09:13:59+08:00">2021-09-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
+              </span>
 
           
 
@@ -936,7 +750,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-08-29 17:41:58" itemprop="dateModified" datetime="2021-08-29T17:41:58+08:00">2021-08-29</time>
               </span>
 
           
@@ -1043,7 +857,7 @@
 <h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h1><blockquote>
 <p>注意每个case后面必需接break退出, 因为程序只判断一次case条件, 进入一次后, 其他的case不会再判断, 会运行下面的所有case.</p>
 </blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1096,7 +910,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
               </span>
 
           
@@ -1210,7 +1024,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
               </span>
 
           
@@ -1268,8 +1082,6 @@
   
   
 
-<<<<<<< HEAD
-=======
       
   
   
@@ -1305,7 +1117,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-08-21 10:30:23" itemprop="dateModified" datetime="2021-08-21T10:30:23+08:00">2021-08-21</time>
               </span>
 
           
@@ -1636,98 +1448,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/%E9%85%8D%E7%BD%AEfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="BOG">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BOG's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/03/%E9%85%8D%E7%BD%AEfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-title-link" itemprop="url">配置frp内网穿透</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-06-03 09:34:18" itemprop="dateCreated datePublished" datetime="2021-06-03T09:34:18+08:00">2021-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-下载对应包"><a href="#1-下载对应包" class="headerlink" title="1. 下载对应包"></a>1. 下载对应包</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a></p>
-</blockquote>
-<p>在git上找到对应自己系统版本的链接, 并下载到服务器</p>
-<p>例:</p>
-<p><code>wget https://github.com/fatedier/frp/releases/download/v0.37.0/frp_0.37.0_linux_386.tar.gz</code></p>
-<h3 id="2-解压缩"><a href="#2-解压缩" class="headerlink" title="2. 解压缩"></a>2. 解压缩</h3><p><code>tar -zvxf frp_0.37.0_linux_386.tar.gz</code></p>
-<h3 id="3-修改服务器配置"><a href="#3-修改服务器配置" class="headerlink" title="3. 修改服务器配置"></a>3. 修改服务器配置</h3><blockquote>
-<p>后台运行: <code>nohup ./frps -c frps.ini &gt;/dev/null 2&gt;&amp;1 &amp;</code></p>
-</blockquote>
-<ul>
-<li><code>vi frps.ini</code></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">vhost_http_port = 80</span><br></pre></td></tr></table></figure>
-<ul>
-<li>启动: <code>./frps -c frps.ini</code></li>
-</ul>
-<h3 id="4-修改客户端配置"><a href="#4-修改客户端配置" class="headerlink" title="4. 修改客户端配置"></a>4. 修改客户端配置</h3><blockquote>
-<p>客户端下载同服务端</p>
-</blockquote>
-<ul>
-<li><code>vi frpc.ini</code></li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 106.14.30.129</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">tls_enable = true</span><br><span class="line"></span><br><span class="line">[krkdwc]</span><br><span class="line">type = http</span><br><span class="line">custom_domains = dev.bogwang.cn</span><br><span class="line">local_port = 5000</span><br></pre></td></tr></table></figure>
-<ul>
-<li>启动: <code>./frpc -c frpc.ini</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
 
   
   <nav class="pagination">
@@ -1797,11 +1517,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-<<<<<<< HEAD
-          <span class="site-state-item-count">13</span>
-=======
-          <span class="site-state-item-count">16</span>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

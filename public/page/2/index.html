@@ -25,11 +25,7 @@
 <meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="BOG&#39;s Blog">
 <meta property="og:locale" content="en_US">
-<<<<<<< HEAD
-<meta property="article:author" content="John Doe">
-=======
 <meta property="article:author" content="BOG">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/page/2/">
@@ -149,8 +145,97 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-<<<<<<< HEAD
-=======
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/03/%E9%85%8D%E7%BD%AEfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/03/%E9%85%8D%E7%BD%AEfrp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="post-title-link" itemprop="url">配置frp内网穿透</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-03 09:34:18" itemprop="dateCreated datePublished" datetime="2021-06-03T09:34:18+08:00">2021-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-下载对应包"><a href="#1-下载对应包" class="headerlink" title="1. 下载对应包"></a>1. 下载对应包</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a></p>
+</blockquote>
+<p>在git上找到对应自己系统版本的链接, 并下载到服务器</p>
+<p>例:</p>
+<p><code>wget https://github.com/fatedier/frp/releases/download/v0.37.0/frp_0.37.0_linux_386.tar.gz</code></p>
+<h3 id="2-解压缩"><a href="#2-解压缩" class="headerlink" title="2. 解压缩"></a>2. 解压缩</h3><p><code>tar -zvxf frp_0.37.0_linux_386.tar.gz</code></p>
+<h3 id="3-修改服务器配置"><a href="#3-修改服务器配置" class="headerlink" title="3. 修改服务器配置"></a>3. 修改服务器配置</h3><blockquote>
+<p>后台运行: <code>nohup ./frps -c frps.ini &gt;/dev/null 2&gt;&amp;1 &amp;</code></p>
+</blockquote>
+<ul>
+<li><code>vi frps.ini</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">vhost_http_port = 80</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动: <code>./frps -c frps.ini</code></li>
+</ul>
+<h3 id="4-修改客户端配置"><a href="#4-修改客户端配置" class="headerlink" title="4. 修改客户端配置"></a>4. 修改客户端配置</h3><blockquote>
+<p>客户端下载同服务端</p>
+</blockquote>
+<ul>
+<li><code>vi frpc.ini</code></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 106.14.30.129</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">tls_enable = true</span><br><span class="line"></span><br><span class="line">[krkdwc]</span><br><span class="line">type = http</span><br><span class="line">custom_domains = dev.bogwang.cn</span><br><span class="line">local_port = 5000</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动: <code>./frpc -c frpc.ini</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/01/mac%E4%B8%8B%E4%BD%BF%E7%94%A8oracle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -182,7 +267,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -333,7 +418,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -450,7 +535,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -486,16 +571,11 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/nginx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-<<<<<<< HEAD
-      <meta itemprop="name" content="John Doe">
-=======
       <meta itemprop="name" content="BOG">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
       <meta itemprop="description" content="">
     </span>
 
@@ -522,11 +602,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-<<<<<<< HEAD
                 <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-=======
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
               </span>
 
           
@@ -574,11 +650,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-<<<<<<< HEAD
-      <meta itemprop="name" content="John Doe">
-=======
       <meta itemprop="name" content="BOG">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
       <meta itemprop="description" content="">
     </span>
 
@@ -605,11 +677,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-<<<<<<< HEAD
                 <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-=======
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
               </span>
 
           
@@ -655,11 +723,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-<<<<<<< HEAD
-      <meta itemprop="name" content="John Doe">
-=======
       <meta itemprop="name" content="BOG">
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
       <meta itemprop="description" content="">
     </span>
 
@@ -686,11 +750,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-<<<<<<< HEAD
                 <time title="Modified: 2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
-=======
-                <time title="Modified: 2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
               </span>
 
           
@@ -791,11 +851,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-<<<<<<< HEAD
-  <p class="site-author-name" itemprop="name">John Doe</p>
-=======
   <p class="site-author-name" itemprop="name">BOG</p>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -803,11 +859,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-<<<<<<< HEAD
-          <span class="site-state-item-count">13</span>
-=======
-          <span class="site-state-item-count">16</span>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -839,19 +891,11 @@
 <div class="copyright">
   
   &copy; 
-<<<<<<< HEAD
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
-=======
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">BOG</span>
->>>>>>> 063e2f9fbce340868b996bf886ca8cd88547dacb
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
