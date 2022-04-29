@@ -141,6 +141,15 @@ exit
 > mkdir /usr/local/oracle/lib
 > cp /usr/local/oracle/libclntsh.so.11.1 /usr/local/oracle/lib/libclntsh.so
 > ```
+> 如果经过以上操作扔有此报错, 且是用supervisor启动的, 可能是因为supervisor没读到环境变量, 需要在supervisor配置文件中添加
+>
+> ```shell
+> environment=ORACLE_HOME="/usr/local/oracle",NLS_LANG="AMERICAN_AMERICA.AL32UTF8",LD_LIBRARY_PATH="/usr/local/oracle"
+> 
+> ```
+>
+> 注: supervisor添加环境变量时, 多个变量以`,`分隔, 单个变量多个值以`:`分隔
+>
 > 报错2. 
 > Error loading shared library libnsl.so.1: No such file or directory (needed by /usr/local/oracle/lib/libclntsh.so
 > (libnsl.so.1  或 libnsl.so) 建对应软链接
@@ -186,4 +195,13 @@ docker commit -a 'laowang' 容器名 镜像名:1.0.0
 ### 报错
 
 - 报错ORA-00904: 后查到是数据库字段写错了, 和模型类的不一致
-- 
+
+- 索引失效(partition of such index is in unusable state):
+
+  - ```sql
+    select index_name,status from user_indexes;  # 查失效索引
+    
+    alter index SYS_C00164313 rebuild;  # 重建索引
+    ```
+
+    
