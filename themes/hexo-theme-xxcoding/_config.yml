@@ -130,7 +130,7 @@ subtitle:
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
   sub:
-    - Hi, I'm zhuxiongxian.
+    - Hi, I'm BOG.
     - Welcome to my blog!!!
   fontcss: https://fonts.googleapis.com/css2?family=Marck+Script
   font_family: Marck Script
@@ -145,27 +145,9 @@ toc:
 # SNS
 # 社交网络服务
 sns:
-  github: https://github.com/xiongxianzhu
-  email: 929679459@qq.com
-  qq: 929679459
-  wechat: xxshwz
-  weibo: http://weibo.com/929679459     # https://weibo.com/xxx
-  zhihu: # https://www.zhihu.com/xxx
-  juejin: https://juejin.cn/user/1714893867985389
-  bilibili: https://space.bilibili.com/200731874
-  facebook: https://www.facebook.com/xiongxian.zhu  # https://www.facebook.com/xxx
-  twitter: https://twitter.com/xiongxianzhu         # https://twitter.com/xxx
-  youtube:
-  googleplus:
-  instagram:
-  tumblr:
-  linkedin: https://www.linkedin.com/in/zhuxiongxian/
-  telegram:
-  dribbble:
-  pinterest:
-  behance:
-  v2ex:
-  segmentfault:
+  github: https://github.com/wangshengbog
+  email: 760698932@qq.com
+  wechat: wangshengbog
   rss: true
 
 # Enable the back to top button
@@ -185,7 +167,7 @@ copyright:
 # disqus comment
 disqus:
   enable: false
-  shortname: blog-zhuxiongxian
+  shortname: blog-wangshengbog
 
 # gitalk comment
 gitalk:
@@ -215,8 +197,8 @@ livere:
 # valine comment system. https://valine.js.org
 valine:
   enable: true # if you want use valine,please set this value is true
-  app_id: Mia2Oc0sFRP8CLKWIpkzlKH7-gzGzoHsz  # leancloud application app id
-  app_key: UzWr1AJYRlfkoKpaNY9l2dIW  # leancloud application app key
+  app_id: MUFRrbkRbrLhxM9JkjK6r1bp-gzGzoHsz  # leancloud application app id
+  app_key: iVbBg7azcxQwmP9XuN3eEKCT  # leancloud application app key
   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
   verify: false # valine verify code (true/false)
   visitor: true
