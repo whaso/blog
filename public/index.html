@@ -1,1293 +1,1622 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="keywords" content="BOG&#39;s Blog">
-    <meta name="description" content="BOG&#39;s Blog">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate.css/animate.min.css">
-    
-    
-    <!-- Material Icons -->
-    <link rel="stylesheet" type="text/css" href="/libs/materialicons/materialicons.css">
-    
-    <!-- Fontawesome Icons -->
-    <link rel="stylesheet" type="text/css" href="/libs/fontawesome/css/all.min.css">
-    <!-- aos -->
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <!-- The theme css -->
-    <link rel="stylesheet" type="text/css" href="/css/xxcoding.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    
-    <!-- 
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/fontawesome/css/all.min.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/animate.css/animate.min.css">
-            
-        
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/prism/prism-tomorrow-night.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/materialicons/materialicons.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/aplayer/APlayer.min.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/tocbot/tocbot.css">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/libs/aplayer/Meting.min.js">
-            
-        
-            
-                <link rel="stylesheet" type="text/css" href="/css/xxcoding.css">
-            
-        
-            
-        
-     -->
-    <!-- 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500">
-    
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Marck+Script">
-     -->
-    
+<link rel="stylesheet" href="/css/main.css">
 
-    <!-- Custom Head -->
-    
 
-    <title>BOG&#39;s Blog</title>
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <script src="/libs/jquery/jquery.min.js"></script>
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="BOG's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="BOG&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="BOG&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="BOG">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>BOG's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="BOG's Blog" type="application/atom+xml">
 </head>
 
-<body>
-    <header class="navbar-fixed">
-    <!-- <nav class="nav-extended pushpin"> -->
-    <nav class="nav-color nav-transparent" id="nav-header" color-on-scroll="100">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a class="brand-logo waves-effect waves-light" href="/">
-                    
-                    <img src="/img/logo.png" class="circle logo-img lazyload" data-src="/img/logo.png" alt="logo">
-                    
-                    <span class="logo-span">BOG&#39;s Blog</span>
-                </a>
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-    <i class="material-icons">menu</i>
-</a>
-<ul class="right hide-on-med-and-down">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">BOG's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-        
-            <li>
-                
-                
-                <a class="nav-item waves-effect waves-light" href="/" style="display: flex;">
-                    <i class="material-icons">home</i>
-                
-                    <span class="nav-menu">首页</span>
-                </a>
-                
-            </li>
-        
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" class="post-title-link" itemprop="url">计算机原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-20 14:59:37" itemprop="dateCreated datePublished" datetime="2022-02-20T14:59:37+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-24 11:13:34" itemprop="dateModified" datetime="2022-06-24T11:13:34+08:00">2022-06-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
-        
-            <li>
-                
-                
-                <a class="nav-item waves-effect waves-light" href="/categories" style="display: flex;">
-                    <i class="material-icons">chrome_reader_mode</i>
-                
-                    <span class="nav-menu">分类</span>
-                </a>
-                
-            </li>
-        
     
-        
-            <li>
-                
-                
-                <a class="nav-item waves-effect waves-light" href="/archives" style="display: flex;">
-                    <i class="material-icons">inbox</i>
-                
-                    <span class="nav-menu">归档</span>
-                </a>
-                
-            </li>
-        
     
-        
-            <li>
-                
-                
-                <a class="nav-item waves-effect waves-light" href="/tags" style="display: flex;">
-                    <i class="material-icons">label</i>
-                
-                    <span class="nav-menu">标签</span>
-                </a>
-                
-            </li>
-        
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="1-Basic"><a href="#1-Basic" class="headerlink" title="1. Basic"></a>1. Basic</h2><h3 id="1-1-基本组成"><a href="#1-1-基本组成" class="headerlink" title="1.1. 基本组成"></a>1.1. 基本组成</h3><p><strong>五大部分</strong></p>
+<ul>
+<li><strong>运算器</strong>  (CPU) (主机): 算术运算、逻辑运算</li>
+<li><strong>控制器</strong>  (CPU) (主机): 指挥各部件, 使程序运行</li>
+<li>存储器 : 存放数据和程序<ul>
+<li><strong>主存</strong>  (主机)</li>
+<li>辅存  (I/O设备)</li>
+</ul>
+</li>
+<li><strong>输入设备</strong>  (I/O设备)</li>
+<li><strong>输出设备</strong>  (I/O设备)</li>
+</ul>
+<h3 id="1-2-各硬件部分"><a href="#1-2-各硬件部分" class="headerlink" title="1.2. 各硬件部分"></a>1.2. 各硬件部分</h3><blockquote>
+<p>寄存, 就是暂存数据的意思, 类似快递点</p>
+</blockquote>
+<p><strong>主存储器</strong></p>
+<blockquote>
+<p>存储体存数据, MAR对应数据位置(主存地址), MDR暂存对应的实际数据</p>
+<p>类似快递点: 存储体=&gt; 货架,  MAR =&gt; 店员,  MDR =&gt; 取货/放货 的柜台</p>
+<p>取数据过程: CPU把地址给到MAR, 把读指令给到主存储器, 主存储器把存储体MAR地址的数据放到MDR等待使用</p>
+<p>存数据过程: CPU把地址给到MAR, 把数据放到MDR, 把写指令给到主存储器, 主存储器根据指令把MDR中数据存储到存储体的MAR地址</p>
+</blockquote>
+<ul>
+<li>存储体: 数据在存储体中按地址存储, 每个地址对应一个存储单元<ul>
+<li>存储单元: 每个存储单元存放一串二进制代码<ul>
+<li>存储元: 即存储二进制的电子元件, 每个存储元可存1bit</li>
+</ul>
+</li>
+<li>存储字: 存储单元中二进制的组合</li>
+<li>存储字长: 存储单元中二进制代码的位数</li>
+</ul>
+</li>
+<li>MAR: 存储地址寄存器, 用于指明要读/写哪个存储单元, 其位数反映存储单元数量 Memory Address Register </li>
+<li>MDR: 存储数据寄存器, 用于暂存要读/写的数据, 其位数=存储字长 Memory Data Register </li>
+</ul>
+<p><strong>运算器</strong>: 用于实现算术运算(+ - * /)、逻辑运算(与/非)</p>
+<blockquote>
+<p>前三个存数据, ALU执行(运算)</p>
+</blockquote>
+<ul>
+<li>ACC: 累加计数器, 存放操作数、运算的结果 Accumulator</li>
+<li>MQ: 乘商寄存器, 进行乘、除法时用  Multiple-Quotient Register</li>
+<li>X: 通用寄存器, 存放操作数</li>
+<li>ALU: 算数逻辑单元, 用电路实现各种算数运算、逻辑运算  Arthmetic and Logic Unit</li>
+</ul>
+<p><strong>控制器</strong></p>
+<blockquote>
+<p>PC + IR 取指令, CU执行</p>
+</blockquote>
+<ul>
+<li>PC: 程序计数器, 存放下一条指令的地址  Program Counter</li>
+<li>IR: 指令寄存器, 存放当前执行的指令    Instruction Register</li>
+<li>CU: 控制单元, 分析指令, 给出控制信息 Control Unit</li>
+</ul>
+<p><strong>工作过程</strong></p>
+<ul>
+<li>初始: 指令、数据存入主存, PC指向第一条指令</li>
+<li>从主存中取指令放入IR、PC自动加1, CU分析指令, CU指挥其他部件执行指令</li>
+</ul>
+<h3 id="1-3-计算机系统层次结构"><a href="#1-3-计算机系统层次结构" class="headerlink" title="1.3. 计算机系统层次结构"></a>1.3. 计算机系统层次结构</h3><table>
+<thead>
+<tr>
+<th>微程序机器M0</th>
+<th>传统机器M1</th>
+<th>虚拟机器M2</th>
+<th>虚拟机器M3</th>
+<th>虚拟机器M4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>微指令系统</td>
+<td>用机器语言的机器</td>
+<td>操作系统机器</td>
+<td>汇编语言机器</td>
+<td>高级语言机器</td>
+</tr>
+<tr>
+<td>硬件</td>
+<td>硬件</td>
+<td>软件</td>
+<td>软件</td>
+<td>软件</td>
+</tr>
+<tr>
+<td>由硬件直接执行微指令</td>
+<td>执行二进制机器指令</td>
+<td>向上提供”广义指令”(系统调用)</td>
+<td>用汇编程序翻译成机器语言程序</td>
+<td>用编译程序翻译成汇编语言程序</td>
+</tr>
+<tr>
+<td>微指令1 / 2 / 3</td>
+<td>000010000000101</td>
+<td></td>
+<td>LOAD 5</td>
+<td>y=a*b + c</td>
+</tr>
+</tbody></table>
+<p><strong>三种级别的语言</strong></p>
+<ul>
+<li>机器语言: 二进制代码</li>
+<li>汇编语言: 助记符<ul>
+<li>将汇编语言翻译成机器语言</li>
+</ul>
+</li>
+<li>高级语言: C, Python<ul>
+<li>编译程序(编译器): 将高级语言一次全部翻译为汇编语言, 或直接翻译为机器语言</li>
+<li>解释程序(解释器): 将高级语言翻译为机器语言, 翻译一句执行一句</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-存储器的性能指标"><a href="#1-4-存储器的性能指标" class="headerlink" title="1.4. 存储器的性能指标"></a>1.4. 存储器的性能指标</h3>
+      
+    </div>
+
     
-        
-            <li>
-                
-                
-                <a class="nav-item waves-effect waves-light" href="/about" style="display: flex;">
-                    <i class="material-icons">account_circle</i>
-                
-                    <span class="nav-menu">关于</span>
-                </a>
-                
-            </li>
-        
     
-        
-            <li>
-                
-                
-                <a class="nav-item dropdown-trigger waves-effect waves-light" href="#!" data-target="dropdown-lab" style="display: flex;">
-                    <i class="material-icons">apps</i>
-                
-                    <span class="nav-menu">实验室</span>
-                    <i class="material-icons right">arrow_drop_down</i>
-                </a>
-                <ul class="dropdown-content" id="dropdown-lab">
-                    
-                        
-                        <li>
-                            
-                            <a href="/comments" style="display: flex;">
-                                <i class="material-icons">comment</i>
-                            
-                                <span>留言板</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/friends" style="display: flex;">
-                                <i class="material-icons">link</i>
-                            
-                                <span>友情链接</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/resume" style="display: flex;">
-                                <i class="material-icons">work</i>
-                            
-                                <span>简历</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/timeline" style="display: flex;">
-                                <i class="material-icons">timeline</i>
-                            
-                                <span>时间线</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/vlog" style="display: flex;">
-                                <i class="material-icons">video_library</i>
-                            
-                                <span>Vlog</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/portfolio" style="display: flex;">
-                                <i class="material-icons">widgets</i>
-                            
-                                <span>作品集</span>
-                            </a>
-                        </li>
-                        
-                    
-                </ul>
-                
-            </li>
-        
     
-        
-            <li>
-                
-                
-                <a class="nav-item dropdown-trigger waves-effect waves-light" href="#!" data-target="dropdown-medias" style="display: flex;">
-                    <i class="material-icons">perm_media</i>
-                
-                    <span class="nav-menu">多媒体</span>
-                    <i class="material-icons right">arrow_drop_down</i>
-                </a>
-                <ul class="dropdown-content" id="dropdown-medias">
-                    
-                        
-                        <li>
-                            
-                            <a href="/galleries" style="display: flex;">
-                                <i class="material-icons">photo_library</i>
-                            
-                                <span>图库</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/musics" style="display: flex;">
-                                <i class="material-icons">library_music</i>
-                            
-                                <span>音乐</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/videos" style="display: flex;">
-                                <i class="material-icons">video_library</i>
-                            
-                                <span>视频</span>
-                            </a>
-                        </li>
-                        
-                    
-                        
-                        <li>
-                            
-                            <a href="/books" style="display: flex;">
-                                <i class="material-icons">library_books</i>
-                            
-                                <span>书籍</span>
-                            </a>
-                        </li>
-                        
-                    
-                </ul>
-                
-            </li>
-        
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/python+flask+oracle+docker+alpine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/python+flask+oracle+docker+alpine/" class="post-title-link" itemprop="url">oracle常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-09 16:05:29" itemprop="dateCreated datePublished" datetime="2021-12-09T16:05:29+08:00">2021-12-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-27 18:05:44" itemprop="dateModified" datetime="2022-04-27T18:05:44+08:00">2022-04-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
-    <li>
-        <a class="nav-item modal-trigger waves-effect waves-light" href="#searchModal">
-            <i class="material-icons">search</i>
-            <!-- <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.6;"></i> -->
-        </a>
-    </li>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="和MySQL对比"><a href="#和MySQL对比" class="headerlink" title="和MySQL对比"></a>和MySQL对比</h3><ul>
+<li><p>大小写: <strong>oracle</strong> 本身不区分大小写 (会把关键字全部转为大写再执行),但是对引号里的字符区分大小写。</p>
+</li>
+<li><p>主键自增: <strong>oracle</strong> 没有自带的主键自增, 需要先创建一个序列, 再创建一个触发器, 来实现主键自增</p>
+</li>
+</ul>
+<h4 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看当前用户所有序列</span></span><br><span class="line">select * from user_objects where object_type=&#x27;SEQUENCE&#x27;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看表的所有触发器</span></span><br><span class="line">select * from all_triggers where table_name=&#x27;表名&#x27;; </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建序列</span></span><br><span class="line">create sequence 序列名称(一般是表名_SEQ)</span><br><span class="line">start with 1  # 开始数字</span><br><span class="line">minvalue 1 # 最小值</span><br><span class="line">maxvalue   # 最大值</span><br><span class="line">cycle    # 是否循环 cycle / nocycle</span><br><span class="line">increment by 1  # 增长数字</span><br><span class="line">nocache # 不使用缓存</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除序列</span></span><br><span class="line">DROP SEQUENCE 序列名;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建触发器</span></span><br><span class="line">create or replace trigger 触发器名</span><br><span class="line">        before insert on 表名</span><br><span class="line">        referencing old as old new as new</span><br><span class="line">        for each row</span><br><span class="line">      begin</span><br><span class="line">        select 序列名.nextval</span><br><span class="line">          into :new.ID</span><br><span class="line">          from dual;</span><br><span class="line">      end 触发器名;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除触发器</span></span><br><span class="line">drop trigger 触发器名;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查版本</span></span><br><span class="line">select * from v$version;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> sqlalchemy_URI  注: 不用指定数据库</span></span><br><span class="line">oracle+cx_oracle://&#123;账号&#125;:&#123;密码&#125;@10.168.199.21:1521/?service_name=&#123;服务名&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Docker-Alpine安装oracle客户端"><a href="#Docker-Alpine安装oracle客户端" class="headerlink" title="Docker Alpine安装oracle客户端"></a><strong>Docker Alpine安装oracle客户端</strong></h3><ol>
+<li>进入docker容器<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name=容器名 镜像名:latest /bin/sh       由镜像创建容器并进入(只有镜像无容器)</span><br><span class="line">或</span><br><span class="line">docker exec -it 容器名 /bin/sh                          直接进入运行中的容器</span><br></pre></td></tr></table></figure></li>
+<li>安装必要包</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apk add libaio, libnsl, unzip</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>下载解压oracle basic包</li>
+</ol>
+<blockquote>
+<p>需要对应服务器版本, 命令<code>select * from v$version;</code></p>
+<p>各版本下载地址(32位): <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client/linux-x86-32-downloads.html">https://www.oracle.com/database/technologies/instant-client/linux-x86-32-downloads.html</a></p>
+<p>各版本下载地址(64位): <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html">https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载basic免安装zip包, 需要登录验证, 所以下载链接不能复用, 要在上面链接中找对应版本下载</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 弄个单独目录存</span></span><br><span class="line">cd /usr/local</span><br><span class="line">mkdir oracle</span><br><span class="line">cd oracle</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> wget -c 支持断点续传</span></span><br><span class="line">wget -c https://download.oracle.com/otn/linux/instantclient/11204/instantclient-basic-linux.x64-11.2.0.4.0.zip</span><br><span class="line">?AuthParam=1644827926_6725c450378f19288cb3dc5d040b8a18</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> unzip 解压</span></span><br><span class="line">unzip instantclient-basic-linux.x64-11.2.0.4.0.zip?AuthParam\=1644827926_6725c450378f19288cb3dc5d040b8a18</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 整理下文件</span></span><br><span class="line">mv ./instantclient_11_2/* ./</span><br><span class="line">rmdir instantclient_11_2</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>unzip End-of-central-directory signature not found: 多半是下载的文件有问题, 重新下载就可以</p>
+</blockquote>
+<ol start="4">
+<li>添加环境变量</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 通过查看 /etc/profile 可以看到会加载 /etc/profile.d/目录下的 .sh结尾的文件</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 弄个单独的环境变量配置文件</span></span><br><span class="line">vi /etc/profile.d/oracle.sh</span><br><span class="line"> </span><br><span class="line">export ORACLE_HOME=/usr/local/oracle</span><br><span class="line">export NLS_LANG=AMERICAN_AMERICA.AL32UTF8</span><br><span class="line">export LD_LIBRARY_PATH=$ORACLE_HOME</span><br><span class="line">export PATH=$ORACLE_HOME:$PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试下加上没有</span></span><br><span class="line">source /etc/profile</span><br><span class="line">echo $PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出容器</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注: 这里会有很多奇怪的报错, 以下为作者碰到的</p>
+<p>报错1. Error loading shared library /usr/local/oracle/lib/libclntsh.so: No such file or directory</p>
+<p>(一开始是打算用软链接的, 但是没用, 直接复制就可以了, 不知道为什么)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/oracle/lib</span><br><span class="line">cp /usr/local/oracle/libclntsh.so.11.1 /usr/local/oracle/lib/libclntsh.so</span><br></pre></td></tr></table></figure>
+<p>如果经过以上操作扔有此报错, 且是用supervisor启动的, 可能是因为supervisor没读到环境变量, 需要在supervisor配置文件中添加</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">environment=ORACLE_HOME=&quot;/usr/local/oracle&quot;,NLS_LANG=&quot;AMERICAN_AMERICA.AL32UTF8&quot;,LD_LIBRARY_PATH=&quot;/usr/local/oracle&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注: supervisor添加环境变量时, 多个变量以<code>,</code>分隔, 单个变量多个值以<code>:</code>分隔</p>
+<p>报错2.<br>Error loading shared library libnsl.so.1: No such file or directory (needed by /usr/local/oracle/lib/libclntsh.so<br>(libnsl.so.1  或 libnsl.so) 建对应软链接</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/lib/libnsl.so.2.0.0 /usr/lib/libnsl.so.1</span><br><span class="line">ln -s /usr/lib/libnsl.so.2.0.0 /usr/lib/libnsl.so</span><br></pre></td></tr></table></figure>
+
+<p>报错3: cx_Oracle.DatabaseError: ORA-21561: OID generation faile</p>
+<p>这是hosts文件有问题</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostname  # 查看当前hostname</span><br><span class="line">把当前hostname加入到 /etc/hosts 文件的 127.0.0.1 即可</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<ol start="5">
+<li>提交镜像</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -a &#x27;laowang&#x27; 容器名 镜像名:1.0.0</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>换docker启动用的镜像版本号</li>
+</ol>
+<blockquote>
+<p>注: 最后会发现环境变量没有加载, 原因未知</p>
+<p>绕路解决方法: </p>
+<ul>
+<li> 通过DockerFile直接运行容器的项目: 修改<code>Dockerfile</code>文件,  例: <code>CMD source /etc/profile &amp;&amp; gunicorn ....</code></li>
+<li>通过DockerCompose启动的项目:  修改<code>docker-compose.yml</code>文件 例: <code>command: /bin/sh -c &quot;source /etc/profile &amp;&amp; gunicorn ....&quot;</code></li>
+</ul>
+<p><strong>python 直连测试代码</strong></p>
+<p>import cx_Oracle<br>conn = cx_Oracle.connect(“user/passwd@host/instance”)</p>
+</blockquote>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><ul>
+<li><p>报错ORA-00904: 后查到是数据库字段写错了, 和模型类的不一致</p>
+</li>
+<li><p>索引失效(partition of such index is in unusable state):</p>
+<ul>
+<li><pre><code class="sql">select index_name,status from user_indexes;  # 查失效索引
+
+alter index SYS_C00164313 rebuild;  # 重建索引</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 
-            </div>
-        </div>
-    </nav>
-</header>
-<div class="sidenav" id="nav-mobile">
-    <div class="user-view">
-        <div class="background overlay">
-            <img class="lazyload" src="/img/icon-seamless.png" data-src="/img/icon-seamless.png">
-        </div>
-        <img class="circle responsive-img lazyload" src="/img/logo.png" data-src="/img/logo.png">
-        <div class="name white-text">BOG's Blog</div>
-        <div class="description white-text"></div>
+      
     </div>
-    <ul>
-        
-            
-                <li>
-                    
-                    
-                    <a class="waves-effect" href="/" style="display: flex;">
-                        <i class="material-icons">home</i>
-                    
-                        <span>首页</span>
-                    </a>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    
-                    <a class="waves-effect" href="/categories" style="display: flex;">
-                        <i class="material-icons">chrome_reader_mode</i>
-                    
-                        <span>分类</span>
-                    </a>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    
-                    <a class="waves-effect" href="/archives" style="display: flex;">
-                        <i class="material-icons">inbox</i>
-                    
-                        <span>归档</span>
-                    </a>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    
-                    <a class="waves-effect" href="/tags" style="display: flex;">
-                        <i class="material-icons">label</i>
-                    
-                        <span>标签</span>
-                    </a>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    
-                    <a class="waves-effect" href="/about" style="display: flex;">
-                        <i class="material-icons">account_circle</i>
-                    
-                        <span>关于</span>
-                    </a>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    <ul class="collapsible">
-                        <li>
-                            
-                            <div class="collapsible-header waves-effect">
-                                <i class="material-icons">apps</i>
-                            
-                                <span>实验室</span>
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </div>
-                            <ul class="collapsible-body">
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/comments" style="display: flex;">
-                                            <i class="material-icons">comment</i>
-                                        
-                                            <span>留言板</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/friends" style="display: flex;">
-                                            <i class="material-icons">link</i>
-                                        
-                                            <span>友情链接</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/resume" style="display: flex;">
-                                            <i class="material-icons">work</i>
-                                        
-                                            <span>简历</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/timeline" style="display: flex;">
-                                            <i class="material-icons">timeline</i>
-                                        
-                                            <span>时间线</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/vlog" style="display: flex;">
-                                            <i class="material-icons">video_library</i>
-                                        
-                                            <span>Vlog</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/portfolio" style="display: flex;">
-                                            <i class="material-icons">widgets</i>
-                                        
-                                            <span>作品集</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                </li>
-            
-        
-            
-                <li>
-                    
-                    <ul class="collapsible">
-                        <li>
-                            
-                            <div class="collapsible-header waves-effect">
-                                <i class="material-icons">perm_media</i>
-                            
-                                <span>多媒体</span>
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </div>
-                            <ul class="collapsible-body">
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/galleries" style="display: flex;">
-                                            <i class="material-icons">photo_library</i>
-                                        
-                                            <span>图库</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/musics" style="display: flex;">
-                                            <i class="material-icons">library_music</i>
-                                        
-                                            <span>音乐</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/videos" style="display: flex;">
-                                            <i class="material-icons">video_library</i>
-                                        
-                                            <span>视频</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                                    
-                                    <li>
-                                        
-                                        <a class="waves-effect" href="/books" style="display: flex;">
-                                            <i class="material-icons">library_books</i>
-                                        
-                                            <span>书籍</span>
-                                        </a>
-                                    </li>
-                                    
-                                
-                            </ul>
-                        </li>
-                    </ul>
-                    
-                </li>
-            
-        
-    </ul>
-</div>
 
-
-    <main>
-    <!-- 转播图 -->
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<div class="carousel carousel-slider backgrounds">
-    <div class="carousel-fixed-item center">
-        <div class="scroll-down aos-init aos-animate" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800">
-            <a class="waves-effect btn pulse" href="#" style="background-color: #E91E63;">开始阅读</a>
-            <i class="chevron bottom"></i>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/09/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/09/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/" class="post-title-link" itemprop="url">hexo部署报错</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-09 11:25:26 / 修改时间：11:26:38" itemprop="dateCreated datePublished" datetime="2021-12-09T11:25:26+08:00">2021-12-09</time>
+            </span>
+
+          
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="报错内容"><a href="#报错内容" class="headerlink" title="报错内容"></a>报错内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fatal: in unpopulated submodule &#x27;.deploy_git&#x27;</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (/Users/krmac/myProjects/blog/node_modules/hexo-util/lib/spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:390:28)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>直接删除 <code>.deploy_git</code>  重新 <code>hexo g</code> 生成即可</p>
+
+      
     </div>
-    
-    <div class="carousel-item background overlay lazyload" data-src="/img/bg/bg-1.jpg" style="background-image: url('/img/bg/bg-1.jpg');"></div>
-    
-    <div class="carousel-item background overlay lazyload" data-src="/img/bg/bg-2.jpg" style="background-image: url('/img/bg/bg-2.jpg');"></div>
-    
-    <div class="carousel-item background overlay lazyload" data-src="/img/bg/bg-3.jpg" style="background-image: url('/img/bg/bg-3.jpg');"></div>
-    
-    <div class="carousel-item background overlay lazyload" data-src="/img/bg/bg-4.jpg" style="background-image: url('/img/bg/bg-4.jpg');"></div>
-    
-    <div class="carousel-item background overlay lazyload" data-src="/img/bg/bg-5.jpg" style="background-image: url('/img/bg/bg-5.jpg');"></div>
-    
-    
-    <a class="carousel-control-prev" href="javascript:;" role="button" data-slide="prev">
-        <i class="material-icons">keyboard_arrow_left</i>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="javascript:;" role="button" data-slide="next">
-        <i class="material-icons">keyboard_arrow_right</i>
-        <span class="sr-only">Next</span>
-    </a>
-    
-</div>
 
-<header>
-    <div class="center" id="bg-center">
-        <h2 class="title white-text">BOG&#39;s Blog</h2>
-        
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Marck+Script">
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<div class="description white-text">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/07/git%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/07/git%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB/" class="post-title-link" itemprop="url">git代码迁移</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-07 18:04:38" itemprop="dateCreated datePublished" datetime="2021-12-07T18:04:38+08:00">2021-12-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-09 11:19:59" itemprop="dateModified" datetime="2021-12-09T11:19:59+08:00">2021-12-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
-    <span id="subtitle" style="font-family: 'Marck Script';"></span>
     
-</div>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 拉所有分支</span></span><br><span class="line">git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除旧源</span></span><br><span class="line">git remote rm origin</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 改为新源</span></span><br><span class="line">git remote add origin git@xxxx.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 推代码 全部分支 / 标签</span></span><br><span class="line">git push --all</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/29/git%E4%BB%A3%E7%A0%81ssh%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/29/git%E4%BB%A3%E7%A0%81ssh%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">git代码ssh方式部署linux服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-29 10:30:47 / 修改时间：10:39:47" itemprop="dateCreated datePublished" datetime="2021-09-29T10:30:47+08:00">2021-09-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a>1. 创建用户</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建用户, -m 创建用户家目录</span></span><br><span class="line">useradd -m 用户名</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改密码(在root用户下操作)</span></span><br><span class="line">passwd 用户名</span><br></pre></td></tr></table></figure>
+<h2 id="2-在git项目服务器添加ssh公钥"><a href="#2-在git项目服务器添加ssh公钥" class="headerlink" title="2. 在git项目服务器添加ssh公钥"></a>2. 在git项目服务器添加ssh公钥</h2><h2 id="3-在部署服务器用户家目录添加ssh密钥"><a href="#3-在部署服务器用户家目录添加ssh密钥" class="headerlink" title="3. 在部署服务器用户家目录添加ssh密钥"></a>3. 在部署服务器用户家目录添加ssh密钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.ssh/</span><br><span class="line">vi id_rsa  # 添加公钥</span><br><span class="line">vi id_rsa.pub  # 添加私钥</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果提示权限644不对(Permissions 0644 <span class="keyword">for</span> <span class="string">&#x27;~/.ssh/id_rsa&#x27;</span> are too open) 执行以下命令修改权限</span></span><br><span class="line">chmod 755 ~/.ssh/</span><br><span class="line">chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub</span><br><span class="line">chmod 644 ~/.ssh/known_hosts</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/pycharm2vscode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/20/pycharm2vscode/" class="post-title-link" itemprop="url">pycharm2vscode.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-09-20 09:13:59 / 修改时间：09:19:45" itemprop="dateCreated datePublished" datetime="2021-09-20T09:13:59+08:00">2021-09-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="VSCode常用快捷键"><a href="#VSCode常用快捷键" class="headerlink" title="VSCode常用快捷键"></a>VSCode常用快捷键</h1><ul>
+<li>全部折叠:  <code>cmd + k</code> + <code>cmd + 0</code></li>
+</ul>
+<h1 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h1><h2 id="关于导包"><a href="#关于导包" class="headerlink" title="关于导包"></a>关于导包</h2><ul>
+<li>PyCharm 可以在项目指定目录右键指定为导包路径, VSCode需要在<code>.vscode/launch.json</code>内 <code>settings.configurations</code> 配置<code>env</code>时加上 <code>&quot;PYTHONPATH&quot;: &quot;$&#123;fileDirname&#125;/../smartbase:$&#123;fileDirname&#125;&quot;</code>多个目录通过 <code>:</code> 追加</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/c-day01-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/21/c-day01-md/" class="post-title-link" itemprop="url">c++day01.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-21 10:52:00" itemprop="dateCreated datePublished" datetime="2021-08-21T10:52:00+08:00">2021-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-21 14:20:53" itemprop="dateModified" datetime="2022-02-21T14:20:53+08:00">2022-02-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="download"><a href="#download" class="headerlink" title="download"></a>download</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/?tdsourcetag=s_pctim_aiomsg"> Windows10下载MinGW </a><ul>
+<li>点击页面中的<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code> 进行下载</li>
+<li>下载完成后把 <code>bin</code> 目录放入系统环境变量即可在终端使用 <code>c++</code> 命令进行编译 <code>.cpp</code> 源代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><ul>
+<li><code>MyFirstApp</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello World! \n&quot;</span>; <span class="comment">// this will output to the console hello world</span></span><br><span class="line">    system(<span class="string">&quot;pause&gt;0&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">g++ .\MyFirstApp.cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行</span></span><br><span class="line">.\a.exe</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>换行  <code>\n</code> 或 <code> &lt;&lt; endl;</code></p>
+</li>
+<li><p>编译命令 <code>g++ [source file] -o [output filename]</code></p>
+</li>
+</ul>
+<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><ul>
+<li>命名<ul>
+<li>构成: 下划线, 字母(区分大小写), 数字(不可数字开头)</li>
+<li>一般用小驼峰命名法</li>
+</ul>
+</li>
+</ul>
+<p><strong>Data types</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>size(bytes)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数</td>
+<td>int</td>
+<td>4</td>
+<td>-2147483648 to 2147483647</td>
+</tr>
+<tr>
+<td>字符</td>
+<td>char</td>
+<td>1</td>
+<td>单引号为字符 ‘a’</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>string</td>
+<td></td>
+<td>双引号为字符串 “character”</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td>bool</td>
+<td>1</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>float</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>大浮点数</td>
+<td>double</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>Data type overflow</strong></p>
+<ul>
+<li>变量的值超过其内存空间, 类似钟表指针, 13 点 = 1 点 (INT_MAX + 1 = INT_MIN)</li>
+</ul>
+<p><strong>ASCII table</strong></p>
+<ul>
+<li>asign characters to number (it’s for American)</li>
+<li>ASCII extends: utf-(1-16)  (for others)</li>
+<li>字符转换为ASCII数字 <code>(int)&#39;a&#39;</code> 和 <code>int(&#39;a&#39;)</code> 两种写法</li>
+</ul>
+<h1 id="Condition-Statement"><a href="#Condition-Statement" class="headerlink" title="Condition Statement"></a>Condition Statement</h1><p><strong>语法</strong></p>
+<p><code>if()&#123;&#125;elif()&#123;&#125;else()&#123;&#125;</code></p>
+<ul>
+<li>注: 如果 <code>&#123;&#125;</code> 内只有一行代码, 可以不写 <code>&#123;&#125;</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//User enters side lengths of a triangle (a, b, c)</span></span><br><span class="line">    <span class="comment">//Program should write out whethre that triangle is</span></span><br><span class="line">    <span class="comment">//equilateral, isosceles or scalene</span></span><br><span class="line">    <span class="keyword">float</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a, b, c: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (a == b &amp;&amp; b == c)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Equilateral triangle&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a != b &amp;&amp; a != c &amp;&amp; b != c)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Scalene triangle&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Isosceles triangle&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行优先级 从上到下</span></span><br><span class="line">    <span class="comment">// + - * / %</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5.0</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2.5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ++, --</span></span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">7</span>;</span><br><span class="line">    counter++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    counter--;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> counter2 = <span class="number">7</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2++ &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 8</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ++counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>); <span class="comment">// clear console</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &lt;, &gt;, &lt;=, &gt;=, ==, !=</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; (a &gt; b) &lt;&lt; endl;  // 0 for false (1 for true)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &amp;&amp;, ||, !</span></span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">8</span>, d = <span class="number">9</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; !(c == 5 &amp;&amp; b == 9);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 优先级</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (c == <span class="number">8</span> &amp;&amp; d == <span class="number">4</span> + <span class="number">5</span>);  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =, +=, -=, *=, /=, %=</span></span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line">    x += <span class="number">7</span>;  <span class="comment">//same as: x = x + 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三目"><a href="#三目" class="headerlink" title="三目"></a>三目</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hostUserNum, guestUserNum;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;HOST: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; hostUserNum;</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Guest: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; guestUserNum;</span><br><span class="line"></span><br><span class="line">    (hostUserNum == guestUserNum)? <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Correct!&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Failed!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h1><blockquote>
+<p>注意每个case后面必需接break退出, 因为程序只判断一次case条件, 进入一次后, 其他的case不会再判断, 会运行下面的所有case.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/" class="post-title-link" itemprop="url">源码安装mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-26 10:46:45" itemprop="dateCreated datePublished" datetime="2021-07-26T10:46:45+08:00">2021-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="源码安装Mysql"><a href="#源码安装Mysql" class="headerlink" title="源码安装Mysql"></a>源码安装Mysql</h1><blockquote>
+<p>系统: CentOS 8</p>
+</blockquote>
+<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p><strong>官网找指定版本下载源码包</strong>   </p>
+<blockquote>
+<p> <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-boost-5.7.34.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>编译时命令 <code>cmake .</code> 报错汇总</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h1><h2 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p>Operating System: Linux-Generic</p>
+<p>OS Version: Linux-Generic(glibc 2.12) (x86, 64-bit)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><blockquote>
+<p>先查看下系统磁盘绑定情况, 再决定mysql data目录</p>
+<p>命令: df -h</p>
+</blockquote>
+<h3 id="2-1-创建用户-用户组-数据目录"><a href="#2-1-创建用户-用户组-数据目录" class="headerlink" title="2.1. 创建用户, 用户组, 数据目录"></a>2.1. 创建用户, 用户组, 数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql -d /home/mysql mysql</span><br><span class="line">mkdir /home/mysql/data</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-下载-解压"><a href="#2-2-下载-解压" class="headerlink" title="2.2. 下载, 解压"></a>2.2. 下载, 解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/mysql</span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -zvxf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<p><font color="red">启动mysql可能出现的错误:</font></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/22/Chapter-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/22/Chapter-02/" class="post-title-link" itemprop="url">Chapter-02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-22 13:42:54" itemprop="dateCreated datePublished" datetime="2021-06-22T13:42:54+08:00">2021-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络基础Chapter-2-物理层"><a href="#计算机网络基础Chapter-2-物理层" class="headerlink" title="计算机网络基础Chapter-2, 物理层"></a>计算机网络基础Chapter-2, 物理层</h1><h2 id="1-通信基础"><a href="#1-通信基础" class="headerlink" title="1. 通信基础"></a>1. 通信基础</h2><p><strong>物理层基本概念</strong></p>
+<ul>
+<li>物理层解决如何在连接各种计算机的传输媒体上<strong>传输数据比特流</strong>, 而不是指具体的传输媒体</li>
+<li>主要任务: 确定与传输媒体接口有关的一些特性</li>
+<li>机械特性:</li>
+<li>电气特性:</li>
+<li>功能特性:</li>
+</ul>
+<p><strong>数据通信基础</strong></p>
+<p><img src="../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
+<ul>
+<li>数据: 传送信息的实体, 通常是有意义的符号序列</li>
+<li>信号: 数据的电气/电磁的表现, 是数据在传输过程中的存在形式<ul>
+<li>数字信号: 代表消息的参数取值是离散的</li>
+<li>模拟信号: 代表消息的参数取值是连续的 (正弦波)</li>
+</ul>
+</li>
+<li>信源: 产生和发送数据的源头</li>
+<li>信宿: 接收数据的终点</li>
+<li>信道: <ul>
+<li>按传输信号分类:</li>
+<li>按</li>
+</ul>
+</li>
+<li>三种通信方式:<ul>
+<li>单工通信</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-两个公式"><a href="#2-两个公式" class="headerlink" title="2. 两个公式"></a>2. 两个公式</h2><h2 id="3-看图说话"><a href="#3-看图说话" class="headerlink" title="3. 看图说话"></a>3. 看图说话</h2><h2 id="4-传输介质"><a href="#4-传输介质" class="headerlink" title="4. 传输介质"></a>4. 传输介质</h2><h2 id="5-物理层设备"><a href="#5-物理层设备" class="headerlink" title="5. 物理层设备"></a>5. 物理层设备</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/16/Chapter-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="BOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BOG's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/16/Chapter-01/" class="post-title-link" itemprop="url">Chapter-01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-16 22:05:05" itemprop="dateCreated datePublished" datetime="2021-06-16T22:05:05+08:00">2021-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络基础Chapter-1"><a href="#计算机网络基础Chapter-1" class="headerlink" title="计算机网络基础Chapter-1"></a>计算机网络基础Chapter-1</h1><h2 id="1-性能指标"><a href="#1-性能指标" class="headerlink" title="1. 性能指标"></a>1. 性能指标</h2><p><strong>速率</strong></p>
+<ul>
+<li> 即数据率或称数据传输率或比特率</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>速率（千，兆，吉，太）(kb, Mb, Gb, Tb)</th>
+<th>存储容量(KB, MB, GB, TB)（1Byte = 8bit）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>千 1kb/s = 10**3 b/s</td>
+<td>1KB = 2**10B = 1024B = 1024 * 8 b</td>
+</tr>
+</tbody></table>
+<p><strong>带宽</strong></p>
+<ul>
+<li> 指网络的通信线路传送数据的能力， 通常是指单位时间内从网络中的一点到另一点所能通过的 <strong>最高数据率</strong>。</li>
+<li>  单位: <strong>比特每秒</strong>， b/s, kb/s, Mb/s, Gb/s, 网络设备所支持的最高速度</li>
+</ul>
+<p> <strong>吞吐量</strong></p>
+<ul>
+<li>表示<strong>单位时间</strong> 内通过 **某个网络(或信道、接口)**的数据量</li>
+<li>单位： b/s, kb/s, Mb/s等</li>
+<li>吞吐量受网络的带宽或网络的额定速率的限制</li>
+</ul>
+<p> <strong>时延</strong></p>
+<ul>
+<li>指数据（报文/分组/比特流）从网络（或链路）的一端传送到另一端所需的时间，也叫延迟，单位s</li>
+</ul>
+<ul>
+<li>发送时延（传输时延）：从发送分组的第一个比特算起， 到该分组的最后一个比特发送完毕所需的时间</li>
+</ul>
+<p>$$<br>发送时延 = \frac{数据长度}{信道带宽}<br>$$</p>
+<ul>
+<li>传播时延：取决于电磁波的传播速度和链路长度</li>
+</ul>
+<p>$$<br>传播时延 = \frac{信道长度}{3 * 10^8}<br>$$</p>
+<ul>
+<li>排队时延：等待输出/输入链路可用</li>
+<li>处理时延：检错、找出口</li>
+</ul>
+<p><strong>时延带宽积</strong></p>
+<ul>
+<li>又称为 <strong>以比特为单位的链路长度</strong>， 即 某段链路现在有多少比特， 是指链路中某一时刻的比特容量</li>
+</ul>
+<p>$$<br>时延带宽积(bit) = 传播时延(s) \times 带宽 (b/s)<br>$$</p>
+<p><strong>往返时间RTT</strong></p>
+<ul>
+<li>从发送方发送数据开始， 到发送方收到接收方的确认（接收方收到数据后立即发送确认），总共经历的时延<ul>
+<li>如 ping 的time = 33ms</li>
+</ul>
+</li>
+<li>RTT越大，在收到确认之前，可以发送的数据越多</li>
+<li>RTT包括<ul>
+<li>往返传播时延 = 传播时延 * 2</li>
+<li>末端处理时间</li>
+</ul>
+</li>
+</ul>
+<p> <strong>利用率</strong></p>
+<ul>
+<li>信道利用率</li>
+</ul>
+<p>$$<br>信道利用率 = \frac{有数据通过时间}{（有+无）数据通过时间}<br>$$</p>
+<ul>
+<li>网络利用率： 信道利用率加权平均值</li>
+</ul>
+<blockquote>
+<p>加权平均值即将各数值乘以相应的权数，然后加总求和得到总体值，再除以总的单位数。加权平均值的大小不仅取决于总体中各单位的数值（变量值）的大小，而且取决于各数值出现的次数（频数），由于各数值出现的次数对其在平均数中的影响起着权衡轻重的作用，因此叫做权数。</p>
+</blockquote>
+<h2 id="2-分层结构"><a href="#2-分层结构" class="headerlink" title="2. 分层结构"></a>2. 分层结构</h2><ul>
+<li>实体：第n层中的活动元素称为 <strong>n层实体</strong>。同一层的实体叫 <strong>对等实体</strong>。</li>
+<li>协议：为进行网络中的 <strong>对等实体</strong> 数据交换而建立的规则、标准或约定称为网络协议。</li>
+<li>接口（访问服务点SAP）： 上层使用下层服务的入口。</li>
+<li>服务：下层为相邻上层提供的功能调用。</li>
+</ul>
+<h3 id="2-1-OSI参考模型"><a href="#2-1-OSI参考模型" class="headerlink" title="2.1. OSI参考模型"></a>2.1. OSI参考模型</h3><p>目的：支持 <strong>异构网络系统</strong> 的互联互通。</p>
+<p>国际标准化组织（ISO) 于1984年提出开放系统互连（OSI）参考模型。</p>
+<table>
+<thead>
+<tr>
+<th>OSI 七层</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>数据子网（数据处理）</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>数据子网（数据处理）</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>数据子网（数据处理）</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td></td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>通信子网（数据通信）</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>通信子网（数据通信）</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>通信子网（数据通信）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>应用层<ul>
+<li>定义：所有能和用户交互产生网络流量的程序</li>
+<li>典型应用层服务：<ul>
+<li>文件传输：FTP</li>
+<li>电子邮件：SMTP</li>
+<li>万维网：HTTP</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>表示层<ul>
+<li>定义：用于处理在两个通信系统中交换信息的表示方式（语法和语义）</li>
+<li>功能：<ul>
+<li>数据格式变换</li>
+<li>数据加密解密</li>
+<li>数据压缩和恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>会话层<ul>
+<li>定义：向表示层实体/用户进程提供<strong>建立连接</strong>并在连接上<strong>有序地传输</strong>数据。这是会话， 也是<strong>建立同步</strong>（SYN)</li>
+<li>功能：<ul>
+<li>建立、管理、终止会话</li>
+<li>使用校验点可使会话在通信失效时从 <strong>校验点/同步点</strong> 继续恢复通信，实现数据同步。（适用于传输大文件）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>定义：负责该机中 <strong>两个进程</strong> 的通信，即<strong>端到端</strong> 的通信。传输意念是报文段或用户数据报。</li>
+<li>功能：<ul>
+<li>可靠传输、不可靠传输<ul>
+<li>可靠：先建立连接，确认机制，如握手，再传输数据</li>
+<li>不可靠：无建立连接，直接传数据</li>
+</ul>
+</li>
+<li>差错控制</li>
+<li>流量控制</li>
+<li>复用分用<ul>
+<li>复用：多个应用层进程可同时使用下面传输层的服务</li>
+<li>分用：运输层把收到的信息分别交付给上面应用层中相应的进程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>定义：主要任务是把分组从源端传到目的端，为分组交换网上的不同该机提供通信服务。网络层传输单位是数据报</li>
+<li>功能：<ul>
+<li>路由选择：最佳路径</li>
+<li>流量控制：限制发送端</li>
+<li>差错控制</li>
+<li>拥塞控制：若所有结点都来不及接受分组，而要丢弃大量分组的话，网络就处于拥塞状态。因此要采取一定措施，缓解这种拥塞。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>定义：主要任务是把网络层传下来的数据报组装成帧。传输单位是帧。</li>
+<li>功能：<ul>
+<li>成帧（定义帧的开始和结束）</li>
+<li>差错控制：帧错+位错</li>
+<li>流量控制：限制发送端速度</li>
+<li>访问（接入）控制：控制对信道的访问</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>物理层<ul>
+<li>定义：主要任务是在物理媒体上实现比特流的透明传输。传输单位是比特。</li>
+<li>透明传输：指不管所传数据是什么样的比特组合，都应当能够在链路上传送。</li>
+<li>功能：<ul>
+<li>定义接口特性</li>
+<li>定义传输模式<ul>
+<li>单工、半双工、双工</li>
+</ul>
+</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码：用什么电压表示1， 什么电压表示0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-TCP-IP模型"><a href="#2-2-TCP-IP模型" class="headerlink" title="2.2. TCP/IP模型"></a>2.2. TCP/IP模型</h3><table>
+<thead>
+<tr>
+<th>TCP/IP 四层</th>
+<th>协议栈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>HTTP，FTP，DNS，SMTP</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>TCP，UDP</td>
+</tr>
+<tr>
+<td>网际层</td>
+<td>IP</td>
+</tr>
+<tr>
+<td>网络接口层</td>
+<td>Ethernet, ATM, Frame Relay</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-OSI与TCP-IP对比"><a href="#2-3-OSI与TCP-IP对比" class="headerlink" title="2.3. OSI与TCP/IP对比"></a>2.3. OSI与TCP/IP对比</h3><ul>
+<li>相同点<ul>
+<li>都分层</li>
+<li>基于独立的协议栈的概念</li>
+<li>可以实现异构网络互联</li>
+</ul>
+</li>
+<li>不同点<ul>
+<li>OSI定义三点：服务、协议、接口</li>
+<li>OSI先出现，参考模型先于协议发明，不偏向特定协议</li>
+<li>TCP/IP设计之初就考虑到异构网互联问题，将IP作为重要层次</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>OSI</th>
+<th>TCP/IP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>网络层</td>
+<td>无连接 + 面向连接</td>
+<td>无连接</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>面向连接</td>
+<td>无连接 + 面向连接</td>
+</tr>
+</tbody></table>
+<p><strong>面向连接</strong>分为三个阶段：</p>
+<ol>
+<li>建立连接，在此阶段，发出一个建立连接的请求。</li>
+<li>只有连接成功建立之后，才能开始传输数据， 这是第二阶段</li>
+<li>当数据传输完毕必须释放连接</li>
+</ol>
+<p><strong>无连接</strong>直接进行数据传输</p>
+<h3 id="2-4-5层参考模型"><a href="#2-4-5层参考模型" class="headerlink" title="2.4. 5层参考模型"></a>2.4. 5层参考模型</h3><table>
+<thead>
+<tr>
+<th>5层参考模型</th>
+<th>说明</th>
+<th>协议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>支持各种网络应用</td>
+<td>FTP、SMTP、HTTP</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>进程-进程的数据传输</td>
+<td>TCP、UDP</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>源主机到目的主机的数据分组路由与转发</td>
+<td>IP、ICMP、OSPF</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>把网络层传下来的数据报组装成帧</td>
+<td>Ethernet、PPP</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>比特传输</td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
 <script>
-
-    var typed = new Typed("#subtitle", {
-        strings: [ 
-            
-                "Hi, I&#39;m BOG.",
-            
-                "Welcome to my blog!!!",
-            
-        ],
-        startDelay: 300,
-        typeSpeed: 100,
-        loop: true,
-        backSpeed: 50,
-        showCursor: true
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
     });
-
+  }
 </script>
 
-    </div>
-</header>
-<script>
-    $(function() {
-        let cover_slider = $('.carousel.carousel-slider');
-        cover_slider.carousel({
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            duration: Number('200'),
-            onCycleTo() {
-
-            }
-        });
-        
-        let slider = M.Carousel.getInstance(cover_slider);
-
-        $('.carousel-control-prev').click(function() {
-            slider.prev();
-        });
-
-        $('.carousel-control-next').click(function() {
-            slider.next();
-        });
-        
-
-        
-        let carousel_interval;
-        let auto_carousel = function() {
-            carousel_interval = setInterval(function () {
-                cover_slider.carousel('next');
-            }, 5000);
-        };
-        auto_carousel();
-        
-
-    });
-
-</script>
-
-    <!-- 所有文章 -->
-    
-<article class="container post">
-    <section class="row">
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2022/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-16.jpg" data-src="/img/random/material-16.jpg" alt="计算机原理">
-                        
-                        <span class="card-title">计算机原理</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        计算机组成原理1. Basic1.1. 基本组成五大部分
-
-运算器  (CPU) (主机): 算术运算、逻辑运算
-控制器  (CPU) (主机): 指挥各部件, 使程序运行
-存储器 : 存放数据和程序
-主存  (主机)
-辅存  (I/O设备
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2022-02-20
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" class="post-category">
-                                计算机原理
-                            </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">BOG</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/12/09/python+flask+oracle+docker+alpine/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-26.jpg" data-src="/img/random/material-26.jpg" alt="oracle常用命令">
-                        
-                        <span class="card-title">oracle常用命令</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        和MySQL对比
-大小写: oracle 本身不区分大小写 (会把关键字全部转为大写再执行),但是对引号里的字符区分大小写。
-
-主键自增: oracle 没有自带的主键自增, 需要先创建一个序列, 再创建一个触发器, 来实现主键自增
-
-
-相
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-12-09
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/12/09/hexo%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-13.jpg" data-src="/img/random/material-13.jpg" alt="hexo部署报错">
-                        
-                        <span class="card-title">hexo部署报错</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        报错内容123456789fatal: in unpopulated submodule &#x27;.deploy_git&#x27;FATAL &#123;  err: Error: Spawn failed      at Child
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-12-09
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/12/07/git%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-13.jpg" data-src="/img/random/material-13.jpg" alt="git代码迁移">
-                        
-                        <span class="card-title">git代码迁移</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        1234567891011121314# 拉所有分支git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-12-07
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/09/29/git%E4%BB%A3%E7%A0%81ssh%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-33.jpg" data-src="/img/random/material-33.jpg" alt="git代码ssh方式部署linux服务器">
-                        
-                        <span class="card-title">git代码ssh方式部署linux服务器</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        1. 创建用户12345# 创建用户, -m 创建用户家目录useradd -m 用户名# 修改密码(在root用户下操作)passwd 用户名
-2. 在git项目服务器添加ssh公钥3. 在部署服务器用户家目录添加ssh密钥1234567
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-09-29
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/09/20/pycharm2vscode/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-36.jpg" data-src="/img/random/material-36.jpg" alt="pycharm2vscode.md">
-                        
-                        <span class="card-title">pycharm2vscode.md</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        VSCode常用快捷键
-全部折叠:  cmd + k + cmd + 0
-
-注:关于导包
-PyCharm 可以在项目指定目录右键指定为导包路径, VSCode需要在.vscode/launch.json内 settings.configur
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-09-20
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/08/21/c-day01-md/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-6.jpg" data-src="/img/random/material-6.jpg" alt="c++day01.md">
-                        
-                        <span class="card-title">c++day01.md</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        download
- Windows10下载MinGW 
-点击页面中的x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z 进行下载
-下载完成后把 bin 目录放入系统环境变量即可在终端使用 c++ 命令进
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-08-21
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-6.jpg" data-src="/img/random/material-6.jpg" alt="源码安装mysql">
-                        
-                        <span class="card-title">源码安装mysql</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        源码安装Mysql
-系统: CentOS 8
-
-1. 下载官网找指定版本下载源码包   
-
- https://downloads.mysql.com/archives/community/
-
-1wget https://downloads.
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-07-26
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/06/22/Chapter-02/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-29.jpg" data-src="/img/random/material-29.jpg" alt="Chapter-02">
-                        
-                        <span class="card-title">Chapter-02</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        计算机网络基础Chapter-2, 物理层1. 通信基础物理层基本概念
-
-物理层解决如何在连接各种计算机的传输媒体上传输数据比特流, 而不是指具体的传输媒体
-主要任务: 确定与传输媒体接口有关的一些特性
-机械特性:
-电气特性:
-功能特性:
-
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-06-22
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col l4 m6 s12 post-item" data-aos="fade-up">
-            <div class="card">
-                <div class="card-image">
-                    <a class="post-image" href="/2021/06/16/Chapter-01/">
-                        
-                        
-                        
-                        <img class="lazyload" src="/img/random/material-28.jpg" data-src="/img/random/material-28.jpg" alt="Chapter-01">
-                        
-                        <span class="card-title">Chapter-01</span>
-                    </a>
-                </div>
-                <div class="card-content post-content">
-                    
-                        计算机网络基础Chapter-11. 性能指标速率
-
- 即数据率或称数据传输率或比特率
-
-
-
-
-速率（千，兆，吉，太）(kb, Mb, Gb, Tb)
-存储容量(KB, MB, GB, TB)（1Byte = 8bit）
-
-
-
-千 1kb/
-                    
-                </div>
-                <div class="card-action">
-                    
-                    <div class="post-tags">
-                        
-                        <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
-                            <span class="badge pink darken-1">网络基础</span>
-                        </a>
-                        
-                    </div>
-                    
-                    <div class="post-publish-info white-text">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>
-                            2021-06-16
-                        </span>
-                        <span class="publish-auth right">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            <a href="/about">
-                            BOG
-                            </a>
-                            
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-    <!-- 文章分页器 -->
-    <section class="paginator">
-    
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="material-icons">chevron_right</i></a>
-    
-</section>
-
-</article>
-
-    
-    
-</main>
-
-    <footer class="page-footer footer-color">
-    
-        
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-
-
-<style type="text/css">
-    .aplayer.aplayer-fixed {
-        z-index: 999;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #b7daff;
-    }
-</style>
-
-<div class="">
-    <div class="row">
-        <meting-js
-            class="col l8 offset-l2 m10 offset-m1 s12"
-            server="netease"
-            type="playlist"
-            id="743950282"
-            fixed='true'
-            autoplay='false'
-            theme='#b7daff'
-            loop='all'
-            order='random'
-            preload='auto'
-            volume='0.7'
-            list-folded='true'>
-        </meting-js>
-    </div>
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 
+      </div>
 
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-
-
-    
-    <div class="container">
-        <div class="row center">
-            <div class="col l12 m12 s12">
-                <div id="framework-info">
-                    Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                    &nbsp;|&nbsp;&nbsp;Theme&nbsp;
-                    <a href="https://github.com/xiongxianzhu/hexo-theme-xxcoding" target="_blank">
-                        xxcoding
-                    </a>
-                </div>
-                <div id="siteinfo">
-                    <!-- <span>站点总字数：</span> -->
-                    
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span id="busuanzi_container_page_pv">站点总阅读量：<span class="white-text" id="busuanzi_value_page_pv"></span>次</span>
-                    &nbsp;|&nbsp;&nbsp;<span id="busuanzi_container_site_uv">站点总访客数：<span class="white-text" id="busuanzi_value_site_uv"></span>人</span>
-                    &nbsp;|&nbsp;&nbsp;<span id="busuanzi_container_site_pv">站点总访问量：<span class="white-text" id="busuanzi_value_site_pv"></span>次</span>
-                    
-                </div>
-                
-                <div id="sitetime">载入运行时间...</div>
-                <script>
-                    function siteTime() {
-                        var seconds = 1000;
-                        var minutes = seconds * 60;
-                        var hours = minutes * 60;
-                        var days = hours * 24;
-                        var years = days * 365;
-                        var today = new Date();
-                        var startYear = "2017";
-                        var startMonth = "6";
-                        var startDate = "5";
-                        var startHour = "0";
-                        var startMinute = "0";
-                        var startSecond = "0";
-                        var todayYear = today.getFullYear();
-                        var todayMonth = today.getMonth() + 1;
-                        var todayDate = today.getDate();
-                        var todayHour = today.getHours();
-                        var todayMinute = today.getMinutes();
-                        var todaySecond = today.getSeconds();
-                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                        var diff = t2 - t1;
-                        var diffYears = Math.floor(diff / years);
-                        var diffDays = Math.floor((diff / days) - diffYears * 365);
-                        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                            minutes);
-                        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                            diffMinutes * minutes) / seconds);
-                        if (startYear == todayYear) {
-                            document.getElementById("year").innerHTML = todayYear;
-                            document.getElementById("sitetime").innerHTML = "本站已持续运行 " + "<span class='white-text'>" + diffDays + "</span>" + " 天 "
-                            + "<span class='white-text'>" + diffHours + "</span>" + " 小时 "
-                            + "<span class='white-text'>" + diffMinutes + "</span>" + " 分钟 "
-                            + "<span class='white-text'>" + diffSeconds + "</span>" + " 秒";
-                        } else {
-                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                            document.getElementById("sitetime").innerHTML = "本站已持续运行 " + "<span class='white-text'>" + diffYears + "</span>" + " 年 "
-                            + "<span class='white-text'>" + diffDays + "</span>" + " 天 "
-                            + "<span class='white-text'>" + diffHours + "</span>" + " 小时 "
-                            + "<span class='white-text'>" + diffMinutes + "</span>" + " 分钟 "
-                            + "<span class='white-text'>" + diffSeconds + "</span>" + " 秒";
-                        }
-                    }
-                    setInterval(siteTime, 1000);
-                </script>
-                
-                
-                <div id="icp">
-                    <img class="lazyload" src="/img/icp.png" data-src="/img/icp.png" style="vertical-align: text-bottom;" />
-                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备17065679号-1</a>
-                </div>
-                
-                
-            </div>
-        </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container center">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2017 - 2022</span>
-            
-            ,&nbsp;
-            made with <span style="color: red;">❤️</span> by
-            <a href="/about" target="_blank">BOG</a>
-            for a better web.
-        </div>
-    </div>
-</footer>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-    
-    <!-- 回到顶部按钮 -->
-<div id="back-top" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BOG</span>
 </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
 
-    
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/lazyload/lazyload.min.js"></script>
-<script src="/libs/aos/aos.js"></script>
-<script src="/js/xxcoding.js"></script>
+        
 
 
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
 </html>
