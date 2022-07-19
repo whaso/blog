@@ -177,7 +177,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-24 11:13:34" itemprop="dateModified" datetime="2022-06-24T11:13:34+08:00">2022-06-24</time>
+                <time title="修改时间：2022-07-19 14:03:55" itemprop="dateModified" datetime="2022-07-19T14:03:55+08:00">2022-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -206,11 +206,11 @@
 <li><strong>控制器</strong>  (CPU) (主机): 指挥各部件, 使程序运行</li>
 <li>存储器 : 存放数据和程序<ul>
 <li><strong>主存</strong>  (主机)</li>
-<li>辅存  (I/O设备)</li>
+<li>辅存  (I&#x2F;O设备)</li>
 </ul>
 </li>
-<li><strong>输入设备</strong>  (I/O设备)</li>
-<li><strong>输出设备</strong>  (I/O设备)</li>
+<li><strong>输入设备</strong>  (I&#x2F;O设备)</li>
+<li><strong>输出设备</strong>  (I&#x2F;O设备)</li>
 </ul>
 <h3 id="1-2-各硬件部分"><a href="#1-2-各硬件部分" class="headerlink" title="1.2. 各硬件部分"></a>1.2. 各硬件部分</h3><blockquote>
 <p>寄存, 就是暂存数据的意思, 类似快递点</p>
@@ -218,7 +218,7 @@
 <p><strong>主存储器</strong></p>
 <blockquote>
 <p>存储体存数据, MAR对应数据位置(主存地址), MDR暂存对应的实际数据</p>
-<p>类似快递点: 存储体=&gt; 货架,  MAR =&gt; 店员,  MDR =&gt; 取货/放货 的柜台</p>
+<p>类似快递点: 存储体&#x3D;&gt; 货架,  MAR &#x3D;&gt; 店员,  MDR &#x3D;&gt; 取货&#x2F;放货 的柜台</p>
 <p>取数据过程: CPU把地址给到MAR, 把读指令给到主存储器, 主存储器把存储体MAR地址的数据放到MDR等待使用</p>
 <p>存数据过程: CPU把地址给到MAR, 把数据放到MDR, 把写指令给到主存储器, 主存储器根据指令把MDR中数据存储到存储体的MAR地址</p>
 </blockquote>
@@ -232,10 +232,10 @@
 <li>存储字长: 存储单元中二进制代码的位数</li>
 </ul>
 </li>
-<li>MAR: 存储地址寄存器, 用于指明要读/写哪个存储单元, 其位数反映存储单元数量 Memory Address Register </li>
-<li>MDR: 存储数据寄存器, 用于暂存要读/写的数据, 其位数=存储字长 Memory Data Register </li>
+<li>MAR: 存储地址寄存器, 用于指明要读&#x2F;写哪个存储单元, 其位数反映存储单元数量 Memory Address Register </li>
+<li>MDR: 存储数据寄存器, 用于暂存要读&#x2F;写的数据, 其位数&#x3D;存储字长 Memory Data Register</li>
 </ul>
-<p><strong>运算器</strong>: 用于实现算术运算(+ - * /)、逻辑运算(与/非)</p>
+<p><strong>运算器</strong>: 用于实现算术运算(+ - * &#x2F;)、逻辑运算(与&#x2F;非)</p>
 <blockquote>
 <p>前三个存数据, ALU执行(运算)</p>
 </blockquote>
@@ -291,11 +291,11 @@
 <td>用编译程序翻译成汇编语言程序</td>
 </tr>
 <tr>
-<td>微指令1 / 2 / 3</td>
+<td>微指令1 &#x2F; 2 &#x2F; 3</td>
 <td>000010000000101</td>
 <td></td>
 <td>LOAD 5</td>
-<td>y=a*b + c</td>
+<td>y&#x3D;a*b + c</td>
 </tr>
 </tbody></table>
 <p><strong>三种级别的语言</strong></p>
@@ -311,7 +311,33 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-4-存储器的性能指标"><a href="#1-4-存储器的性能指标" class="headerlink" title="1.4. 存储器的性能指标"></a>1.4. 存储器的性能指标</h3>
+<h3 id="1-4-存储器的性能指标"><a href="#1-4-存储器的性能指标" class="headerlink" title="1.4. 存储器的性能指标"></a>1.4. 存储器的性能指标</h3><ul>
+<li>CPU主频: CPU内数字脉冲信号振荡的频率 (Hz)</li>
+<li>CPU时钟周期 &#x3D; 1 &#x2F; CPU主频  (秒)</li>
+<li>CPI(Clock cycle Per Instruction): 执行一条指令所需的时钟周期数</li>
+</ul>
+<blockquote>
+<p>不同的指令, CPI不同, 甚至相同的指令, CPI也可能变化</p>
+</blockquote>
+<ul>
+<li>执行一条指令的耗时 &#x3D; CPI * CPU时钟周期</li>
+<li>IPS(Instructions Per Second): 每秒执行多少条指令  &#x3D; 主频 &#x2F; 平均CPI   (KMGT  Kilo&#x3D;10 ** 3  Million&#x3D;10 ** 6)</li>
+<li>FLOPS(Floating-point Operations Per Second): 每秒执行多少次浮点运算  (KMGT  Giga&#x3D;10 ** 9  Tera&#x3D;10 ** 12)</li>
+</ul>
+<h3 id="1-5-系统整体的性能指标"><a href="#1-5-系统整体的性能指标" class="headerlink" title="1.5. 系统整体的性能指标"></a>1.5. 系统整体的性能指标</h3><blockquote>
+<p>描述存储容量, 文件大小时: K &#x3D; 2^10, M&#x3D;2^20, G&#x3D;2^30, T&#x3D;2^40</p>
+<p>描述频率, 速率时: K&#x3D;10^3, M&#x3D;10^6, G&#x3D;10^9, T&#x3D;10^12</p>
+</blockquote>
+<ul>
+<li>数据通路带宽: 数据总线一次所能并行传送信息的位数(各硬件部件通过数据总线传输数据)</li>
+<li>吞吐量: 指系统在单位时间内处理请求的数量</li>
+<li>响应时间: 指从用户向计算机发送一个请求, 到系统对该请求做出响应并获得它所需要的结果的时间</li>
+<li>基准程序: 用来测量计算机的一种实用程序(跑分软件)</li>
+</ul>
+<h2 id="2-数据的表示和运算"><a href="#2-数据的表示和运算" class="headerlink" title="2. 数据的表示和运算"></a>2. 数据的表示和运算</h2><h3 id="2-1-进位计数制"><a href="#2-1-进位计数制" class="headerlink" title="2.1. 进位计数制"></a>2.1. 进位计数制</h3><blockquote>
+<p>位权: 由符号的位置反映权重</p>
+</blockquote>
+
       
     </div>
 
@@ -1531,7 +1557,7 @@ alter index SYS_C00164313 rebuild;  # 重建索引</code></pre>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
