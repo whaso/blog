@@ -177,7 +177,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-27 09:24:55" itemprop="dateModified" datetime="2022-07-27T09:24:55+08:00">2022-07-27</time>
+                <time title="修改时间：2022-08-05 14:20:07" itemprop="dateModified" datetime="2022-08-05T14:20:07+08:00">2022-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -185,7 +185,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机原理</span></a>
+                  <a href="/categories/%E8%AE%A1%E5%8E%9F/" itemprop="url" rel="index"><span itemprop="name">计原</span></a>
                 </span>
             </span>
 
@@ -675,7 +675,7 @@
 <p>H<del>3</del>  :  3  转二进制  0   1   1</p>
 <p>H<del>5</del>  :  5     —&gt;&gt;&gt;    1   0   1</p>
 <p>H<del>6</del>  :  6     —&gt;&gt;&gt;    1   1   0</p>
-<p>H<del>7</del>   : 7      —-&gt;&gt;&gt;   1   1  1</p>
+<p>H<del>7</del>   : 7      —&gt;&gt;&gt;   1   1   1</p>
 <blockquote>
 <p>根据P下标对应二进制位的权重进行分组</p>
 </blockquote>
@@ -694,6 +694,156 @@
 <p>​		S2 &#x3D;&gt; P2 H3 H6 H7  &#x3D;&gt; H2 H3 H6 H7  &#x3D;&gt; 0001 &#x3D;&gt; 1</p>
 <p>​		S3 &#x3D;&gt; P3 H3 H5 H7  &#x3D;&gt; H4 H3 H5 H7  &#x3D;&gt; 0011 &#x3D;&gt; 0</p>
 <p>错误位即： 010 &#x3D;&gt; H2</p>
+<ol start="5">
+<li>补充</li>
+</ol>
+<p>海明码的检错、纠错能力：1位可纠错， 2位可检错</p>
+<p>实际使用中会在头部再加一个全校验位H<del>8</del>（P<del>全</del>），对整体进行偶校验</p>
+<p>S<del>3</del>S<del>2</del>S<del>1</del>  &#x3D; 000 且全体偶校验成功  -&gt; 无错误</p>
+<p>S<del>3</del>S<del>2</del>S<del>1</del>  !&#x3D; 000 且全体偶校验失败  -&gt; 1位错误，纠正即可</p>
+<p>S<del>3</del>S<del>2</del>S<del>1</del>  !&#x3D; 000 且全体偶校验成功  -&gt; 2位错误，不可纠正，需重传</p>
+<h3 id="2-5-循环冗余校验"><a href="#2-5-循环冗余校验" class="headerlink" title="2.5. 循环冗余校验"></a>2.5. 循环冗余校验</h3><blockquote>
+<p>Cyclic Redundancy Check,  CRC</p>
+</blockquote>
+<h4 id="2-5-1-原理"><a href="#2-5-1-原理" class="headerlink" title="2.5.1. 原理"></a>2.5.1. 原理</h4><ol>
+<li><p>数据发送、接受方约定一个”除数“</p>
+</li>
+<li><p>K个信息位 + R个校验位 作为”被除数“， 添加校验位后需要保证除法的余数为0</p>
+</li>
+<li><p>收到数据后，进行除法检查余数是否为0</p>
+</li>
+<li><p>若余数为非0说明出错，则进行纠错或重传</p>
+</li>
+</ol>
+<h4 id="2-5-2-构造方法"><a href="#2-5-2-构造方法" class="headerlink" title="2.5.2. 构造方法"></a>2.5.2. 构造方法</h4><blockquote>
+<p>模二除：十进制除法基础上，每次上的值由被除数高为是否为1决定，1就上1，0就上0再加一位（模二除后余数位数应该正好比除数少1位）</p>
+<p>模二减：对应位取异或</p>
+</blockquote>
+<ol>
+<li>由生成多项式确定”除数”。若生成多项式中x的最高次为R，则”除数“有R+1位</li>
+<li>K个信息位 + R个0，作为”被除数“</li>
+<li>被除数、除数 进行”模二除“，得R位余数</li>
+<li>K个信息位 + R位余数 &#x3D; CRC码</li>
+</ol>
+<h4 id="2-5-3-检错纠错"><a href="#2-5-3-检错纠错" class="headerlink" title="2.5.3. 检错纠错"></a>2.5.3. 检错纠错</h4><ol>
+<li>可检测出所有奇数个错误</li>
+<li>可检测出所有双比特的错误</li>
+<li>可检测出所有小于等于校验位长度的连续错误</li>
+<li>若选择合适的生成多项式，且2^R^ &gt;&#x3D; K + R + 1，则可纠正单比特位错误</li>
+</ol>
+<h4 id="2-5-4-例"><a href="#2-5-4-例" class="headerlink" title="2.5.4. 例"></a>2.5.4. 例</h4><p>设生成多项式为G(x) &#x3D; x^3^ + x^2^ + 1, 信息码为101001，求对应的CRC码。</p>
+<ol>
+<li>确定K、R以及生成多项式对应的二进制码</li>
+</ol>
+<p>K&#x3D;信息码的长度：6</p>
+<p>R&#x3D;生成多项式最高次幂：3</p>
+<p>N(校验码位数) &#x3D; K + R &#x3D; 9</p>
+<p>生成多项式G(x) &#x3D; 1 * x^3^ + 1 * x^2^ + 0 * x^1^ + 1 * x^0^, 对应二进制码1101</p>
+<ol start="2">
+<li>移位</li>
+</ol>
+<p>信息码左移R位，低位补0，对应二进制码 1101000</p>
+<ol start="3">
+<li>相除（模二除）</li>
+</ol>
+<p>101001 000 模二除 1101 余数001，</p>
+<p>得CRC码 101001 001</p>
+<ol start="4">
+<li>检错和纠错</li>
+</ol>
+<p>发送： 101001001</p>
+<p>接收： 101001001 用1101进行模二除 余数为000，代表没出错</p>
+<p>接收： 101001011 用1101进行模二除 余数为010，代表出错</p>
+<blockquote>
+<p>信息位+校验位 共9位，但校验位3位8保状态，无法表示全部所以才没纠错能力</p>
+</blockquote>
+<p>K个信息位，R个校验位，若生成多项式选择得当，且2^R^ &gt;&#x3D; K + R _+ 1, 则CRC码可纠正1位错</p>
+<blockquote>
+<p>CRC码实际常应用在计算机网络中，几千个bit的信息位 + 几个校验位， 仅用来检错，不用来纠错</p>
+</blockquote>
+<h3 id="2-6-定点数"><a href="#2-6-定点数" class="headerlink" title="2.6. 定点数"></a>2.6. 定点数</h3><blockquote>
+<p>定点数： 小数点的位置固定  995.222               –常规计数</p>
+<p>浮点数：小数点的位置不固定  9.95222 * 10^2^  –科学计数</p>
+<p>二进制和十进制的一样也是分为定点和浮点</p>
+</blockquote>
+<h4 id="2-6-1-无符号数"><a href="#2-6-1-无符号数" class="headerlink" title="2.6.1. 无符号数"></a>2.6.1. 无符号数</h4><ul>
+<li><p>概念：整个机器字长的全部二进制位均为数值位，没有符号位，相当于数的绝对值。</p>
+</li>
+<li><p>表示范围：n位二进制数：0 ~ 2^n^ - 1 </p>
+</li>
+<li><p>通常只有无符号的整数，而没有无符号小数</p>
+</li>
+</ul>
+<h4 id="2-6-2-有符号数定点表示"><a href="#2-6-2-有符号数定点表示" class="headerlink" title="2.6.2. 有符号数定点表示"></a>2.6.2. 有符号数定点表示</h4><blockquote>
+<p>数值部分也称尾数</p>
+<p>用定点方式表示19.75时，需要把整数和小数部分分别单独保存</p>
+<p>可用原码、反码、补码三种方式来表示定点整数和定点小数。还可以用移码表示定点整数</p>
+<p>若真值为x，则用 [x]<del>原</del>、 [x]<del>反</del>、 [x]<del>补</del>、 [x]<del>移</del>、分别表示真值所对应的原码、反码、补码、移码</p>
+</blockquote>
+<ul>
+<li>定点整数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>x0</th>
+<th>x1</th>
+<th>x2</th>
+<th>…</th>
+<th>xn</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>符号位</td>
+<td>数</td>
+<td>值</td>
+<td>部</td>
+<td>分</td>
+<td>小数点位置（隐含）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>定点小数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>x0</th>
+<th></th>
+<th>x1</th>
+<th>x2</th>
+<th>…</th>
+<th>xn</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>符号位</td>
+<td>小数点位置（隐含）</td>
+<td>数</td>
+<td>值</td>
+<td>部</td>
+<td>分</td>
+</tr>
+</tbody></table>
+<p><strong>原码：用尾数表示真值的绝对值，符号位 0&#x2F;1 对应 正&#x2F;负</strong></p>
+<ul>
+<li>整数表示范围（机器字长n+1）：-(2^n^-1) &lt;&#x3D; x &lt;&#x3D; 2^n^-1<ul>
+<li>真值0有+0和-0两种形式</li>
+<li>8位表示整数+19：0 0010011</li>
+</ul>
+</li>
+<li>小数表示范围（机器字长n+1）： -(1-2^-n^) &lt;&#x3D; x &lt;&#x3D; 1-2^-n^<ul>
+<li>真值0有+0和-0两种形式</li>
+<li>8位表示小数-0.75： 1 110000</li>
+</ul>
+</li>
+</ul>
+<p><strong>反码：若符号位为0，则反码与原码相同；若符号位为1，则数值位全部取反</strong></p>
+<ul>
+<li>整数&#x2F;小数 表示范围和原码相同</li>
+</ul>
+<p><strong>补码：正数的补码与原码相同；负数的补码&#x3D;反码末位+1（要考虑进位）</strong></p>
 
       
     </div>
