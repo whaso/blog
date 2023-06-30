@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: BOG's Blog
+title: whaso's Blog
 subtitle: ''
 description: ''
 keywords:
-author: BOG
+author: WHASO
 language: zh-CN
 timezone: ''
 
@@ -105,5 +105,5 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:WangShengBog/WangShengBog.github.io.git
+  repository: git@github.com:whaso/whaso.github.io.git
   branch: master

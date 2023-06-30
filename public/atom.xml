@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>BOG&#39;s Blog</title>
+  <title>whaso&#39;s Blog</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>BOG</name>
+    <name>WHASO</name>
     
   </author>
   
@@ -36,30 +36,6 @@
     
     
     <category term="python conda" scheme="http://example.com/tags/python-conda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2023/02/17/%E5%9B%9A%E5%BE%92/"/>
-    <id>http://example.com/2023/02/17/%E5%9B%9A%E5%BE%92/</id>
-    <published>2023-02-17T05:54:34.629Z</published>
-    <updated>2023-02-17T05:59:11.481Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.beastskills.com/">http://www.beastskills.com/</a></p><blockquote><p>所有动作保持 2-1-2</p></blockquote><h1 id="六艺"><a href="#六艺" class="headerlink" title="六艺"></a>六艺</h1><h2 id="俯卧撑"><a href="#俯卧撑" class="headerlink" title="俯卧撑"></a>俯卧撑</h2><h3 id="靠墙"><a href="#靠墙" class="headerlink" title="靠墙"></a>靠墙</h3><p>姿势</p><ul><li>手平放与胸平</li><li>臂与肩同宽</li><li>双脚并拢</li><li>弯肘至前额轻触墙面</li></ul><p>标准</p><ol><li>1 * 10</li><li>2 * 25</li><li>3 * 50</li></ol><h2 id="举腿"><a href="#举腿" class="headerlink" title="举腿"></a>举腿</h2><h3 id="坐姿屈膝"><a href="#坐姿屈膝" class="headerlink" title="坐姿屈膝"></a>坐姿屈膝</h3><h1 id="日程"><a href="#日程" class="headerlink" title="日程"></a>日程</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>俯卧撑 2～3组</p><p>举腿 2～3组</p><ul><li></li></ul><p>引体向上  2～3组</p><p>深蹲 2～3组</p><p>下一计划前提：四个全到六式</p><p>二</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;http://www.beastskills.com/&quot;&gt;http://www.beastskills.com/&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;所有动作保持 2-1-2&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;六艺&quot;&gt;&lt;a h</summary>
-      
-    
-    
-    
     
   </entry>
   
@@ -288,6 +264,26 @@
       
     <summary type="html">&lt;h3 id=&quot;1-下载对应包&quot;&gt;&lt;a href=&quot;#1-下载对应包&quot; class=&quot;headerlink&quot; title=&quot;1. 下载对应包&quot;&gt;&lt;/a&gt;1. 下载对应包&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/fatedie</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>囚徒</title>
+    <link href="http://example.com/2021/06/03/%E5%9B%9A%E5%BE%92/"/>
+    <id>http://example.com/2021/06/03/%E5%9B%9A%E5%BE%92/</id>
+    <published>2021-06-03T01:34:18.000Z</published>
+    <updated>2023-06-30T03:00:14.943Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="六艺"><a href="#六艺" class="headerlink" title="六艺"></a>六艺</h1><p><a href="http://www.beastskills.com/">http://www.beastskills.com/</a></p><blockquote><p>所有动作保持 2-1-2</p></blockquote><h2 id="俯卧撑"><a href="#俯卧撑" class="headerlink" title="俯卧撑"></a>俯卧撑</h2><h3 id="靠墙"><a href="#靠墙" class="headerlink" title="靠墙"></a>靠墙</h3><p>姿势</p><ul><li>手平放与胸平</li><li>臂与肩同宽</li><li>双脚并拢</li><li>弯肘至前额轻触墙面</li></ul><p>标准</p><ol><li>1 * 10</li><li>2 * 25</li><li>3 * 50</li></ol><h2 id="举腿"><a href="#举腿" class="headerlink" title="举腿"></a>举腿</h2><h3 id="坐姿屈膝"><a href="#坐姿屈膝" class="headerlink" title="坐姿屈膝"></a>坐姿屈膝</h3><h1 id="日程"><a href="#日程" class="headerlink" title="日程"></a>日程</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>俯卧撑 2～3组</p><p>举腿 2～3组</p><ul><li></li></ul><p>引体向上  2～3组</p><p>深蹲 2～3组</p><p>下一计划前提：四个全到六式</p><p>二</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;六艺&quot;&gt;&lt;a href=&quot;#六艺&quot; class=&quot;headerlink&quot; title=&quot;六艺&quot;&gt;&lt;/a&gt;六艺&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.beastskills.com/&quot;&gt;http://www.beastskills.com/&lt;/a&gt;&lt;</summary>
       
     
     
