@@ -146,6 +146,213 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WHASO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="whaso's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/" class="post-title-link" itemprop="url">源码安装mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-26 10:46:45" itemprop="dateCreated datePublished" datetime="2021-07-26T10:46:45+08:00">2021-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="源码安装Mysql"><a href="#源码安装Mysql" class="headerlink" title="源码安装Mysql"></a>源码安装Mysql</h1><blockquote>
+<p>系统: CentOS 8</p>
+</blockquote>
+<h2 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h2><p><strong>官网找指定版本下载源码包</strong>   </p>
+<blockquote>
+<p> <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-boost-5.7.34.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>编译时命令 <code>cmake .</code> 报错汇总</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h1><h2 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/community/">https://downloads.mysql.com/archives/community/</a></p>
+<p>Operating System: Linux-Generic</p>
+<p>OS Version: Linux-Generic(glibc 2.12) (x86, 64-bit)</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><blockquote>
+<p>先查看下系统磁盘绑定情况, 再决定mysql data目录</p>
+<p>命令: df -h</p>
+</blockquote>
+<h3 id="2-1-创建用户-用户组-数据目录"><a href="#2-1-创建用户-用户组-数据目录" class="headerlink" title="2.1. 创建用户, 用户组, 数据目录"></a>2.1. 创建用户, 用户组, 数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql -d /home/mysql mysql</span><br><span class="line">mkdir /home/mysql/data</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-下载-解压"><a href="#2-2-下载-解压" class="headerlink" title="2.2. 下载, 解压"></a>2.2. 下载, 解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/mysql</span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -zvxf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<p><font color="red">启动mysql可能出现的错误:</font></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/22/Chapter-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WHASO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="whaso's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/22/Chapter-02/" class="post-title-link" itemprop="url">Chapter-02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-22 13:42:54" itemprop="dateCreated datePublished" datetime="2021-06-22T13:42:54+08:00">2021-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络基础Chapter-2-物理层"><a href="#计算机网络基础Chapter-2-物理层" class="headerlink" title="计算机网络基础Chapter-2, 物理层"></a>计算机网络基础Chapter-2, 物理层</h1><h2 id="1-通信基础"><a href="#1-通信基础" class="headerlink" title="1. 通信基础"></a>1. 通信基础</h2><p><strong>物理层基本概念</strong></p>
+<ul>
+<li>物理层解决如何在连接各种计算机的传输媒体上<strong>传输数据比特流</strong>, 而不是指具体的传输媒体</li>
+<li>主要任务: 确定与传输媒体接口有关的一些特性</li>
+<li>机械特性:</li>
+<li>电气特性:</li>
+<li>功能特性:</li>
+</ul>
+<p><strong>数据通信基础</strong></p>
+<p><img src="../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
+<ul>
+<li>数据: 传送信息的实体, 通常是有意义的符号序列</li>
+<li>信号: 数据的电气/电磁的表现, 是数据在传输过程中的存在形式<ul>
+<li>数字信号: 代表消息的参数取值是离散的</li>
+<li>模拟信号: 代表消息的参数取值是连续的 (正弦波)</li>
+</ul>
+</li>
+<li>信源: 产生和发送数据的源头</li>
+<li>信宿: 接收数据的终点</li>
+<li>信道: <ul>
+<li>按传输信号分类:</li>
+<li>按</li>
+</ul>
+</li>
+<li>三种通信方式:<ul>
+<li>单工通信</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-两个公式"><a href="#2-两个公式" class="headerlink" title="2. 两个公式"></a>2. 两个公式</h2><h2 id="3-看图说话"><a href="#3-看图说话" class="headerlink" title="3. 看图说话"></a>3. 看图说话</h2><h2 id="4-传输介质"><a href="#4-传输介质" class="headerlink" title="4. 传输介质"></a>4. 传输介质</h2><h2 id="5-物理层设备"><a href="#5-物理层设备" class="headerlink" title="5. 物理层设备"></a>5. 物理层设备</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/16/Chapter-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1183,85 +1390,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/nginx%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WHASO">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="whaso's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/nginx%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">nginx相关</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 17:05:06" itemprop="dateCreated datePublished" datetime="2021-03-18T17:05:06+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="nginx服务更新证书"><a href="#nginx服务更新证书" class="headerlink" title="nginx服务更新证书"></a>nginx服务更新证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">nginx配置文件: &#x2F;etc&#x2F;nginx&#x2F;sites_enabled</span><br><span class="line">server &#123;</span><br><span class="line">    listen  443;</span><br><span class="line">    server_name djdeveloper.cn *.djdeveloper.cn;</span><br><span class="line">    root    &#x2F;var&#x2F;www&#x2F;djdeveloper.cn;</span><br><span class="line">    autoindex   off;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.full.crt;</span><br><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache       shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout     5m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginx证书: &#x2F;etc&#x2F;nginx&#x2F;ssl</span><br><span class="line"></span><br><span class="line">cp **.full.crt **.full.crt.bak</span><br><span class="line">cp **.key **.key.bak</span><br><span class="line"></span><br><span class="line">vim **.full.crt cp</span><br><span class="line">vim **.key cp</span><br><span class="line"></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域:"></a>配置跨域:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置: http&#123;这里, server&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="nginx-502-错误初步排查"><a href="#nginx-502-错误初步排查" class="headerlink" title="nginx 502 错误初步排查"></a>nginx 502 错误初步排查</h3><ul>
-<li>nginx 配置文件默认目录 /etc/nginx/nginx.conf</li>
-<li>配置文件中有 include * 为包含的配置文件</li>
-<li>access_log off 为关闭日志, 开启后为 access_log /var/www/ccd.log</li>
-<li>如果在日志文件中能看到请求说明与nginx无关, 是项目的问题</li>
-<li>nginx -s reload</li>
-<li>nginx -t 检查配置文件语法是否正确</li>
-<li>lsof -i:port1 检查端口使用 CLOSE_WAIT 时看 port1 -&gt; port2 是port2出了问题</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1327,7 +1459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1337,7 +1469,7 @@
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
