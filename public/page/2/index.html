@@ -146,6 +146,236 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/pycharm2vscode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WHASO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="whaso's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/20/pycharm2vscode/" class="post-title-link" itemprop="url">pycharm2vscode.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-20 09:13:59" itemprop="dateCreated datePublished" datetime="2021-09-20T09:13:59+08:00">2021-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-20 17:12:08" itemprop="dateModified" datetime="2022-02-20T17:12:08+08:00">2022-02-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="VSCode常用快捷键"><a href="#VSCode常用快捷键" class="headerlink" title="VSCode常用快捷键"></a>VSCode常用快捷键</h1><ul>
+<li>全部折叠:  <code>cmd + k</code> + <code>cmd + 0</code></li>
+</ul>
+<h1 id="注"><a href="#注" class="headerlink" title="注:"></a>注:</h1><h2 id="关于导包"><a href="#关于导包" class="headerlink" title="关于导包"></a>关于导包</h2><ul>
+<li>PyCharm 可以在项目指定目录右键指定为导包路径, VSCode需要在<code>.vscode/launch.json</code>内 <code>settings.configurations</code> 配置<code>env</code>时加上 <code>&quot;PYTHONPATH&quot;: &quot;$&#123;fileDirname&#125;/../smartbase:$&#123;fileDirname&#125;&quot;</code>多个目录通过 <code>:</code> 追加</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/21/c-day01-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WHASO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="whaso's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/21/c-day01-md/" class="post-title-link" itemprop="url">c++day01.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-21 10:52:00" itemprop="dateCreated datePublished" datetime="2021-08-21T10:52:00+08:00">2021-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-21 14:20:53" itemprop="dateModified" datetime="2022-02-21T14:20:53+08:00">2022-02-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="download"><a href="#download" class="headerlink" title="download"></a>download</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/?tdsourcetag=s_pctim_aiomsg"> Windows10下载MinGW </a><ul>
+<li>点击页面中的<code>x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z</code> 进行下载</li>
+<li>下载完成后把 <code>bin</code> 目录放入系统环境变量即可在终端使用 <code>c++</code> 命令进行编译 <code>.cpp</code> 源代码</li>
+</ul>
+</li>
+</ul>
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1><ul>
+<li><code>MyFirstApp</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Hello World! \n&quot;</span>; <span class="comment">// this will output to the console hello world</span></span><br><span class="line">    system(<span class="string">&quot;pause&gt;0&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">g++ .\MyFirstApp.cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行</span></span><br><span class="line">.\a.exe</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>换行  <code>\n</code> 或 <code> &lt;&lt; endl;</code></p>
+</li>
+<li><p>编译命令 <code>g++ [source file] -o [output filename]</code></p>
+</li>
+</ul>
+<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><ul>
+<li>命名<ul>
+<li>构成: 下划线, 字母(区分大小写), 数字(不可数字开头)</li>
+<li>一般用小驼峰命名法</li>
+</ul>
+</li>
+</ul>
+<p><strong>Data types</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>size(bytes)</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整数</td>
+<td>int</td>
+<td>4</td>
+<td>-2147483648 to 2147483647</td>
+</tr>
+<tr>
+<td>字符</td>
+<td>char</td>
+<td>1</td>
+<td>单引号为字符 ‘a’</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>string</td>
+<td></td>
+<td>双引号为字符串 “character”</td>
+</tr>
+<tr>
+<td>布尔</td>
+<td>bool</td>
+<td>1</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td>float</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>大浮点数</td>
+<td>double</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>Data type overflow</strong></p>
+<ul>
+<li>变量的值超过其内存空间, 类似钟表指针, 13 点 = 1 点 (INT_MAX + 1 = INT_MIN)</li>
+</ul>
+<p><strong>ASCII table</strong></p>
+<ul>
+<li>asign characters to number (it’s for American)</li>
+<li>ASCII extends: utf-(1-16)  (for others)</li>
+<li>字符转换为ASCII数字 <code>(int)&#39;a&#39;</code> 和 <code>int(&#39;a&#39;)</code> 两种写法</li>
+</ul>
+<h1 id="Condition-Statement"><a href="#Condition-Statement" class="headerlink" title="Condition Statement"></a>Condition Statement</h1><p><strong>语法</strong></p>
+<p><code>if()&#123;&#125;elif()&#123;&#125;else()&#123;&#125;</code></p>
+<ul>
+<li>注: 如果 <code>&#123;&#125;</code> 内只有一行代码, 可以不写 <code>&#123;&#125;</code></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//User enters side lengths of a triangle (a, b, c)</span></span><br><span class="line">    <span class="comment">//Program should write out whethre that triangle is</span></span><br><span class="line">    <span class="comment">//equilateral, isosceles or scalene</span></span><br><span class="line">    <span class="keyword">float</span> a, b, c;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a, b, c: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (a == b &amp;&amp; b == c)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Equilateral triangle&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (a != b &amp;&amp; a != c &amp;&amp; b != c)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Scalene triangle&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Isosceles triangle&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 执行优先级 从上到下</span></span><br><span class="line">    <span class="comment">// + - * / %</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">5.0</span> / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 2.5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// ++, --</span></span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">7</span>;</span><br><span class="line">    counter++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    counter--;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> counter2 = <span class="number">7</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2++ &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 8</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ++counter2 &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 9</span></span><br><span class="line"></span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>); <span class="comment">// clear console</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &lt;, &gt;, &lt;=, &gt;=, ==, !=</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">5</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; (a &gt; b) &lt;&lt; endl;  // 0 for false (1 for true)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// &amp;&amp;, ||, !</span></span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">8</span>, d = <span class="number">9</span>;</span><br><span class="line">    <span class="comment">// cout &lt;&lt; !(c == 5 &amp;&amp; b == 9);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 优先级</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (c == <span class="number">8</span> &amp;&amp; d == <span class="number">4</span> + <span class="number">5</span>);  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// =, +=, -=, *=, /=, %=</span></span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line">    x += <span class="number">7</span>;  <span class="comment">//same as: x = x + 7</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三目"><a href="#三目" class="headerlink" title="三目"></a>三目</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hostUserNum, guestUserNum;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;HOST: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; hostUserNum;</span><br><span class="line">    system(<span class="string">&quot;cls&quot;</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Guest: &quot;</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; guestUserNum;</span><br><span class="line"></span><br><span class="line">    (hostUserNum == guestUserNum)? <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Correct!&quot;</span>: <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Failed!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h1><blockquote>
+<p>注意每个case后面必需接break退出, 因为程序只判断一次case条件, 进入一次后, 其他的case不会再判断, 会运行下面的所有case.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> num1, num2;</span><br><span class="line">    <span class="keyword">char</span> operation;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Caculator&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num1 &gt;&gt; operation &gt;&gt; num2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (operation)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 - num2;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 + num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 * num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:<span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; num1 / num2; <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;%&#x27;</span>:</span><br><span class="line">        <span class="keyword">bool</span> isNum1Int, isNum2Int;</span><br><span class="line">        isNum1Int = (<span class="keyword">int</span>(num1) == num1);</span><br><span class="line">        isNum2Int = (<span class="keyword">int</span>(num2) == num2);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isNum1Int &amp;&amp; isNum2Int)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num1 &lt;&lt; operation &lt;&lt; num2 &lt;&lt; <span class="string">&quot;=&quot;</span> &lt;&lt; <span class="keyword">int</span>(num1) % <span class="keyword">int</span>(num2);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid!&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">default</span>:<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Not valid opeation!&quot;</span>; <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/26/%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -177,7 +407,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="修改时间：2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
               </span>
 
           
@@ -201,9 +431,12 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-boost-5.7.34.tar.gz</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-解压编译"><a href="#2-解压编译" class="headerlink" title="2. 解压编译"></a>2. 解压编译</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解压</span></span><br><span class="line">tar -zvxf mysql-boost-5.7.34.tar.gz</span><br><span class="line">cd mysql-5.7.34</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装cmake</span></span><br><span class="line">yum install cmake</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编译</span></span><br><span class="line">cmake .</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>编译时命令 <code>cmake .</code> 报错汇总</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> (也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">报错: undefined symbol: archive_write_add_filter_zstd</span></span><br><span class="line">yum install libarchive</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">报错: No CMAKE_CXX_COMPILER could be found.</span></span><br><span class="line">yum install gcc-c++</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">报错: CMake Error at cmake/boost.cmake:88, 根据提示命令增加额外安装boost目录</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">(也可自行下载安装Boost C++ 下载地址: https://sourceforge.net/projects/boost/files/boost/)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意 只能是1.59.0版本的boost</span></span><br><span class="line">mkdir -p /usr/local/boost</span><br><span class="line"></span><br><span class="line">cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost .</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">cd /usr/local/boost</span><br><span class="line">wget https://udomain.dl.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.gz</span><br><span class="line">tar -zvxf boost_1_59_0.tar.gz</span><br><span class="line">cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost/boost_1_59_0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">报错: CMake Error at cmake/ssl.cmake:63 (MESSAGE): Please install the appropriate openssl developer package</span></span><br><span class="line">gg</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
 
 <h1 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h1><h2 id="1-下载-1"><a href="#1-下载-1" class="headerlink" title="1. 下载"></a>1. 下载</h2><blockquote>
@@ -214,15 +447,20 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
 
 
+
 <h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><blockquote>
 <p>先查看下系统磁盘绑定情况, 再决定mysql data目录</p>
 <p>命令: df -h</p>
 </blockquote>
 <h3 id="2-1-创建用户-用户组-数据目录"><a href="#2-1-创建用户-用户组-数据目录" class="headerlink" title="2.1. 创建用户, 用户组, 数据目录"></a>2.1. 创建用户, 用户组, 数据目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql -d /home/mysql mysql</span><br><span class="line">mkdir /home/mysql/data</span><br></pre></td></tr></table></figure>
+
 <h3 id="2-2-下载-解压"><a href="#2-2-下载-解压" class="headerlink" title="2.2. 下载, 解压"></a>2.2. 下载, 解压</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/mysql</span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">tar -zvxf mysql-5.7.34-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-配置启动"><a href="#2-3-配置启动" class="headerlink" title="2.3. 配置启动"></a>2.3. 配置启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">初始化配置</span></span><br><span class="line">./mysqld --user=mysql --basedir=/home/mysql --datadir=/home/mysql/data --initialize</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改basedir, datadir</span></span><br><span class="line">vim support-files/mysql.server</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">basedir=/home/mysql</span><br><span class="line">datadir=/home/mysql/data</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建软链接使命令可全局使用</span></span><br><span class="line">ln -s /home/mysql/bin/mysql /usr/bin/mysql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建配置文件</span></span><br><span class="line">vi /etc/my.cnf</span><br><span class="line">--------------------------</span><br><span class="line">...</span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line">basedir = /home/mysql</span><br><span class="line">datadir = /home/mysql/data</span><br><span class="line"></span><br><span class="line">character-set-client-handshake = FALSE</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line">collation-server = utf8mb4_unicode_ci</span><br><span class="line">init_connect = &#x27;SET NAMES utf8mb4&#x27;</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">...</span><br><span class="line">--------------------------</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加开机启动</span></span><br><span class="line">cp /home/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">增加可执行权限</span></span><br><span class="line">chmod 755 /etc/init.d/mysqld</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看开机启动列表是否有mysqld, 没有就根据提示添加</span></span><br><span class="line">chkconfig --list mysqld</span><br><span class="line">chkconfig --add mysqld </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动mysql</span></span><br><span class="line">./support-files/mysql.server start</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">首次进入mysql 并修改root密码</span></span><br><span class="line">mysql -uroot -p</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">alter user user() identified by <span class="string">&quot;修改的密码&quot;</span>;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看默认编码集</span></span><br><span class="line">show variables where variable_name like &#x27;%char%&#x27; or variable_name like &#x27;collation%&#x27;;</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| Variable_name            | Value                       |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                     |</span><br><span class="line">| character_set_connection | utf8mb4                     |</span><br><span class="line">| character_set_database   | utf8mb4                     |</span><br><span class="line">| character_set_filesystem | binary                      |</span><br><span class="line">| character_set_results    | utf8mb4                     |</span><br><span class="line">| character_set_server     | utf8mb4                     |</span><br><span class="line">| character_set_system     | utf8                        |</span><br><span class="line">| character_sets_dir       | /home/mysql/share/charsets/ |</span><br><span class="line">| collation_connection     | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_database       | utf8mb4_unicode_ci          |</span><br><span class="line">| collation_server         | utf8mb4_unicode_ci          |</span><br><span class="line">+--------------------------+-----------------------------+</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">systemctl 显示mysqld退出但实际没退出时</span></span><br><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
 <p><font color="red">启动mysql可能出现的错误:</font></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta">#</span><span class="bash"> error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">error <span class="keyword">while</span> loading shared libraries: libncurses.so.5</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">error <span class="keyword">while</span> loading shared libraries: libtinfo.so.5</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提示缺少依赖libncurses.so.5 和 libtinfo.so.5</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">但在 /usr/lib64 目录下是有 libtinfo.so.6.1 和 libncurses.so.6.1包的</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">所以只需创建个软链接让mysql启动时去找到 *.5的包但实际是调用 *.6.1的包即可</span></span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/lib64/libncurses.so.6.1 /usr/lib64/libncurses.so.5</span><br><span class="line">sudo ln -s /usr/lib64/libtinfo.so.6.1 /usr/lib64/libtinfo.so.5</span><br></pre></td></tr></table></figure>
+
 
 
 
@@ -291,7 +529,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="修改时间：2021-08-21 10:52:54" itemprop="dateModified" datetime="2021-08-21T10:52:54+08:00">2021-08-21</time>
               </span>
 
           
@@ -314,10 +552,10 @@
 <li>功能特性:</li>
 </ul>
 <p><strong>数据通信基础</strong></p>
-<p><img src="../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
+<p><img src="/../images/image-20210622135226744.png" alt="image-20210622135226744"></p>
 <ul>
 <li>数据: 传送信息的实体, 通常是有意义的符号序列</li>
-<li>信号: 数据的电气/电磁的表现, 是数据在传输过程中的存在形式<ul>
+<li>信号: 数据的电气&#x2F;电磁的表现, 是数据在传输过程中的存在形式<ul>
 <li>数字信号: 代表消息的参数取值是离散的</li>
 <li>模拟信号: 代表消息的参数取值是连续的 (正弦波)</li>
 </ul>
@@ -750,7 +988,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-18 08:59:57" itemprop="dateModified" datetime="2022-03-18T08:59:57+08:00">2022-03-18</time>
+                <time title="修改时间：2022-04-10 20:55:59" itemprop="dateModified" datetime="2022-04-10T20:55:59+08:00">2022-04-10</time>
               </span>
 
           
@@ -780,6 +1018,7 @@
 <li><code>vi frps.ini</code></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">vhost_http_port = 80</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>启动: <code>./frps -c frps.ini</code></li>
 </ul>
@@ -790,6 +1029,7 @@
 <li><code>vi frpc.ini</code></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 106.14.30.129</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 12345678</span><br><span class="line">tls_enable = true</span><br><span class="line"></span><br><span class="line">[krkdwc]</span><br><span class="line">type = http</span><br><span class="line">custom_domains = dev.bogwang.cn</span><br><span class="line">local_port = 5000</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>启动: <code>./frpc -c frpc.ini</code></li>
 </ul>
@@ -843,7 +1083,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-30 11:00:14" itemprop="dateModified" datetime="2023-06-30T11:00:14+08:00">2023-06-30</time>
+                <time title="修改时间：2023-07-01 09:58:15" itemprop="dateModified" datetime="2023-07-01T09:58:15+08:00">2023-07-01</time>
               </span>
 
           
@@ -933,7 +1173,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="修改时间：2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -953,13 +1193,14 @@
 <h3 id="mac安装通过docker安装使用oracle"><a href="#mac安装通过docker安装使用oracle" class="headerlink" title="mac安装通过docker安装使用oracle"></a>mac安装通过docker安装使用oracle</h3><blockquote>
 <p>参考: <a target="_blank" rel="noopener" href="https://github.com/MaksymBilenko/docker-oracle-12c">https://github.com/MaksymBilenko/docker-oracle-12c</a></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 拉取镜像</span></span><br><span class="line">docker pull quay.io/maksymbilenko/oracle-12c</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建容器并运行</span></span><br><span class="line">docker run -d -p 8080:8080 -p 1521:1521 --name=oracle quay.io/maksymbilenko/oracle-12c</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 连接配置</span></span><br><span class="line">hostname: localhost</span><br><span class="line">port: 1521</span><br><span class="line">sid: xe</span><br><span class="line">service name: xe</span><br><span class="line">username: system</span><br><span class="line">password: oracle</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取镜像</span></span><br><span class="line">docker pull quay.io/maksymbilenko/oracle-12c</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建容器并运行</span></span><br><span class="line">docker run -d -p 8080:8080 -p 1521:1521 --name=oracle quay.io/maksymbilenko/oracle-12c</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">连接配置</span></span><br><span class="line">hostname: localhost</span><br><span class="line">port: 1521</span><br><span class="line">sid: xe</span><br><span class="line">service name: xe</span><br><span class="line">username: system</span><br><span class="line">password: oracle</span><br></pre></td></tr></table></figure>
+
 <h3 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h3><ul>
 <li>查看数据库版本: <code>select * from v$version;</code></li>
 </ul>
 <h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><ul>
 <li>创建用户:  <code>create user 用户名 identified by 密码</code><ul>
-<li>  例: <code>create user test identified by test</code></li>
+<li>例: <code>create user test identified by test</code></li>
 </ul>
 </li>
 </ul>
@@ -978,7 +1219,7 @@
 <li>connect role(连接角色)</li>
 </ol>
 <p>–临时用户，特指不需要建表的用户，通常只赋予他们connect role. </p>
-<p>–connect是使用oracle简单权限，这种权限只对其他用户的表有访问权限，包括select/insert/update和delete等。</p>
+<p>–connect是使用oracle简单权限，这种权限只对其他用户的表有访问权限，包括select&#x2F;insert&#x2F;update和delete等。</p>
 <p>–拥有connect role 的用户还能够创建表、视图、序列（sequence）、簇（cluster）、同义词(synonym)、回话（session）和其他 数据的链（link）</p>
 <ol start="2">
 <li>resource role(资源角色)</li>
@@ -1084,7 +1325,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="修改时间：2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -1100,56 +1341,80 @@
       
           <p>[TOC]</p>
 <h1 id="flask-cookiecutter-restful-使用"><a href="#flask-cookiecutter-restful-使用" class="headerlink" title="flask-cookiecutter-restful 使用"></a>flask-cookiecutter-restful 使用</h1><h2 id="一-本地开发准备"><a href="#一-本地开发准备" class="headerlink" title="一. 本地开发准备"></a>一. 本地开发准备</h2><h3 id="1-源码安装python-3-7-10"><a href="#1-源码安装python-3-7-10" class="headerlink" title="1. 源码安装python-3.7.10"></a>1. 源码安装python-3.7.10</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -c https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tar.xz</span><br><span class="line">tar -zxvf Python-3.7.10.tar.xz</span><br><span class="line">cd Python-3.7.10/Modules</span><br><span class="line">vim Setup.dist</span><br></pre></td></tr></table></figure>
+
 <p>搜索:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:/ssl</span><br></pre></td></tr></table></figure>
 <p>将以下内容取消注释:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Socket module helper <span class="keyword">for</span> socket(2)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">_socket socketmodule.c</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Socket module helper <span class="keyword">for</span> SSL support; you must comment out the other</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> socket line above, and possibly edit the SSL variable:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SSL=/usr/<span class="built_in">local</span>/ssl</span></span><br><span class="line"><span class="meta">#</span><span class="bash">_ssl _ssl.c \</span></span><br><span class="line"><span class="bash"><span class="comment"># -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \</span></span></span><br><span class="line"><span class="bash"><span class="comment"># -L$(SSL)/lib -lssl -lcrypto</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Socket module helper <span class="keyword">for</span> socket(2)</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">_socket socketmodule.c</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Socket module helper <span class="keyword">for</span> SSL support; you must comment out the other</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">socket line above, and possibly edit the SSL variable:</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">SSL=/usr/local/ssl</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">_ssl _ssl.c \</span></span><br><span class="line"><span class="language-bash"><span class="comment"># -DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \</span></span></span><br><span class="line"><span class="language-bash"><span class="comment"># -L$(SSL)/lib -lssl -lcrypto</span></span></span><br></pre></td></tr></table></figure>
+
 <p>取消注释如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Socket module helper <span class="keyword">for</span> socket(2)</span></span><br><span class="line">_socket socketmodule.c</span><br><span class="line"><span class="meta">#</span><span class="bash"> Socket module helper <span class="keyword">for</span> SSL support; you must comment out the other</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> socket line above, and possibly edit the SSL variable:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">SSL=/usr/<span class="built_in">local</span>/ssl</span></span><br><span class="line">_ssl _ssl.c \</span><br><span class="line">-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \</span><br><span class="line"><span class="meta">-L$</span><span class="bash">(SSL)/lib -lssl -lcrypto</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Socket module helper <span class="keyword">for</span> socket(2)</span></span><br><span class="line">_socket socketmodule.c</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Socket module helper <span class="keyword">for</span> SSL support; you must comment out the other</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">socket line above, and possibly edit the SSL variable:</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">SSL=/usr/local/ssl</span></span><br><span class="line">_ssl _ssl.c \</span><br><span class="line">-DUSE_SSL -I$(SSL)/include -I$(SSL)/include/openssl \</span><br><span class="line"><span class="meta prompt_">-L$</span><span class="language-bash">(SSL)/lib -lssl -lcrypto</span></span><br></pre></td></tr></table></figure>
+
 <p>返回Python源码根目录编译安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python3.7.10 --enable-loadable-sqlite-extensions</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>将 /usr/local/python3.6/bin 加入 PATH， 在<code>/etc/profile</code>文件后追加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ../</span><br><span class="line">./configure --prefix=/usr/local/python3.7.10 --enable-loadable-sqlite-extensions</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>将 &#x2F;usr&#x2F;local&#x2F;python3.6&#x2F;bin 加入 PATH， 在<code>/etc/profile</code>文件后追加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
 <p>追回内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;python3.7&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/python3.7/bin:$PATH</span><br></pre></td></tr></table></figure>
+
 <p>设置python, pip别名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+
 <p>内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias python3.7&#x3D;&#x2F;usr&#x2F;local&#x2F;python3.7.10&#x2F;bin&#x2F;python3</span><br><span class="line">alias pip3.7&#x3D;&#x2F;usr&#x2F;local&#x2F;python3.7.10&#x2F;bin&#x2F;pip3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias python3.7=/usr/local/python3.7.10/bin/python3</span><br><span class="line">alias pip3.7=/usr/local/python3.7.10/bin/pip3</span><br></pre></td></tr></table></figure>
+
 
 
 <h3 id="2-使用cookiecutter创建项目"><a href="#2-使用cookiecutter创建项目" class="headerlink" title="2. 使用cookiecutter创建项目"></a>2. 使用cookiecutter创建项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install cookiecutter</span><br><span class="line"></span><br><span class="line">cookiecutter https://github.com/karec/cookiecutter-flask-restful</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="3-pipenv-创建虚拟环境"><a href="#3-pipenv-创建虚拟环境" class="headerlink" title="3. pipenv 创建虚拟环境"></a>3. pipenv 创建虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">pip install pipenv</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新</span></span><br><span class="line">pip install --user --upgrade pipenv</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定Python版本创建虚拟环境</span></span><br><span class="line">pipenv --python 3.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入虚拟环境</span></span><br><span class="line">pipenv shell</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装包</span></span><br><span class="line">pipenv install</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或</span></span><br><span class="line">pipenv install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<h3 id="4-数据库"><a href="#4-数据库" class="headerlink" title="4. 数据库"></a>4. 数据库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 本地创建相关库</span></span><br><span class="line">CREATE DATABASE `aipms` /*!40100 DEFAULT CHARACTER SET utf8mb4 */</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 项目配置数据库, 修改.env</span></span><br><span class="line">DATABASE_URI=mysql+pymysql://root:123456@localhost:3306/aipms?charset=utf8mb4</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进虚拟环境</span></span><br><span class="line">pipenv shell</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 生成迁移文件</span></span><br><span class="line">flask db migrate -m &#x27;init migration&#x27;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更新到数据库</span></span><br><span class="line">flask db upgrate</span><br></pre></td></tr></table></figure>
-<h3 id="5-接口测试"><a href="#5-接口测试" class="headerlink" title="5. 接口测试"></a>5. 接口测试</h3><ul>
-<li>注册<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl --location --request POST &#x27;http://127.0.0.1:5002/auth/register&#x27; \</span><br><span class="line">--header &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">--data-raw &#x27;&#123;</span><br><span class="line">    &quot;username&quot;: &quot;admin&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;admin&quot;</span><br><span class="line">&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
-<li>登录<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl --location --request POST &#x27;http://127.0.0.1:5002/auth/login&#x27; \</span><br><span class="line">--header &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">--data-raw &#x27;&#123;</span><br><span class="line">    &quot;username&quot;: &quot;admin&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;admin&quot;</span><br><span class="line">&#125;&#x27;</span><br></pre></td></tr></table></figure>
 
+<h3 id="3-pipenv-创建虚拟环境"><a href="#3-pipenv-创建虚拟环境" class="headerlink" title="3. pipenv 创建虚拟环境"></a>3. pipenv 创建虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装</span></span><br><span class="line">pip install pipenv</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新</span></span><br><span class="line">pip install --user --upgrade pipenv</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">指定Python版本创建虚拟环境</span></span><br><span class="line">pipenv --python 3.7</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入虚拟环境</span></span><br><span class="line">pipenv shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装包</span></span><br><span class="line">pipenv install</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">pipenv install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-数据库"><a href="#4-数据库" class="headerlink" title="4. 数据库"></a>4. 数据库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">本地创建相关库</span></span><br><span class="line">CREATE DATABASE `aipms` /*!40100 DEFAULT CHARACTER SET utf8mb4 */</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">项目配置数据库, 修改.<span class="built_in">env</span></span></span><br><span class="line">DATABASE_URI=mysql+pymysql://root:123456@localhost:3306/aipms?charset=utf8mb4</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进虚拟环境</span></span><br><span class="line">pipenv shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成迁移文件</span></span><br><span class="line">flask db migrate -m &#x27;init migration&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新到数据库</span></span><br><span class="line">flask db upgrate</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-接口测试"><a href="#5-接口测试" class="headerlink" title="5. 接口测试"></a>5. 接口测试</h3><ul>
+<li><p>注册</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl --location --request POST &#x27;http://127.0.0.1:5002/auth/register&#x27; \</span><br><span class="line">--header &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">--data-raw &#x27;&#123;</span><br><span class="line">    &quot;username&quot;: &quot;admin&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;admin&quot;</span><br><span class="line">&#125;&#x27;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl --location --request POST &#x27;http://127.0.0.1:5002/auth/login&#x27; \</span><br><span class="line">--header &#x27;Content-Type: application/json&#x27; \</span><br><span class="line">--data-raw &#x27;&#123;</span><br><span class="line">    &quot;username&quot;: &quot;admin&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;admin&quot;</span><br><span class="line">&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="6-git"><a href="#6-git" class="headerlink" title="6. git"></a>6. git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git初始化</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加源</span></span><br><span class="line">git remote add origin git@*****</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 拉取代码, 有冲突解决冲突</span></span><br><span class="line">git pull</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换新分支</span></span><br><span class="line">git checkout -b feature-init</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> add 所有</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> commit</span></span><br><span class="line">git commit -m &#x27;init&#x27;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 分支推送到远程库</span></span><br><span class="line">git push --set-upstream origin feature-init</span><br></pre></td></tr></table></figure>
+<h3 id="6-git"><a href="#6-git" class="headerlink" title="6. git"></a>6. git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git初始化</span></span><br><span class="line">git init</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加源</span></span><br><span class="line">git remote add origin git@*****</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">拉取代码, 有冲突解决冲突</span></span><br><span class="line">git pull</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">切换新分支</span></span><br><span class="line">git checkout -b feature-init</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">add 所有</span></span><br><span class="line">git add .</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">commit</span></span><br><span class="line">git commit -m &#x27;init&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">分支推送到远程库</span></span><br><span class="line">git push --set-upstream origin feature-init</span><br></pre></td></tr></table></figure>
+
 
 
 <h2 id="二-部署"><a href="#二-部署" class="headerlink" title="二. 部署"></a>二. 部署</h2><h3 id="1-gunicorn"><a href="#1-gunicorn" class="headerlink" title="1. gunicorn"></a>1. gunicorn</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install gunicorn</span><br></pre></td></tr></table></figure>
+
 
 
 <h3 id="2-docker"><a href="#2-docker" class="headerlink" title="2. docker"></a>2. docker</h3><ul>
 <li>安docker</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install docker</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>安docker-compose</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m pip install docker-compose</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>登录docker<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure></li>
-<li>拉取基础Image<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull python:3.7.10-alpine</span><br></pre></td></tr></table></figure></li>
-<li>创建容器并进入<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name=container_name python:3.7.10-alpine /bin/sh</span><br></pre></td></tr></table></figure></li>
-<li>配置dockerfile<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>从dockerfile启动项目<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t container_name ./Dockerfile</span><br></pre></td></tr></table></figure>
+<li><p>登录docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>拉取基础Image</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull python:3.7.10-alpine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建容器并进入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --name=container_name python:3.7.10-alpine /bin/sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置dockerfile</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从dockerfile启动项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t container_name ./Dockerfile</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1201,7 +1466,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
+                <time title="修改时间：2021-06-13 22:33:29" itemprop="dateModified" datetime="2021-06-13T22:33:29+08:00">2021-06-13</time>
               </span>
 
           
@@ -1218,163 +1483,6 @@
           <h1 id="Flask-Migrate-pgsql-执行报错psycopg2-errors-DuplicateTable-relation-“user”-already-exists"><a href="#Flask-Migrate-pgsql-执行报错psycopg2-errors-DuplicateTable-relation-“user”-already-exists" class="headerlink" title="Flask-Migrate  + pgsql 执行报错psycopg2.errors.DuplicateTable: relation “user” already exists"></a>Flask-Migrate  + pgsql 执行报错psycopg2.errors.DuplicateTable: relation “user” already exists</h1><p><strong>问题出现</strong>: 全新项目, 本来是打算用mysql, 后来换pgsql, 一开始用mysql时执行过 <code>flask db migrate / flask db upgrade</code>, 测试ORM,, 换成pgsql后再执行<code>flask db upgrade</code>出现如上报错, 看字面意思是表已存在, 可pgsql中并没有此表!</p>
 <p><strong>原因</strong>: 一开始执行 <code>flask db migrate</code> 时 alembic 已经创建了记录(versions目录下的.py文件), 也就是说对 alembic 来说是已经创建过数据表了, 在sql语句执行前就被报错拦截住了, 所以即使数据库没有user表, 报错也提示表已存在!</p>
 <p><strong>解决</strong>: 直接把 versions 目录下记录全部删除, 重新执行 <code>flask db upgrade </code> </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WHASO">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="whaso's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/nginx/" class="post-title-link" itemprop="url">nginx</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 17:10:44" itemprop="dateCreated datePublished" datetime="2021-03-18T17:10:44+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-08 17:47:44" itemprop="dateModified" datetime="2021-09-08T17:47:44+08:00">2021-09-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="nginx服务更新证书"><a href="#nginx服务更新证书" class="headerlink" title="nginx服务更新证书"></a>nginx服务更新证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">nginx配置文件: &#x2F;etc&#x2F;nginx&#x2F;sites_enabled</span><br><span class="line">server &#123;</span><br><span class="line">    listen  443;</span><br><span class="line">    server_name djdeveloper.cn *.djdeveloper.cn;</span><br><span class="line">    root    &#x2F;var&#x2F;www&#x2F;djdeveloper.cn;</span><br><span class="line">    autoindex   off;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.full.crt;</span><br><span class="line">    ssl_certificate_key  &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;djdeveloper.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache       shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout     5m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginx证书: &#x2F;etc&#x2F;nginx&#x2F;ssl</span><br><span class="line"></span><br><span class="line">cp **.full.crt **.full.crt.bak</span><br><span class="line">cp **.key **.key.bak</span><br><span class="line"></span><br><span class="line">vim **.full.crt cp</span><br><span class="line">vim **.key cp</span><br><span class="line"></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-<h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域:"></a>配置跨域:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置: http&#123;这里, server&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br></pre></td></tr></table></figure>
-<h3 id="nginx-502-错误初步排查"><a href="#nginx-502-错误初步排查" class="headerlink" title="nginx 502 错误初步排查"></a>nginx 502 错误初步排查</h3><ul>
-<li>nginx 配置文件默认目录 /etc/nginx/nginx.conf</li>
-<li>配置文件中有 include * 为包含的配置文件</li>
-<li>access_log off 为关闭日志, 开启后为 access_log /var/www/ccd.log</li>
-<li>如果在日志文件中能看到请求说明与nginx无关, 是项目的问题</li>
-<li>nginx -s reload</li>
-<li>nginx -t 检查配置文件语法是否正确</li>
-<li>lsof -i:port1 检查端口使用 CLOSE_WAIT 时看 port1 -&gt; port2 是port2出了问题</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WHASO">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="whaso's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" class="post-title-link" itemprop="url">微信公众号</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-18 17:09:33" itemprop="dateCreated datePublished" datetime="2021-03-18T17:09:33+08:00">2021-03-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-24 11:45:47" itemprop="dateModified" datetime="2022-06-24T11:45:47+08:00">2022-06-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" itemprop="url" rel="index"><span itemprop="name">微信公众号</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="redirect-uri错误"><a href="#redirect-uri错误" class="headerlink" title="redirect_uri错误"></a>redirect_uri错误</h3><ol>
-<li><p>首先确定<code>基本配置</code>中的 appID, appSecret, 服务器配置是否启用, 服务器地址, token是否都配置正确.</p>
-</li>
-<li><p><code>接口权限</code>-<code>网页授权获取用户基本信息</code>-<code>修改</code></p>
-</li>
-</ol>
-<ul>
-<li>注意: 这里有个大坑, 使用的url最好是直接域名, 如果有层级要保证项目实际使用的url全是在这里填写的层级之下的, 不然即使这里修改成功, 还是会报redirect_uri错误</li>
-</ul>
 
       
     </div>
@@ -1459,7 +1567,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
