@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-01T01:58:15.652Z</updated>
+  <updated>2023-07-03T09:27:29.919Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2023/06/30/go%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
     <id>http://example.com/2023/06/30/go%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</id>
     <published>2023-06-30T03:59:24.000Z</published>
-    <updated>2023-07-01T01:58:15.652Z</updated>
+    <updated>2023-07-03T09:27:29.919Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一-基础"><a href="#一-基础" class="headerlink" title="一. 基础"></a>一. 基础</h1><ul><li>编译型语言<ul><li>定义：在程序运行之前，源代码会先经过编译器将其转换为机器语言的形式，生成可执行文件。在运行时，计算机直接执行该可执行文件，无需再进行翻译或解释。C、C++ 和 Java 等语言属于编译型语言。</li><li>白话定义：只有第一次执行的时候需要编译,之后如果没修改源代码就不会再编译了</li><li>示例：C++、Go、Java</li></ul></li><li>解释型语言<ul><li>定义：在程序运行时，源代码逐行解释并执行。解释器将源代码转换为机器语言，并逐行执行代码。解释型语言的代码无需编译，可以直接运行，但由于需要逐行解释执行，相对于编译型语言，解释型语言的执行速度通常较慢。</li><li>白话定义：每次运行都会从第一行进行编译,编译一行执行一行</li><li>示例：Python、JavaScript、Ruby</li></ul></li><li>静态语言<ul><li>如果在编译时知道变量的类型, 则为静态类型语言. 优点是编译器可以执行各种检查, 程序没跑起来就能找到一些小错误</li><li>示例：C++、Go、Java</li></ul></li><li>动态语言<ul><li>定义：在运行期间过才去做数据类型检查的语言, 在用动态语言编程时, 不用给变量指定数据类型, 该语言会丰第一次赋值给变量时, 在内部将数据类型记录下来, 不必每次都指定类型</li><li>示例：Python, PHP,  JavaScript</li></ul></li><li>强类型<ul><li>定义：为所有变量指定数据类型称之为”强类型”, 不允许两种不同类型的变量相互操作</li><li>示例：Python, Go, Java, C#</li></ul></li><li>弱类型<ul><li>定义：也称为弱类型定义语言, 一个变量可以赋不同数据类型的值, 允许将一块内存看做多种类型, 比如直接将整型变量与字符变量相加</li><li>示例：C, C++, JavaScript, PHP</li></ul></li></ul><h2 id="1-基中基"><a href="#1-基中基" class="headerlink" title="1. 基中基"></a>1. 基中基</h2><h3 id="1-1-编译器下载安装"><a href="#1-1-编译器下载安装" class="headerlink" title="1.1. 编译器下载安装"></a>1.1. 编译器下载安装</h3><blockquote><p>官网：<a href="https://golang.org/dl/">https://golang.org/dl/</a></p></blockquote><ul><li>mac<ul><li>下载*.pkg直接安装 默认安装目录 <code>/usr/local/go</code></li><li>添加**&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin**目录到环境变量 <code>export PATH=$PATH:/usr/local/go/bin</code></li></ul></li></ul><h3 id="1-2-Hello-World"><a href="#1-2-Hello-World" class="headerlink" title="1.2. Hello World"></a>1.2. Hello World</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;   </span><br><span class="line">  fmt.Printf(<span class="string">&quot;Hello, Go\n&quot;</span>) </span><br><span class="line">&#125; <span class="comment">/* main 是入口, 名固定不能改 */</span></span><br><span class="line"></span><br><span class="line">$ <span class="keyword">go</span> build hello.<span class="keyword">go</span> </span><br><span class="line">$./hello </span><br><span class="line"></span><br><span class="line">&gt;&gt; Hello, Go</span><br></pre></td></tr></table></figure><ul><li>package main 包声名, 必须在源文件非注释第一行声名这个文件属于哪个包, 每个Go程序都必须有一个名为 main 的包</li><li>import “fmt” 导入包, 表示这个程序需要”fmt”包, 注: “fmt” go的格式化输入输出包</li><li>func main() {} go的第一个程序都必须有一个main函数, 这是程序入口, go程序执行顺序: init -&gt; main -&gt; 其他, 没有init就main最先执行</li></ul><p>*<em>注: 当标识符以大写字母开头</em>***（包括常量、变量、类型、函数名、结构字段等等）表示可被外部包使用, 以小写字母开头表示不可被外部包使用(但对包内部是可用的)</p><h3 id="1-3-基础"><a href="#1-3-基础" class="headerlink" title="1.3. 基础"></a>1.3. 基础</h3><ul><li><p>注释</p><ul><li><code>//</code> 单行注释</li><li><code> /*</code> 多行注释 <code>*/</code></li></ul></li><li><p>标识符: 由字母, 数字, 下划线构成, 不能数字开头, 不能是go的关键字</p></li><li><p>关键字:</p></li></ul><blockquote><p>官方文档：<a href="https://go.dev/ref/spec#Keywords">https://go.dev/ref/spec#Keywords</a></p></blockquote><table><thead><tr><th>关键字</th><th>涉及功能</th></tr></thead><tbody><tr><td>select, case, if, else, switch, default</td><td>逻辑判断</td></tr><tr><td></td><td>异常捕获</td></tr><tr><td>for, continue, break, return</td><td>循环</td></tr><tr><td>import, package,</td><td>导包</td></tr><tr><td>func, interface</td><td>定义</td></tr><tr><td></td><td>异步</td></tr><tr><td></td><td>变量空间</td></tr><tr><td>, select, defer, go, map, struct, chan, goto, range, type, const, fallthrough, var</td><td>其他</td></tr></tbody></table><ul><li>预定义标识符:</li></ul><table><thead><tr><th>标识符</th><th>含义</th></tr></thead><tbody><tr><td>bool, true, false</td><td>布尔类型， 真，假</td></tr><tr><td>byte</td><td>alias for uint8</td></tr><tr><td>rune</td><td>alias for int32</td></tr><tr><td>int, int8, int16, int32, int64</td><td>整数类型关键字, 有符号整数类型的不同位数</td></tr><tr><td>uint, uint8, uint16, uint32, uint64</td><td>无符号整数类型的关键字, 无符号整数类型的不同位数</td></tr><tr><td>uintptr</td><td>用于存储指针值的整数类型</td></tr><tr><td>float32, float64</td><td>浮点数类型的不同精度</td></tr><tr><td>complex32, complex64</td><td>复数类型的不同精度</td></tr><tr><td>string</td><td>字符串类型的关键字</td></tr><tr><td>error</td><td>表示错误类型的接口</td></tr><tr><td>make</td><td>用于创建切片、映射和通道的内建函数</td></tr><tr><td>new</td><td>用于分配内存的内建函数</td></tr><tr><td>append</td><td>用于向切片追加元素的内建函数</td></tr><tr><td>len</td><td>用于返回切片、数组、字典、字符串或通道的长度的内建函数</td></tr><tr><td>cap</td><td>对于切片或容量为数组、切片或通道的内建函数，返回其容量</td></tr></tbody></table><h3 id="1-4-数据类型"><a href="#1-4-数据类型" class="headerlink" title="1.4. 数据类型"></a>1.4. 数据类型</h3><ul><li>布尔: true &#x2F; false</li><li>数字: uint8 &#x2F; uint16 &#x2F; uint32 &#x2F; uint64 (无符号 0-255-65535-…) &#x2F; int8 &#x2F; int16 &#x2F; float32 &#x2F; float64 ( -128-127 -32768 - 32768 .. ..)</li><li>字符串: utf-8</li><li>派生类型:</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="一-基础"><a href="#一-基础" class="headerlink" title="一. 基础"></a>一. 基础</h1><ul><li>编译型语言<ul><li>定义：在程序运行之前，源代码会先经过编译器将其转换为机器语言的形式，生成可执行文件。在运行时，计算机直接执行该可执行文件，无需再进行翻译或解释。C、C++ 和 Java 等语言属于编译型语言。</li><li>白话定义：只有第一次执行的时候需要编译,之后如果没修改源代码就不会再编译了</li><li>示例：C++、Go、Java</li></ul></li><li>解释型语言<ul><li>定义：在程序运行时，源代码逐行解释并执行。解释器将源代码转换为机器语言，并逐行执行代码。解释型语言的代码无需编译，可以直接运行，但由于需要逐行解释执行，相对于编译型语言，解释型语言的执行速度通常较慢。</li><li>白话定义：每次运行都会从第一行进行编译,编译一行执行一行</li><li>示例：Python、JavaScript、Ruby</li></ul></li><li>静态语言<ul><li>如果在编译时知道变量的类型, 则为静态类型语言. 优点是编译器可以执行各种检查, 程序没跑起来就能找到一些小错误</li><li>示例：C++、Go、Java</li></ul></li><li>动态语言<ul><li>定义：在运行期间过才去做数据类型检查的语言, 在用动态语言编程时, 不用给变量指定数据类型, 该语言会丰第一次赋值给变量时, 在内部将数据类型记录下来, 不必每次都指定类型</li><li>示例：Python, PHP,  JavaScript</li></ul></li><li>强类型<ul><li>定义：为所有变量指定数据类型称之为”强类型”, 不允许两种不同类型的变量相互操作</li><li>示例：Python, Go, Java, C#</li></ul></li><li>弱类型<ul><li>定义：也称为弱类型定义语言, 一个变量可以赋不同数据类型的值, 允许将一块内存看做多种类型, 比如直接将整型变量与字符变量相加</li><li>示例：C, C++, JavaScript, PHP</li></ul></li></ul><h2 id="1-基中基"><a href="#1-基中基" class="headerlink" title="1. 基中基"></a>1. 基中基</h2><blockquote><p>在 Python 中，要实现并发编程，通常需要使用特定的库或框架，如 threading、multiprocessing、asyncio 等。这些库提供了线程、进程、协程等抽象，用于实现并发任务的调度和执行。Python 的标准库提供了一些基本的并发工具，但在处理大规模并发时可能需要使用更高级的第三方库。</p><p>而在 Go 中，原生的 Goroutine 和调度器提供了并发编程的内置支持，不需要依赖额外的框架或库。Goroutine 是 Go 语言提供的一种轻量级的并发执行单元，通过使用关键字 <code>go</code> 来启动 Goroutine，无需额外的线程或进程管理。调度器会自动将 Goroutines 调度到可用的系统线程上执行，并进行高效的并发调度。</p><p>由于 Goroutines 是 Go 语言内部的机制，Go 运行时系统负责管理 Goroutines 的创建、调度和销毁，使得并发编程在 Go 中变得非常简单和高效。此外，Go 还提供了通道（Channel）作为 Goroutines 之间进行通信和同步的机制，进一步简化了并发编程的复杂性。</p><p>总结:  Go 在语言本身就提供了原生的并发支持，使用 Goroutine 和调度器实现轻量级的并发编程。相比之下，Python 需要借助额外的库或框架来处理并发任务，并且在处理大规模并发时可能需要使用更高级的工具。</p><p>Goroutine 是 Go 语言中并发编程的核心概念之一，它是一种轻量级的执行单元。每个 Goroutine 都是一个独立的执行线程，可以与其他 Goroutines 并发地执行。</p><p>Goroutine 可以看作是一种比传统线程更轻量级、更高效的并发编程抽象。与传统的线程相比，Goroutine 的创建和销毁开销很小，可以高效地创建大量的 Goroutines。这使得在 Go 语言中可以方便地使用大量的 Goroutines 来实现并发任务，而不会消耗过多的系统资源。</p><p>使用 Goroutines 的一个重要特点是它们之间的切换开销非常低。由于 Goroutines 是由 Go 调度器（Scheduler）管理的，调度器可以在 Goroutines 之间非常高效地进行切换，以实现并发执行。当一个 Goroutine 遇到阻塞操作（例如等待 I&#x2F;O 完成或休眠）时，调度器会自动切换到其他可执行的 Goroutine，以充分利用系统资源。</p><p>另一个重要特点是 Goroutines 之间可以通过通道（Channel）进行通信和同步。通道是 Goroutines 之间安全地传递数据的机制，可以用于在不同的 Goroutines 之间进行数据交换和共享。</p><p>通过使用 Goroutines，开发者可以将任务并发地划分为多个独立的执行单元，每个执行单元由一个 Goroutine 来处理。这样可以简化并发编程的复杂性，并充分发挥多核处理器的性能优势。</p><p>总结: Goroutine 是 Go 语言中的一种轻量级并发执行单元，它提供了高效的并发编程抽象。通过使用 Goroutines，开发者可以方便地实现并发任务，并充分利用多核处理器的性能。同时，通过通道的机制，Goroutines 可以安全地进行通信和同步，实现高效的并发编程。</p></blockquote><h3 id="1-1-编译器下载安装"><a href="#1-1-编译器下载安装" class="headerlink" title="1.1. 编译器下载安装"></a>1.1. 编译器下载安装</h3><blockquote><p>官网：<a href="https://golang.org/dl/">https://golang.org/dl/</a></p></blockquote><ul><li>mac<ul><li>下载*.pkg直接安装 默认安装目录 <code>/usr/local/go</code></li><li>添加**&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin**目录到环境变量 <code>export PATH=$PATH:/usr/local/go/bin</code></li></ul></li></ul><h3 id="1-2-Hello-World"><a href="#1-2-Hello-World" class="headerlink" title="1.2. Hello World"></a>1.2. Hello World</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;   </span><br><span class="line">  fmt.Printf(<span class="string">&quot;Hello, Go\n&quot;</span>) </span><br><span class="line">&#125; <span class="comment">/* main 是入口, 名固定不能改 */</span></span><br><span class="line"></span><br><span class="line">$ <span class="keyword">go</span> build hello.<span class="keyword">go</span> </span><br><span class="line">$./hello </span><br><span class="line"></span><br><span class="line">&gt;&gt; Hello, Go</span><br></pre></td></tr></table></figure><ul><li>package main 包声名, 必须在源文件非注释第一行声名这个文件属于哪个包, 每个Go程序都必须有一个名为 main 的包</li><li>import “fmt” 导入包, 表示这个程序需要”fmt”包, 注: “fmt” go的格式化输入输出包</li><li>func main() {} go的第一个程序都必须有一个main函数, 这是程序入口, go程序执行顺序: init -&gt; main -&gt; 其他, 没有init就main最先执行</li></ul><p>*<em>注: 当标识符以大写字母开头</em>***（包括常量、变量、类型、函数名、结构字段等等）表示可被外部包使用, 以小写字母开头表示不可被外部包使用(但对包内部是可用的)</p><h3 id="1-3-基础"><a href="#1-3-基础" class="headerlink" title="1.3. 基础"></a>1.3. 基础</h3><ul><li><p>注释</p><ul><li><code>//</code> 单行注释</li><li><code> /*</code> 多行注释 <code>*/</code></li></ul></li><li><p>标识符: 由字母, 数字, 下划线构成, 不能数字开头, 不能是go的关键字</p></li><li><p>关键字:</p></li></ul><blockquote><p>官方文档：<a href="https://go.dev/ref/spec#Keywords">https://go.dev/ref/spec#Keywords</a></p></blockquote><table><thead><tr><th>关键字</th><th>涉及功能</th></tr></thead><tbody><tr><td>select, case, if, else, switch, default</td><td>逻辑判断</td></tr><tr><td></td><td>异常捕获</td></tr><tr><td>for, continue, break, return</td><td>循环</td></tr><tr><td>import, package,</td><td>导包</td></tr><tr><td>func, interface</td><td>定义</td></tr><tr><td></td><td>异步</td></tr><tr><td></td><td>变量空间</td></tr><tr><td>, select, defer, go, map, struct, chan, goto, range, type, const, fallthrough, var</td><td>其他</td></tr></tbody></table><ul><li>预定义标识符:</li></ul><table><thead><tr><th>标识符</th><th>含义</th></tr></thead><tbody><tr><td>bool, true, false</td><td>布尔类型， 真，假</td></tr><tr><td>byte</td><td>alias for uint8</td></tr><tr><td>rune</td><td>alias for int32</td></tr><tr><td>int, int8, int16, int32, int64</td><td>整数类型关键字, 有符号整数类型的不同位数</td></tr><tr><td>uint, uint8, uint16, uint32, uint64</td><td>无符号整数类型的关键字, 无符号整数类型的不同位数</td></tr><tr><td>uintptr</td><td>用于存储指针值的整数类型</td></tr><tr><td>float32, float64</td><td>浮点数类型的不同精度</td></tr><tr><td>complex32, complex64</td><td>复数类型的不同精度</td></tr><tr><td>string</td><td>字符串类型的关键字</td></tr><tr><td>error</td><td>表示错误类型的接口</td></tr><tr><td>make</td><td>用于创建切片、映射和通道的内建函数</td></tr><tr><td>new</td><td>用于分配内存的内建函数</td></tr><tr><td>append</td><td>用于向切片追加元素的内建函数</td></tr><tr><td>len</td><td>用于返回切片、数组、字典、字符串或通道的长度的内建函数</td></tr><tr><td>cap</td><td>对于切片或容量为数组、切片或通道的内建函数，返回其容量</td></tr></tbody></table><h3 id="1-4-数据类型"><a href="#1-4-数据类型" class="headerlink" title="1.4. 数据类型"></a>1.4. 数据类型</h3><ul><li>布尔: true &#x2F; false</li><li>数字: uint8 &#x2F; uint16 &#x2F; uint32 &#x2F; uint64 (无符号 0-255-65535-…) &#x2F; int8 &#x2F; int16 &#x2F; float32 &#x2F; float64 ( -128-127 -32768 - 32768 .. ..)</li><li>字符串: utf-8</li><li>派生类型:</li></ul>]]></content>
     
     
       
@@ -59,26 +59,6 @@
     
     
     <category term="python" scheme="http://example.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://example.com/2023/06/29/%E7%8C%AB%E6%97%A5%E8%AE%B0/"/>
-    <id>http://example.com/2023/06/29/%E7%8C%AB%E6%97%A5%E8%AE%B0/</id>
-    <published>2023-06-29T02:06:48.022Z</published>
-    <updated>2023-06-29T05:44:31.474Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="猫日记"><a href="#猫日记" class="headerlink" title="猫日记"></a>猫日记</h1><h2 id="猫行为记录"><a href="#猫行为记录" class="headerlink" title="猫行为记录"></a>猫行为记录</h2><ul><li>2023<ul><li>0629<ul><li>09:50 跑疯</li><li>10:00 睡觉</li><li>11:15 大头叫 并学说话 玩</li><li>11:30 跑疯</li><li>12:00 睡觉</li><li>13:00 跑疯</li><li>13:45 跑疯</li></ul></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;猫日记&quot;&gt;&lt;a href=&quot;#猫日记&quot; class=&quot;headerlink&quot; title=&quot;猫日记&quot;&gt;&lt;/a&gt;猫日记&lt;/h1&gt;&lt;h2 id=&quot;猫行为记录&quot;&gt;&lt;a href=&quot;#猫行为记录&quot; class=&quot;headerlink&quot; title=&quot;猫行为记录&quot;&gt;&lt;/a&gt;</summary>
-      
-    
-    
-    
     
   </entry>
   
@@ -358,26 +338,6 @@
   </entry>
   
   <entry>
-    <title>囚徒</title>
-    <link href="http://example.com/2021/06/03/%E5%9B%9A%E5%BE%92/"/>
-    <id>http://example.com/2021/06/03/%E5%9B%9A%E5%BE%92/</id>
-    <published>2021-06-03T01:34:18.000Z</published>
-    <updated>2023-07-01T01:58:15.653Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="六艺"><a href="#六艺" class="headerlink" title="六艺"></a>六艺</h1><p><a href="http://www.beastskills.com/">http://www.beastskills.com/</a></p><blockquote><p>所有动作保持 2-1-2</p></blockquote><h2 id="俯卧撑"><a href="#俯卧撑" class="headerlink" title="俯卧撑"></a>俯卧撑</h2><h3 id="靠墙"><a href="#靠墙" class="headerlink" title="靠墙"></a>靠墙</h3><p>姿势</p><ul><li>手平放与胸平</li><li>臂与肩同宽</li><li>双脚并拢</li><li>弯肘至前额轻触墙面</li></ul><p>标准</p><ol><li>1 * 10</li><li>2 * 25</li><li>3 * 50</li></ol><h2 id="举腿"><a href="#举腿" class="headerlink" title="举腿"></a>举腿</h2><h3 id="坐姿屈膝"><a href="#坐姿屈膝" class="headerlink" title="坐姿屈膝"></a>坐姿屈膝</h3><h1 id="日程"><a href="#日程" class="headerlink" title="日程"></a>日程</h1><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>俯卧撑 2～3组</p><p>举腿 2～3组</p><ul><li></li></ul><p>引体向上  2～3组</p><p>深蹲 2～3组</p><p>下一计划前提：四个全到六式</p><p>二</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;六艺&quot;&gt;&lt;a href=&quot;#六艺&quot; class=&quot;headerlink&quot; title=&quot;六艺&quot;&gt;&lt;/a&gt;六艺&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.beastskills.com/&quot;&gt;http://www.beastskills.com/&lt;/a&gt;&lt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>mac + python + oracle.md</title>
     <link href="http://example.com/2021/06/01/mac%E4%B8%8B%E4%BD%BF%E7%94%A8oracle/"/>
     <id>http://example.com/2021/06/01/mac%E4%B8%8B%E4%BD%BF%E7%94%A8oracle/</id>
@@ -438,6 +398,51 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>nginx</title>
+    <link href="http://example.com/2021/03/18/nginx/"/>
+    <id>http://example.com/2021/03/18/nginx/</id>
+    <published>2021-03-18T09:10:44.000Z</published>
+    <updated>2021-06-13T14:33:29.293Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="nginx服务更新证书"><a href="#nginx服务更新证书" class="headerlink" title="nginx服务更新证书"></a>nginx服务更新证书</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">nginx配置文件: /etc/nginx/sites_enabled</span><br><span class="line">server &#123;</span><br><span class="line">    listen  443;</span><br><span class="line">    server_name djdeveloper.cn *.djdeveloper.cn;</span><br><span class="line">    root    /var/www/djdeveloper.cn;</span><br><span class="line">    autoindex   off;</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/nginx/ssl/djdeveloper.full.crt;</span><br><span class="line">    ssl_certificate_key  /etc/nginx/ssl/djdeveloper.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_cache       shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout     5m;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nginx证书: /etc/nginx/ssl</span><br><span class="line"></span><br><span class="line">cp **.full.crt **.full.crt.bak</span><br><span class="line">cp **.key **.key.bak</span><br><span class="line"></span><br><span class="line">vim **.full.crt cp</span><br><span class="line">vim **.key cp</span><br><span class="line"></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure><h3 id="配置跨域"><a href="#配置跨域" class="headerlink" title="配置跨域:"></a>配置跨域:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">位置: http&#123;这里, server&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">add_header &#x27;Access-Control-Allow-Credentials&#x27; &#x27;true&#x27;;</span><br></pre></td></tr></table></figure><h3 id="nginx-502-错误初步排查"><a href="#nginx-502-错误初步排查" class="headerlink" title="nginx 502 错误初步排查"></a>nginx 502 错误初步排查</h3><ul><li>nginx 配置文件默认目录 &#x2F;etc&#x2F;nginx&#x2F;nginx.conf</li><li>配置文件中有 include * 为包含的配置文件</li><li>access_log off 为关闭日志, 开启后为 access_log &#x2F;var&#x2F;www&#x2F;ccd.log</li><li>如果在日志文件中能看到请求说明与nginx无关, 是项目的问题</li><li>nginx -s reload</li><li>nginx -t 检查配置文件语法是否正确</li><li>lsof -i:port1 检查端口使用 CLOSE_WAIT 时看 port1 -&gt; port2 是port2出了问题</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;nginx服务更新证书&quot;&gt;&lt;a href=&quot;#nginx服务更新证书&quot; class=&quot;headerlink&quot; title=&quot;nginx服务更新证书&quot;&gt;&lt;/a&gt;nginx服务更新证书&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号</title>
+    <link href="http://example.com/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    <id>http://example.com/2021/03/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</id>
+    <published>2021-03-18T09:09:33.000Z</published>
+    <updated>2022-07-24T08:18:32.556Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="redirect-uri错误"><a href="#redirect-uri错误" class="headerlink" title="redirect_uri错误"></a>redirect_uri错误</h3><ol><li><p>首先确定<code>基本配置</code>中的 appID, appSecret, 服务器配置是否启用, 服务器地址, token是否都配置正确.</p></li><li><p><code>接口权限</code>-<code>网页授权获取用户基本信息</code>-<code>修改</code></p></li></ol><ul><li>注意: 这里有个大坑, 使用的url最好是直接域名, 如果有层级要保证项目实际使用的url全是在这里填写的层级之下的, 不然即使这里修改成功, 还是会报redirect_uri错误</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;redirect-uri错误&quot;&gt;&lt;a href=&quot;#redirect-uri错误&quot; class=&quot;headerlink&quot; title=&quot;redirect_uri错误&quot;&gt;&lt;/a&gt;redirect_uri错误&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先确定&lt;code&gt;基本配</summary>
+      
+    
+    
+    
+    <category term="微信公众号" scheme="http://example.com/categories/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+    
+    <category term="bug" scheme="http://example.com/tags/bug/"/>
     
   </entry>
   
