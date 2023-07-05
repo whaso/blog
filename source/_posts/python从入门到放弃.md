@@ -576,13 +576,204 @@ print(sys.path)
 - from 包名 import 模块名 as 模块别名
 - from 包名 import *      默认不是导入包里所有模块, 需要在__init__.py中使用__all__去指定
 
-
-
 # 二. 高级
 
 ## 1. 多任务
 
+### 1.1. 常识
+
+- 多任务的目的：充分利用CPU资源，提高执行效率
+
+- 时间片：内核分配给程序执行的一小段时间，这个时间内进程拥有cpu资源
+
+- 同步：协同步调，按预定的先后次序进行运行。如：你说完，我再说
+
+- 进程、线程同步：可理解为进程或线程A和B一块配合，A执行到一定程度时要依靠B的某个结果，于是停下来，示意B运行; B执行，再将结果给A; A再继续操作
+
+- 进程状态: 等待状态不占用时间片, 即使时间片有剩余也会退出不占用CPU资源, 只有运行状态才占用CPU资源
+
+  ![image-20230704132442670](..\images\image-20230704132442670.png)
+
+### 1.2. 执行形式
+
+- 并发：在一个时间段内，交替的执行多个任务，任务数 > CPU核心数，时间片轮转
+- 并行：在一个时间点，多核CPU同时执行多个任务，任务数 < CPU核心数
+- 一般情况下，并发和并行同时存在
+
+### 1.3. 实现方式：进程
+
+- **进程是操作系统进行资源(CPU、内存)分配的基本单位**
+- 程序中至少有一个进程，这个进程称为主进程
+- 主进程会等待所有子进程执行结束再结束
+  - 如果子进程没执行完，主进程会一直等待，此时如果子进程进入死循环会导致主进程无法退出解决办法：
+    - 设置子进程为守护主进程，主进程退出时子进程直接销毁: `sub_process.daemon = True`
+    - 主进程退出前先销毁子进程: `sub_process.terminate()`
+- 每个进程中至少有一个线程，这个线程称为主线程
+- 进程间不共享全局变量
+- 进程之间执行也是无序的，由操作系统调度决定
+
+```python
+# 进程创建子进程时程序会复制一份代码去跑(也就是说操作系统会再次进行资源分配，所以创建出来的子进程所拥有的内存是和创建它的进程的内存是不同的，所以不可能共享全局变量)
+# 打印全局变量id可发现变量的内存地址是不同的
+import time
+import multiprocessing
+
+
+my_list = []  # 列表可变类型，为全局变量
+
+
+def read_val():
+    print(f"reading list: {my_list}, id: {id(my_list)}")
+
+
+def write_val():
+    for i in range(3):
+        my_list.append(i)
+        print(f"writed.....{my_list}, id: {id(my_list)}")
+        time.sleep(0.5)
+
+
+# 创建子进程时：linux和mac不会拷贝主进程执行的代码，但windows会拷贝主进程代码并执行，所以对windows来说创建子进程的代码会发生递归执行而报错，需要把此部分代码放在__name__ == "__main__"判断下（判断主模块的代码只会执行一次），linux和mac就不需要
+if __name__ == "__main__":
+    read_task = multiprocessing.Process(target=read_val)
+    write_task = multiprocessing.Process(target=write_val)
+
+    write_task.start()
+    read_task.start()
+```
+
+### 1.4. 实现方式：线程
+
+- 线程是进程中执行代码的一个分支，每个线程想到执行代码需要CPU进行调度
+- **线程是CPU调度的基本单位**，每个进程至少有一个线程，称为主线程
+- 主线程会等待所有子线程结束再结束
+  - `sub_thread.setDaemon(True)`
+  - `threading.Thread(target=task, daemon=True)`
+- 线程执行时无序的, 谁抢到CPU, 谁就执行
+- 线程之间共享全局变量，因为在同一进程里面，所以使用的内存资源是相同的，这会导致数据错乱问题，解决方案
+  - 线程等待 `sub_thread.join()`
+  - 互斥锁：对共享数据进行锁定，保证同一时刻只有一个线程操作共享数据
+  - 以上两种方法都是把多任务改成单任务去执行，保证了数据的准确性，但执行效率会下降
+
+```python
+import time
+import threading
+
+
+def sing(name):
+    cur_thread = threading.current_thread()
+    print(f"sing: {cur_thread}\n")
+    for _ in range(3):
+        print(f"singing {name}... \n")
+        time.sleep(0.2)
+
+def dance():
+    cur_thread = threading.current_thread()
+    print(f"dance: {cur_thread}\n")
+    for _ in range(3):
+        print("dancing... \n")
+        time.sleep(0.2)
+
+def tutorial0():
+    """线程无序"""
+    main_thread = threading.current_thread()
+    print(f"main thread: {main_thread}")
+
+    sing_thread = threading.Thread(target=sing, args=("正月十八", ))
+    dance_thread = threading.Thread(target=dance)
+
+    sing_thread.start()
+    dance_thread.start()
+
+
+# 线程之间共享全局变量
+g_list = []
+
+
+def add_data():
+    for i in range(3):
+        g_list.append(i)
+        print(f"added, {g_list}\n")
+
+
+def read_data():
+    print(f"read data {g_list}\n")
+
+
+def tutorial1():
+    """线程共享全局变量"""
+    add_thread = threading.Thread(target=add_data)
+    read_thread = threading.Thread(target=read_data)
+
+    add_thread.start()
+    read_thread.start()
+
+
+g_num = 0
+lock = threading.Lock()
+
+
+def add_num0():
+    lock.acquire()
+    for _ in range(100_0000):
+        global g_num  # int不可变要用全局需要声名
+        g_num += 1
+    print(f"add0: {g_num}")
+    lock.release()
+
+
+def add_num1():
+    lock.acquire()
+    for _ in range(100_0000):
+        global g_num  # int不可变要用全局需要声名
+        g_num += 1
+    print(f"add1: {g_num}")
+    lock.release()
+
+
+def tutorial2():
+    """数据保护"""
+    thread0 = threading.Thread(target=add_num0)
+    thread1 = threading.Thread(target=add_num1)
+
+    thread0.start()
+    # thread0.join()  # 线程等待 在0执行完再向下执行
+    thread1.start()
+
+if __name__ == "__main__":
+    tutorial2()
+
+```
+
 
 
 ## 2. 高级语法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
