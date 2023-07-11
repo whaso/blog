@@ -311,13 +311,31 @@ help(show)
 - 函数不写`return` 取函数返回值时会取到 `None`
 - 在多层循环中 `return` 可把多层全部终止，`break` 只能终止一层
 
-### 3.3. 全局变量
+### 3.3. 局部变量&全局变量
 
-- `global` 本质是表示: 要修改全局变量的内存地址, 所以只有不可变类型需要`global`
+- 局部变量：作用域仅在函数体内部,  随着函数执行结束会销毁
+- 全局变量：在函数体内外都生效，不会随着函数执行结束会销毁
 
+- `global` 本质是表示:  要修改全局变量的内存地址, 所以只有不可变类型需要`global`
 - 在函数内部使用全局变量时, 要先声明 `global` 全局变量, 如果是可变类型就不需要了
-
 - 对于操作全局变量的数据, 如果是通过重新赋值来完成的, 那么必须加上`global`关键字
+- `nonlocal` 使用场景是函数嵌套时，内层函数要使用外层函数的变量或参数
+
+```python
+a = 1
+b = [1]
+
+def t():
+    global a
+    a = 2
+    b.append(2)
+    print(a, b)
+
+t()
+print(a, b)
+# 2 [1, 2]
+# 2 [1, 2]
+```
 
 ### 3.4. 函数参数
 
@@ -495,17 +513,17 @@ hello world
 
 - **静态方法**: 方法里没有self和cls参数并且还需要使用`@staticmethod`的关键字进行修饰
 
-## 6. 异常与模块
+## 6. 异常&模块
 
 ### 6.1. 异常
 
-**异常捕获 try...except...**
+**异常捕获` try...except...`**
 
-- try 表示尝试执行可能出问题的代码, except 表示如果代码出现异常, 进行捕获 as e:
-- 捕获异常类型的通用写法就是用Exception,  因为大多数异常类型都是最终继承Exception的
-- BaseException 可以捕获任何异常
+- `try` 表示尝试执行可能出问题的代码, `except` 表示如果代码出现异常, 进行捕获 `as e:`
+- 捕获异常类型的通用写法就是用`Exception`,  因为大多数异常类型都是最终继承`Exception`的
+- `BaseException` 可以捕获任何异常
 
-**try...except...else...finally**
+**`try...except...else...finally`**
 
 - `except` 与 `else` 互斥,  `finally`不管有没有异常都执行
 
@@ -515,8 +533,8 @@ hello world
 
 **自定义异常**
 
-- class定义自定义异常类, 必须继承Exception或者BaseException才可以
-- 抛出自定义异常使用关键字raise
+- class定义自定义异常类, 必须继承`Exception`或者`BaseException`才可以
+- 抛出自定义异常使用关键字`raise`
 - 注意:raise只能抛出异常类的对象
 
 ### 6.2. 模块
@@ -745,9 +763,479 @@ if __name__ == "__main__":
 
 ```
 
+### 1.5. 实现方式：协程
 
+**迭代器 Iterator**
+
+- 可迭代对象(Iterable)定义：包含 `__iter__` 方法
+  - 可迭代对象不一定是迭代器，但迭代器一定是可迭代对象
+
+```python
+# 判断一个对象是否可迭代
+from collections import Iterable
+
+isinstance(A, Iterable)
+```
+
+- 迭代器定义：包含 `__iter__` 和 `__next__` 方法
+  - 迭代是访问集合元素的一种方式
+  - 迭代器是一个可以记住遍历位置的对象
+  - 迭代器对象从集合第一个元素开始访问，直到所有元素被访问结束
+  - 迭代器只能往前不能后退
+  - 迭代器可以节省内存空间，实现循环
+- 迭代器优点：存放生成数据的实现方式而不是具体数据，占用很少的内存空间
+
+```python
+from collections.abc import Iterable, Iterator
+
+
+class ClassIterator:
+
+    def __init__(self, obj) -> None:
+        self.obj = obj
+        self.cur_num = 0
+
+    def __iter__(self):
+        pass
+
+    def __next__(self):
+        if self.cur_num >= len(self.obj.names):
+            raise StopIteration
+
+        res = self.obj.names[self.cur_num]
+        self.cur_num += 1
+        return res
+
+
+class Classmate:
+
+    def __init__(self) -> None:
+        self.names = list()
+
+    def add(self, name):
+        self.names.append(name)
+
+    def __iter__(self):
+        """想要一个对象称为一个 可迭代对象, 即可以用for遍历
+        必须要有此方法
+        """
+        return ClassIterator(self)
+
+
+# iter返回self
+class Fibonacci:
+
+    def __init__(self, nums) -> None:
+        self.nums = nums
+        self.cur_num = 0
+        self.a = 0
+        self.b = 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.cur_num >= len(self.nums):
+            raise StopIteration
+        
+        res = self.a
+        self.a, self.b = self.b, self.a + self.b
+        self.cur_num += 1
+
+        return res
+
+
+if __name__ == "__main__":
+    classmate = Classmate()
+
+    classmate.add("foo")
+    classmate.add("zoo")
+    classmate.add("yoo")
+
+    # iter方法会自动调用__iter__方法接收返回值, 其返回值就是迭代器也就是ClassIterator类创建的对象就是迭代器
+    classmate_iterator = iter(classmate)
+    print(isinstance(classmate_iterator, Iterator))  # 判断是否是迭代器 True
+
+    for i in classmate:
+        print(i)  # foo zoo yoo
+
+    print(isinstance(classmate, Iterable))
+
+```
+
+**生成器 Generator**
+
+- 生成器是一种特殊的迭代器
+- 如果一个函数中有`yield`语句，那么这个函数就不再是函数，而是一个生成器模板
+- 定义：生成器推导式
+  - 列表推导式：`[i for i in range(3)]`
+    - 把列表推导式的`[]` 改为 `()` 返回的就是一个生成器
+- 生成器的启动：让生成器从断点处继续执行，即唤醒生成器
+  - `next()`第几次启动都可以，但不能传参
+  - `obj.send(param)` 需要传参时使用，不能第一次启动时使用
+- 获取生成器数据用 `next(generator)`方法
+- 生成器数据全部取出后再次使用`next()`方法会报`StopIteration`错误
+- `yield`关键字有两个作用
+  - 保存当前运行状态，暂停执行，将生成器挂起
+  - 将`yield`关键字后面表达式的值作为返回值返回，此时类似`return`
+
+```python
+def create_num(cnt):
+    a, b = 0, 1
+    cur_num = 0
+    while cur_num < cnt:
+        yield a
+        a, b = b, a + b
+        cur_num += 1
+
+gen_obj = create_num(10)  # 此时创建了一个生成器对象
+print(gen_obj)  # <generator object create_num at 0x0000022C5899D510>
+print([i for i in gen_obj])  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+```
+
+**协程 Coroutine**
+
+```python
+# 使用greenlet
+
+import time
+from greenlet import greenlet
+
+def t1():
+    while True:
+        print("----------A----------")
+        gr2.switch()
+        time.sleep(1)
+
+
+def t2():
+    while True:
+        print("----------B----------")
+        gr1.switch()
+        time.sleep(1)
+
+gr1 = greenlet(t1)
+gr2 = greenlet(t2)
+
+print(gr1, gr2)
+gr2.switch()
+
+"""
+<greenlet.greenlet object at 0x00000276263C30F0 (otid=0x00000276263A9EE0) pending> <greenlet.greenlet object at 0x00000276263C31A0 (otid=0x00000276263C7040) pending>
+----------B----------
+----------A----------
+----------B----------
+----------A----------
+...
+"""
+
+# 使用gevent碰到延时就切换到其他的greenlet去运行
+from gevent import monkey
+monkey.patch_all()
+```
+
+### 1.6. 不同实现方式对比
+
+- 进程是资源分配的基本单位，切换需要资源最大，效率很低
+- 线程是操作系统调度的基本单位，切换需要的资源一般，效率一般(不考虑GIL的情况下)
+- 协程切换任务需要的资源很小，效率高
+- 多进程、多线程根据CPU核数不同可能是并行的，协程在一个线程中所以一定是并发的
+
+### 1.7. GIL锁
+
+> GIL（全局解释器锁）是一个在CPython解释器中的锁，用于确保同一时刻只有一个线程执行Python字节码。这是由于CPython的内存管理机制并不是线程安全的，因此GIL可以防止多个线程同时访问、修改同一块内存，从而避免了可能出现的数据竞争和内存错误。但同时，GIL也限制了Python多线程并行性能，在一些密集计算和多线程CPU密集型任务场景中表现不及其他语言和并发框架。
+
+> CPython解释器的内存管理机制是基于引用计数的垃圾回收，即对象被引用一次计数器加一，对象引用被释放计数器减一，当计数器变为0时，对象被回收。这种内存管理机制并不是线程安全的，因为多个线程可能同时访问和修改同一块内存，从而导致计数器不一致，或者对象被销毁多次，或者内存泄漏等问题。因此，为了避免这些问题，CPython引入了GIL锁来确保同一时刻只有一个线程执行Python字节码，从而保证内存管理的线程安全性。
+
+>  CPython（即C实现的Python解释器）的内存管理机制在默认情况下并不是线程安全的，这是由于全局解释器锁（Global Interpreter Lock，GIL）所导致的。 GIL是一种机制，确保每个时刻只有一个线程执行Python字节码。这个锁的存在是为了简化CPython的设计实现，因为锁的存在可以防止多个线程同时访问和修改Python对象的内部数据结构，从而提供了一种简单而有效的线程安全保证机制。 由于GIL的存在，当多个线程同时运行Python代码时，它们必须相互竞争获取全局解释器锁。这意味着在进行CPU密集型任务时，多线程并不能充分利用多核心处理器的优势。 而在内存管理方面，CPython使用引用计数机制进行内存的自动分配和释放。每个Python对象都有一个引用计数器，用于跟踪对象的引用数量。但是，由于GIL的存在，多个线程同时修改对象的引用计数可能会导致竞争条件和不一致性，从而破坏了线程安全性。 虽然CPython提供了一些线程安全的数据结构和锁机制（如`threading`模块的`Lock`类），但因为GIL的存在，多线程Python代码的执行效率并不能获得明显提升。 值得注意的是，其他实现的Python解释器，如Jython和IronPython，并不使用全局解释器锁，因此在多线程环境中可能具有更好的性能和线程安全性。
+
+-   全局解释器锁
+-   保证同一时间, 只有一个线程使用CPU, 不管主子线程
+-   GIL的存在导致, python中只有进程是可以并行的, 多线程实际也是并发的
+-   一个进程有一个GIL锁
+-   GIL不是python的特性, 只是CPython解释器的概念, 历史遗留问题
+
+现不及其他语言和并发框架。
+
+  **GIL锁什么时候释放**
+
+-   当前线程执行超时后会释放
+-   当前线程阻塞操作时会自动释放(input, io/输入输出)
+-   当前执行完成时
+
+  **GIL的弊端**
+
+-   GIL对计算密集型的程序会产生影响。因为计算密集型的程序，需要占用系统资源。
+-   GIL的存在，相当于始终在进行单线程运算，这样自然就慢了。
+-   IO密集型影响不大的原因在于，IO，input/output，这两个词就表明程序的瓶颈在于输入所耗费的时间，线程大部分时间在等待，所以它们是多个一起等（多线程）还是单个等（单线程）无所谓的。
+
+  **解决方案：**
+
+  要提升多线程执行效率，解决方案：
+
+-   更换解释器
+-   改为进程替换多线程
+-   子线程使用C语言实现（绕过GIL锁）
+
+  **必须要知道的是：**
+
+-   CPU 密集(计算密集)型不太适合多线程
+-   I/O 密集型适合多线程/协程（Gil锁会释放）
+
+  
 
 ## 2. 高级语法
+
+### 2.1. 闭包&装饰器
+
+```python
+
+
+"""闭包
+定义：函数嵌套的前提下，内部函数使用了外部函数的变量或参数，外部函数返回内部函数
+作用：保存外部函数内的变量, 不会随着外部函数调用结束而销毁，但消耗内存!
+
+"""
+def outter0(a):
+    local_a = "world"
+    def inner(b):
+        print(f"inner: {a}, {b} {local_a}")
+    return inner
+
+def t0():
+    foo = outter0("foo")
+    foo("hello")
+
+    goo = outter0("goo")
+    goo("hello")
+
+    # inner: foo, hello world
+    # inner: goo, hello world
+
+
+def outter1(a=10):
+    print(f"outter: {a}")
+
+    def inner(b=10):
+        nonlocal a
+        a = a + b  # 此时默认是是取local vars不声名nonlocal会报UnboundLocalError
+        print(f"inner a: {a}, b: {b}")
+    return inner
+
+
+def t1():
+    f = outter1()
+    f()
+    # outter: 10
+    # inner a: 20, b: 10
+
+
+"""
+装饰器：本质就是一个闭包函数（但要求闭包函数有且只有一个参数, 参数必须是函数类型）
+装饰器的执行事件是加载模块事立即执行 (在函数定义时候执行了), 所以一般外部函数内不写其他东西, 只有内部函数
+特点：
+    - 不修改已有函数的源代码
+    - 不修改已有函数的调用方式
+    - 给已有函数增加额外的功能
+"""
+
+# 通用装饰器(inner的参数为 *args, **kwargs也就是接收任意参数)
+def outter2(f):
+    def inner(*args, **kwargs):
+        print(f"inner: {args, kwargs}")
+        res = f(*args, **kwargs)
+        print(f"inner: {res}")
+        return res
+    return inner
+
+
+@outter2  # 相当于执行了这句代码：func = outter2(func)
+def func2(a, b, c=3, d=None):
+    print(f"func: {a, b, c, d}")
+    return "hello world"
+
+
+def t2():
+    func2(1, 2, d=5)
+    # inner: ((1, 2), {'d': 5})
+    # func: (1, 2, 3, 5)
+    # inner: hello world
+
+
+# 带有参数的装饰器：装饰器外再加一层闭包
+def outter3(flag=False):
+    def outter2(f):
+        def inner(*args, **kwargs):
+            # 此时只是打印flag, 没修改不可变类型，不需要声名nonlocal
+            print(f"inner: {args, kwargs}, {flag=}")
+            res = f(*args, **kwargs)
+            print(f"inner: {res}, {flag=}")
+            return res
+        return inner
+    return outter2
+
+
+@outter3(True)
+def func3(a, b, c=3, d=None):
+    print(f"func: {a, b, c, d}")
+    return "hello world"
+
+def t3():
+    func3(1, 2, d=4)
+    # inner: ((1, 2), {'d': 4}), flag=True
+    # func: (1, 2, 3, 4)
+    # inner: hello world, flag=True
+
+
+# 类装饰器
+class Outter4:
+    
+    def __init__(self, f):
+        self.f = f
+    
+    def __call__(self, *args, **kwargs):
+        print(f"inner: {args=}, {kwargs=}")
+        res = self.f(*args, **kwargs)
+        return res
+
+@Outter4
+def func4(a, b, c=3, d=None):
+    print(f"func: {a, b, c, d}")
+    return "hello world"
+
+
+def t4():
+    func4(1, 2, d=4)
+    # inner: args=(1, 2), kwargs={'d': 4}
+    # func: (1, 2, 3, 4)
+
+
+if __name__ == "__main__":
+    t4()
+
+```
+
+### 2.2. property
+
+**3. property属性**
+
+- property属性就是负责把一个方法当做属性进行使用，这样做可以简化代码使用
+- 定义方式
+  - 装饰器方式
+  - 类属性方式
+
+```python
+# 类属性方式 
+class Student(object):   
+
+    def __init__(self):     
+        self.__age = 0   
+
+    def get_age(self):     
+        return self.__age   
+
+    def set_age(self, value):    
+        self.__age = value
+
+    # 第一个参数是获取值的方法， 第二个是设置值的方法   
+    age = property(get_age, set_age)      
+
+
+# 装饰器方式
+class Student(object):   
+
+    def __init__(self):
+        self.__age = 0
+
+    # 获取年龄
+    @property
+    def age(self):
+        return self.__age   
+
+    # 设置年龄
+    @age.setter
+    def age(self, value):     
+        self.__age = value  
+
+```
+
+### 2.3. with语句&上下文管理器
+
+- with 语句执行完成以后自动调用关闭文件操作, 即使出现异常
+- 一个类只要实现了``__enter__()``和``__exit__()``这个两个方法，通过该类创建的对象我们就称之为上下文管理器
+
+```python
+# 要实现上下文管理器， 要实现__enter__ 和 __exit__  
+class File(object):   
+
+    def __init__(self, file_name, file_mode):
+        self.file_name = file_name
+        self.file_mode = file_mode
+
+        # 实现上文的方法，主要用来提供资源，需要返回一个对象
+        def __enter__(self):
+            print('entered up')
+            self.fp = open(self.file_name, self.file_mode)
+            return self.fp
+
+        
+        # 实现下文的方法，主要用来释放资源
+        def __exit__(self, exc_type, exc_val, exc_tb):
+            print('exited down')
+            self.fp.close()
+
+            
+with File("a.txt", "w") as f:
+    print('-' * 28)
+
+# entered up
+# ----------------------------
+# exited down
+```
+
+- 上下文管理器可以使用 with 语句，with语句之所以这么强大，背后是由上下文管理器做支撑的，也就是说刚才使用 open 函数创建的文件对象就是就是一个上下文管理器对象
+- ``__enter__``表示上文方法，需要返回一个操作文件对象
+
+- `__exit__`表示下文方法，with语句执行完成会自动执行，即使出现异常也会执行该方法
+
+### 2.4. 深拷贝和浅拷贝
+
+- `import copy`拷贝的目的: 保证原数据和拷贝的数据之间不影响
+- **`copy.copy()` 浅拷贝**，只对可变类型的第一层对象进行拷贝，对拷贝的对象开辟新的内存空间进行存储，不会拷贝对象内部的子对象
+  - 不可变类型进行浅拷贝不会给拷贝的对象开辟新的内存空间，而只是拷贝了这个对象的引用
+  - 可变类型进行浅拷贝只对可变类型的第一层对象进行拷贝，对拷贝的对象会开辟新的内存空间进行存储，子对象不进行拷贝
+- **`copy.deepcopy()` 深拷贝**, 只要发现对象有可变类型就会对该对象到最后一个可变类型的每一层对象就行拷贝, 对每一层拷贝的对象都会开辟新的内存空间进行存储
+  - 不可变类型进行深拷贝如果子对象没有可变类型则不会进行拷贝，而只是拷贝了这个对象的引用，否则会对该对象到最后一个可变类型的每一层对象就行拷贝, 对每一层拷贝的对象都会开辟新的内存空间进行存储
+  - 可变类型进行深拷贝会对该对象到最后一个可变类型的每一层对象就行拷贝, 对每一层拷贝的对象都会开辟新的内存空间进行存储
+- **浅拷贝最多拷贝对象的一层 (即使可变类型, 也只拷贝第一层) 其它情况都是拷贝引用**
+- **深拷贝可能拷贝对象的多层 (只要是有可变类型, 就全部拷贝) 其它情况都是拷贝引用**
+
+### 2.5. 单例
+
+```python
+# 只有一份内存空间
+# __new__ 开辟内存空间, 会在__init__之前执行 
+
+class Singleton(object):   
+    is_instance = None   
+    def __new__(cls, *args, **kwargs):
+        if cls.is_instance is None:
+            # 保证下边代码执行一次
+            cls.is_instance = object.__new__(cls)
+            return cls.is_instance
+        else:
+            return cls.is_instance
+
+
+a = Singleton()
+b = Singleton()
+c = Singleton()
+
+>>> id(a) == id(b) == id(c)
+>>> True
+
+```
 
 
 
