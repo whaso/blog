@@ -2,6 +2,7 @@
 title: python从入门到放弃
 date: 2023-06-30 11:14:42
 tags: python
+categories: 从入门到放弃
 ---
 
 # 一. 基础
